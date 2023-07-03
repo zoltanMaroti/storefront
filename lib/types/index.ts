@@ -12,8 +12,7 @@ export type PageProps = {
     searchParams?: { [key: string]: string | string[] | undefined };
 };
 
-export type Translation = {
-    [namespace: string]: {
-        [key: string]: string;
-    };
+export type Category = {
+    slug: string;
+    name: string;
 };
