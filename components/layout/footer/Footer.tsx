@@ -6,7 +6,7 @@ import {
     Row,
     PaymentMethod,
     PaymentMethods,
-} from '@/components/layout/footer/styles';
+} from '@/components/layout/footer/style';
 import { FiFacebook, FiInstagram } from 'react-icons/fi';
 import { RiPinterestLine } from 'react-icons/ri';
 import { useTranslations } from 'next-intl';
