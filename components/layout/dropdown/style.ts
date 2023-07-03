@@ -65,3 +65,8 @@ export const InnerContainer = styled.ul`
         border-radius: inherit;
     }
 `;
+
+export const DropdownItem = styled.li`
+    cursor: pointer;
+    white-space: nowrap;
+`;
