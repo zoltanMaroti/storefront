@@ -13,7 +13,7 @@ import { useTranslations } from 'next-intl';
 import { CATEGORIES } from '@/lib/constants';
 
 const Footer = () => {
-    const t = useTranslations('footer');
+    const t = useTranslations('common');
 
     return (
         <FooterContainer>

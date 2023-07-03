@@ -1,5 +1,5 @@
 {
-  "footer": {
+  "common": {
     "About the shop": "À propos du magasin",
     "Welcome to our interior design store, where style meets functionality! Explore our curated collection of exquisite furniture, decor, and accessories, meticulously selected to transform your living spaces into havens of comfort and elegance": "Bienvenue dans notre boutique de design d'intérieur, où le style rencontre la fonctionnalité ! Explorez notre collection organisée de meubles, de décorations et d'accessoires exquis, méticuleusement sélectionnés pour transformer vos espaces de vie en havres de confort et d'élégance.",
     "All products": "Tous les produits",
@@ -10,6 +10,7 @@
     "FAQ": "FAQ",
     "Contact": "Contact",
     "Shop": "Magasin",
-    "Information": "Information"
+    "Information": "Information",
+    "Home": "Page d'accueil"
   }
 }
