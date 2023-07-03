@@ -1,8 +1,14 @@
 import { ReactNode } from 'react';
 
-export type PageProps = {
+export type Locale = 'en' | 'fr' | 'de';
+
+export type LayoutProps = {
     children: ReactNode;
-    params: { slug: string; locale: Locale };
+    params: { locale: Locale };
+};
+
+export type PageProps = {
+    params: { locale: Locale };
     searchParams?: { [key: string]: string | string[] | undefined };
 };
 
@@ -11,5 +17,3 @@ export type Translation = {
         [key: string]: string;
     };
 };
-
-export type Locale = 'en' | 'fr' | 'de';
