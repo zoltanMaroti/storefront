@@ -16,3 +16,9 @@ export type Category = {
     slug: string;
     name: string;
 };
+
+export type DrawerProps = {
+    isOpen: boolean;
+    children: ReactNode;
+    onClick: () => void;
+};
