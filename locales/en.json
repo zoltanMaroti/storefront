@@ -1,5 +1,15 @@
 {
-  "HomePage": {
-    "hello": "Hello World!"
+  "footer": {
+    "About the shop": "About the store",
+    "Welcome to our interior design store, where style meets functionality! Explore our curated collection of exquisite furniture, decor, and accessories, meticulously selected to transform your living spaces into havens of comfort and elegance": "Welcome to our interior design store, where style meets functionality! Explore our curated collection of exquisite furniture, decor, and accessories, meticulously selected to transform your living spaces into havens of comfort and elegance.",
+    "All products": "All products",
+    "Clocks": "Clocks",
+    "Images": "Images",
+    "Trays": "Trays",
+    "About us": "About",
+    "FAQ": "FAQ",
+    "Contact": "Contact",
+    "Shop": "Shop",
+    "Information": "Information"
   }
 }
