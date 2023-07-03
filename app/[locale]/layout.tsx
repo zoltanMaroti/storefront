@@ -3,7 +3,7 @@ import { Montserrat } from 'next/font/google';
 import React from 'react';
 import { NextIntlClientProvider } from 'next-intl';
 import { getTranslation } from '@/lib/utils/translation';
-import { PageProps } from '@/lib/types/types';
+import { LayoutProps } from '@/lib/types/types';
 
 const montserrat = Montserrat({
     subsets: ['latin'],
@@ -18,7 +18,7 @@ export const metadata = {
 export default async function RootLayout({
     children,
     params: { locale },
-}: PageProps) {
+}: LayoutProps) {
     const translation = await getTranslation(locale);
 
     return (
