@@ -31,3 +31,8 @@ export type AccordionProps = {
     children: ReactNode;
     defaultOpen?: boolean;
 };
+
+export type DropdownProps = {
+    isActive: boolean;
+    children: ReactNode;
+};
