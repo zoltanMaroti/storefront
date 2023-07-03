@@ -25,7 +25,7 @@ export const DrawerContainer = styled.div<{ isOpen?: boolean }>`
         isOpen &&
         css`
             transform: translateX(0);
-        `}
+        `};
 
     @media screen and (max-width: ${screenSizes.SMALL}) {
         min-width: 70vw;
