@@ -22,3 +22,12 @@ export type DrawerProps = {
     children: ReactNode;
     onClick: () => void;
 };
+
+export type AccordionProps = {
+    label: ReactNode;
+    borderTop?: boolean;
+    borderBottom?: boolean;
+    padding?: boolean;
+    children: ReactNode;
+    defaultOpen?: boolean;
+};
