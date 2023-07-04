@@ -5,6 +5,8 @@ import { css } from '@emotion/react';
 
 export const NavItem = styled.span<{ isActive: boolean; size?: string }>`
     font-size: var(--font-size-lg);
+    cursor: pointer;
+    white-space: nowrap;
 
     ${({ isActive }) =>
         isActive &&

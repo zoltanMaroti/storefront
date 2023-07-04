@@ -44,7 +44,9 @@ export type MobileNavigationProps = {
 
 export type NavLinkProps = {
     href: string;
-    children: React.ReactNode;
+    children: ReactNode;
     onClick?: () => void;
     size?: string;
+    renderer?: React.ElementType;
+    isActive?: boolean;
 };

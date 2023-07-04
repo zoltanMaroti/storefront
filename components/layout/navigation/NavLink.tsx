@@ -6,14 +6,26 @@ import Link from 'next/link';
 import { NavItem } from '@/components/layout/navigation/style';
 import React from 'react';
 
-const NavLink = ({ href, children, onClick, size }: NavLinkProps) => {
+const NavLink = ({
+    href,
+    children,
+    onClick,
+    size,
+    isActive,
+    renderer = NavItem,
+}: NavLinkProps) => {
     const pathname = usePathname();
+    const Wrapper = renderer;
 
     return (
         <Link href={href}>
-            <NavItem isActive={pathname === href} onClick={onClick} size={size}>
+            <Wrapper
+                isActive={isActive || pathname === href}
+                onClick={onClick}
+                size={size}
+            >
                 {children}
-            </NavItem>
+            </Wrapper>
         </Link>
     );
 };
