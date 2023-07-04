@@ -5,6 +5,7 @@ import {
     DesktopLogo,
     DesktopNavigation,
     HeaderContainer,
+    MobileNavigationContainer,
     NavItem,
     ShopMenuItem,
 } from '@/components/layout/header/style';
@@ -13,17 +14,26 @@ import Dropdown from '@/components/layout/dropdown/Dropdown';
 import { DropdownItem } from '@/components/layout/dropdown/style';
 import Link from 'next/link';
 import { CATEGORIES } from '@/lib/constants';
+import { FiMenu } from 'react-icons/fi';
+import MobileNavigation from '@/components/layout/navigation/MobileNavigation';
 
 const Header = () => {
     const t = useTranslations('common');
 
     const [isDropdownOpen, setDropdownOpen] = useState<boolean>(false);
+    const [isMenuOpen, setMenuOpen] = useState<boolean>(false);
 
     const onMouseOver = () => setDropdownOpen(true);
     const onMouseOut = () => setDropdownOpen(false);
 
+    const toggleMenu = () => setMenuOpen((prevState) => !prevState);
+
     return (
         <HeaderContainer>
+            <MobileNavigationContainer>
+                <FiMenu size={24} onClick={toggleMenu} />
+                <MobileNavigation isOpen={isMenuOpen} onClick={toggleMenu} />
+            </MobileNavigationContainer>
             <DesktopNavigation>
                 <li>
                     <NavItem>{t('Home')}</NavItem>

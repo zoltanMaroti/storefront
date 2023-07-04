@@ -5,7 +5,7 @@ import { css } from '@emotion/react';
 import { screenSizes } from '@/lib/constants';
 
 export const DrawerContainer = styled.div<{ isOpen?: boolean }>`
-    background: var(--background-color-primary);
+    background: var(--color-background-primary);
     height: 100vh;
     display: flex;
     flex-direction: column;

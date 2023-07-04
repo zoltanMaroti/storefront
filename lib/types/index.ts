@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 
 export type Locale = 'en' | 'fr' | 'de';
 
@@ -35,4 +35,16 @@ export type AccordionProps = {
 export type DropdownProps = {
     isActive: boolean;
     children: ReactNode;
+};
+
+export type MobileNavigationProps = {
+    isOpen: boolean;
+    onClick: () => void;
+};
+
+export type NavLinkProps = {
+    href: string;
+    children: React.ReactNode;
+    onClick?: () => void;
+    size?: string;
 };

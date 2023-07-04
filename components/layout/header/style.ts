@@ -88,3 +88,15 @@ export const NavItem = styled.a<{ isActive?: boolean }>`
 export const ShopMenuItem = styled.li`
     position: relative;
 `;
+
+export const MobileNavigationContainer = styled.div`
+    visibility: hidden;
+    display: flex;
+    align-items: center;
+
+    @media screen and (max-width: ${screenSizes.SMALL}) {
+        visibility: visible;
+        justify-content: flex-start;
+        width: 100%;
+    }
+`;
