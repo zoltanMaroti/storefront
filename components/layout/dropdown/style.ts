@@ -26,7 +26,7 @@ export const DropdownContainer = styled.div<{ isActive?: boolean }>`
     }
 `;
 
-export const InnerContainer = styled.ul`
+export const InnerContainer = styled.div`
     background: var(--color-background-primary);
     padding: var(--spacing-sm);
     display: flex;
@@ -64,9 +64,4 @@ export const InnerContainer = styled.ul`
         background: inherit;
         border-radius: inherit;
     }
-`;
-
-export const DropdownItem = styled.li`
-    cursor: pointer;
-    white-space: nowrap;
 `;

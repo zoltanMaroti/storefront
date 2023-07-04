@@ -6,16 +6,15 @@ import {
     DesktopNavigation,
     HeaderContainer,
     MobileNavigationContainer,
-    NavItem,
+    HeaderNavItem,
     ShopMenuItem,
 } from '@/components/layout/header/style';
 import { useTranslations } from 'next-intl';
 import Dropdown from '@/components/layout/dropdown/Dropdown';
-import { DropdownItem } from '@/components/layout/dropdown/style';
-import Link from 'next/link';
 import { CATEGORIES } from '@/lib/constants';
 import { FiMenu } from 'react-icons/fi';
 import MobileNavigation from '@/components/layout/navigation/MobileNavigation';
+import NavLink from '@/components/layout/navigation/NavLink';
 
 const Header = () => {
     const t = useTranslations('common');
@@ -35,21 +34,32 @@ const Header = () => {
                 <MobileNavigation isOpen={isMenuOpen} onClick={toggleMenu} />
             </MobileNavigationContainer>
             <DesktopNavigation>
-                <li>
-                    <NavItem>{t('Home')}</NavItem>
-                </li>
+                <NavLink href={'/'} renderer={HeaderNavItem}>
+                    {t('Home')}
+                </NavLink>
                 <ShopMenuItem onMouseOver={onMouseOver} onMouseOut={onMouseOut}>
-                    <NavItem isActive={isDropdownOpen}>{t('Shop')}</NavItem>
+                    <NavLink
+                        href={'#'}
+                        renderer={HeaderNavItem}
+                        isActive={isDropdownOpen}
+                    >
+                        {t('Shop')}
+                    </NavLink>
                     <Dropdown isActive={isDropdownOpen}>
-                        <DropdownItem>
-                            <Link href={'/products'}>{t('All products')}</Link>
-                        </DropdownItem>
+                        <NavLink
+                            href={'/products'}
+                            size={'var(--font-size-md)'}
+                        >
+                            {t('All products')}
+                        </NavLink>
                         {CATEGORIES.map((category) => (
-                            <DropdownItem key={category.slug}>
-                                <Link href={`/products/${category.slug}`}>
-                                    {t(`${category.name}`)}
-                                </Link>
-                            </DropdownItem>
+                            <NavLink
+                                key={category.slug}
+                                href={`/products/${category.slug}`}
+                                size={'var(--font-size-md)'}
+                            >
+                                {t(`${category.name}`)}
+                            </NavLink>
                         ))}
                     </Dropdown>
                 </ShopMenuItem>
@@ -60,12 +70,12 @@ const Header = () => {
                     height={150}
                     priority
                 />
-                <li>
-                    <NavItem>{t('About us')}</NavItem>
-                </li>
-                <li>
-                    <NavItem>{t('FAQ')}</NavItem>
-                </li>
+                <NavLink href={'/about'} renderer={HeaderNavItem}>
+                    {t('About us')}
+                </NavLink>
+                <NavLink href={'/faq'} renderer={HeaderNavItem}>
+                    {t('FAQ')}
+                </NavLink>
             </DesktopNavigation>
         </HeaderContainer>
     );

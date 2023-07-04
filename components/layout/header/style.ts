@@ -47,7 +47,7 @@ export const DesktopLogo = styled(Image)`
     padding: 0 var(--spacing-sm);
 `;
 
-export const NavItem = styled.a<{ isActive?: boolean }>`
+export const HeaderNavItem = styled.span<{ isActive?: boolean }>`
     display: block;
     position: relative;
     padding: 0.2rem 0;

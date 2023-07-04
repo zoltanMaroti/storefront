@@ -46,7 +46,7 @@ const MobileNavigation = ({ isOpen, onClick }: MobileNavigationProps) => {
                 <Divider />
                 <NavLink href={'/cart'}>{t('Cart')}</NavLink>
                 <Divider />
-                <NavLink href={'/about-us'}>{t('About us')}</NavLink>
+                <NavLink href={'/about'}>{t('About us')}</NavLink>
                 <Divider />
                 <NavLink href={'/faq'}>{t('FAQ')}</NavLink>
                 <Divider />
