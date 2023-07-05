@@ -92,3 +92,11 @@ export type Product = {
     slug: string;
     quantity?: number;
 };
+
+export type GenericContainerProps = {
+    children: ReactNode;
+};
+
+export type GalleryProps = {
+    images: ProductImage[];
+};

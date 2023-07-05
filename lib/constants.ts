@@ -38,3 +38,5 @@ export const languages: LanguageSelectorItem[] = [
         name: 'English',
     },
 ];
+
+export const GALLERY_THUMBNAIL_HEIGHT = 80;
