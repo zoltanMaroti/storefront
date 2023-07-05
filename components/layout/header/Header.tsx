@@ -68,13 +68,15 @@ const Header = () => {
                         ))}
                     </Dropdown>
                 </ShopMenuItem>
-                <DesktopLogo
-                    alt="Logo"
-                    src={'/assets/logos/logo.png'}
-                    width={150}
-                    height={150}
-                    priority
-                />
+                <Link href={'/'}>
+                    <DesktopLogo
+                        alt="Logo"
+                        src={'/assets/logos/logo.png'}
+                        width={150}
+                        height={150}
+                        priority
+                    />
+                </Link>
                 <NavLink href={'/about'} renderer={HeaderNavItem}>
                     {t('About us')}
                 </NavLink>
@@ -83,13 +85,15 @@ const Header = () => {
                 </NavLink>
             </DesktopNavigation>
             <MobileHeader>
-                <MobileLogo
-                    alt="Logo"
-                    src={'/assets/logos/logo.png'}
-                    width={100}
-                    height={100}
-                    priority
-                />
+                <Link href={'/'}>
+                    <MobileLogo
+                        alt="Logo"
+                        src={'/assets/logos/logo.png'}
+                        width={100}
+                        height={100}
+                        priority
+                    />
+                </Link>
             </MobileHeader>
             <IconsContainer>
                 <InnerContainer>
