@@ -100,3 +100,17 @@ export type GenericContainerProps = {
 export type GalleryProps = {
     images: ProductImage[];
 };
+
+export type SpinnerProps = {
+    color?: string;
+    size?: string;
+};
+
+export type ButtonProps = {
+    disabled?: boolean;
+    loading?: boolean;
+    width?: string;
+    variant?: 'primary' | 'secondary';
+    children: ReactNode;
+    onClick?: () => void;
+};
