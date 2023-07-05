@@ -31,10 +31,10 @@ const ProductDetails = ({ product }: { product: Product }) => {
                 variant={'secondary'}
                 onClick={() => onAddToCartClick(product)}
             >
-                <ButtonText>{t('add to cart')}</ButtonText>
+                <ButtonText>{t('Add to cart')}</ButtonText>
             </Button>
             <Button onClick={onBuyNowClick} loading={false} disabled={false}>
-                <ButtonText>{t('buy now')}</ButtonText>
+                <ButtonText>{t('Buy now')}</ButtonText>
             </Button>
             <Description>{product.content.description}</Description>
             <div>
@@ -43,7 +43,7 @@ const ProductDetails = ({ product }: { product: Product }) => {
                     label={
                         <AccordionLabel>
                             <TbTexture />
-                            <Description>{t('materials')}</Description>
+                            <Description>{t('Materials')}</Description>
                         </AccordionLabel>
                     }
                 >
@@ -53,22 +53,22 @@ const ProductDetails = ({ product }: { product: Product }) => {
                     label={
                         <AccordionLabel>
                             <RxDimensions />
-                            <Description>{t('dimensions')}</Description>
+                            <Description>{t('Dimensions')}</Description>
                         </AccordionLabel>
                     }
                 >
                     <div>
                         <Description>
-                            {t('height')}: {product.content.height} cm
+                            {t('Height')}: {product.content.height} cm
                         </Description>
                         <Description>
-                            {t('width')}: {product.content.width} cm
+                            {t('Width')}: {product.content.width} cm
                         </Description>
                         <Description>
-                            {t('length')}: {product.content.length} cm
+                            {t('Length')}: {product.content.length} cm
                         </Description>
                         <Description>
-                            {t('weight')}: {product.content.weight} gr
+                            {t('Weight')}: {product.content.weight} gr
                         </Description>
                     </div>
                 </Accordion>
@@ -77,7 +77,7 @@ const ProductDetails = ({ product }: { product: Product }) => {
                     label={
                         <AccordionLabel>
                             <TbWashGentle />
-                            <Description>{t('care instructions')}</Description>
+                            <Description>{t('Care instructions')}</Description>
                         </AccordionLabel>
                     }
                 >

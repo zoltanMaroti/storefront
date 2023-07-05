@@ -12,6 +12,15 @@
     "Shop": "Magasin",
     "Information": "Information",
     "Home": "Page d'accueil",
-    "Cart": "Panier"
+    "Cart": "Panier",
+    "Add to cart": "Ajouter au panier",
+    "Buy now": "Acheter maintenant",
+    "Materials": "Matériaux",
+    "Dimensions": "Dimensions",
+    "Height": "Hauteur",
+    "Width": "Largeur",
+    "Length": "Longueur",
+    "Weight": "Lester",
+    "Care instructions": "Conseils d'entretien"
   }
 }

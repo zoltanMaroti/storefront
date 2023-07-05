@@ -12,6 +12,15 @@
     "Shop": "Shop",
     "Information": "Information",
     "Home": "Home",
-    "Cart": "Cart"
+    "Cart": "Cart",
+    "Add to cart": "Add to cart",
+    "Buy now": "Buy now",
+    "Materials": "Materials",
+    "Dimensions": "Dimensions",
+    "Height": "Height",
+    "Width": "Width",
+    "Length": "Length",
+    "Weight": "Weight",
+    "Care instructions": "Care instructions"
   }
 }
