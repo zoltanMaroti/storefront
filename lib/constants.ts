@@ -1,4 +1,4 @@
-import { Category } from '@/lib/types';
+import { Category, LanguageSelectorItem } from '@/lib/types';
 
 export const screenSizes = {
     SMALL: '768px',
@@ -18,5 +18,20 @@ export const CATEGORIES: Category[] = [
     {
         name: 'Trays',
         slug: 'trays',
+    },
+];
+
+export const languages: LanguageSelectorItem[] = [
+    {
+        code: 'fr',
+        name: 'Français',
+    },
+    {
+        code: 'de',
+        name: 'Deutsch',
+    },
+    {
+        code: 'en',
+        name: 'English',
     },
 ];

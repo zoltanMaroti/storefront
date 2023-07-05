@@ -123,14 +123,13 @@ export const MobileLogo = styled(Image)`
 export const IconsContainer = styled.div`
     position: relative;
     width: 100%;
-    max-width: 100px;
 `;
 
 export const InnerContainer = styled.div`
     position: absolute;
     bottom: -10px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
     justify-items: flex-end;
     height: 100%;
@@ -140,5 +139,11 @@ export const InnerContainer = styled.div`
 
     @media screen and (max-width: ${screenSizes.SMALL}) {
         bottom: unset;
+    }
+`;
+
+export const LanguageSelectorContainer = styled.div`
+    @media screen and (max-width: ${screenSizes.SMALL}) {
+        display: none;
     }
 `;

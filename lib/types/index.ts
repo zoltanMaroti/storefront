@@ -50,3 +50,12 @@ export type NavLinkProps = {
     renderer?: React.ElementType;
     isActive?: boolean;
 };
+
+export type LanguageSelectorProps = {
+    inline?: boolean;
+};
+
+export type LanguageSelectorItem = {
+    code: Locale;
+    name: string;
+};

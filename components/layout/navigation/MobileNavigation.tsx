@@ -10,6 +10,7 @@ import Divider from '@/components/common/divider/Divider';
 import Accordion from '@/components/layout/accordion/Accordion';
 import { CATEGORIES } from '@/lib/constants';
 import NavLink from '@/components/layout/navigation/NavLink';
+import LanguageSelector from '@/components/layout/header/language/LanguageSelector';
 
 const MobileNavigation = ({ isOpen, onClick }: MobileNavigationProps) => {
     const t = useTranslations('common');
@@ -50,6 +51,7 @@ const MobileNavigation = ({ isOpen, onClick }: MobileNavigationProps) => {
                 <Divider />
                 <NavLink href={'/faq'}>{t('FAQ')}</NavLink>
                 <Divider />
+                <LanguageSelector inline={true} />
             </Drawer>
         </nav>
     );
