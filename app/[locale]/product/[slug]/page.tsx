@@ -22,7 +22,6 @@ const ProductPage = async ({ params: { slug } }: ProductPageProps) => {
                 <Gallery images={product.content.images} />
                 <ProductDetails product={product} />
             </ProductContainer>
-            {product.content.name}
         </PageContainer>
     );
 };
