@@ -10,13 +10,16 @@ import {
     ShopMenuItem,
     MobileHeader,
     MobileLogo,
+    IconsContainer,
+    InnerContainer,
 } from '@/components/layout/header/style';
 import { useTranslations } from 'next-intl';
 import Dropdown from '@/components/layout/dropdown/Dropdown';
 import { CATEGORIES } from '@/lib/constants';
-import { FiMenu } from 'react-icons/fi';
+import { FiSearch, FiShoppingBag, FiMenu } from 'react-icons/fi';
 import MobileNavigation from '@/components/layout/navigation/MobileNavigation';
 import NavLink from '@/components/layout/navigation/NavLink';
+import Link from 'next/link';
 
 const Header = () => {
     const t = useTranslations('common');
@@ -88,6 +91,16 @@ const Header = () => {
                     priority
                 />
             </MobileHeader>
+            <IconsContainer>
+                <InnerContainer>
+                    <Link href={'/search'}>
+                        <FiSearch size={24} />
+                    </Link>
+                    <Link href={'/cart'}>
+                        <FiShoppingBag size={24} />
+                    </Link>
+                </InnerContainer>
+            </IconsContainer>
         </HeaderContainer>
     );
 };

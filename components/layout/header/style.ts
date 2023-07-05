@@ -119,3 +119,26 @@ export const MobileLogo = styled(Image)`
     max-width: 100%;
     height: auto;
 `;
+
+export const IconsContainer = styled.div`
+    position: relative;
+    width: 100%;
+    max-width: 100px;
+`;
+
+export const InnerContainer = styled.div`
+    position: absolute;
+    bottom: -10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: flex-end;
+    height: 100%;
+    width: 100%;
+    gap: var(--spacing-sm);
+    line-height: 1;
+
+    @media screen and (max-width: ${screenSizes.SMALL}) {
+        bottom: unset;
+    }
+`;
