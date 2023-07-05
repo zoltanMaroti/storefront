@@ -1,5 +1,17 @@
 {
-  "HomePage": {
-    "hello": "Hallo Welt!"
+  "common": {
+    "About the shop": "Über den Laden",
+    "Welcome to our interior design store, where style meets functionality! Explore our curated collection of exquisite furniture, decor, and accessories, meticulously selected to transform your living spaces into havens of comfort and elegance": "Willkommen in unserem Innenarchitektur-Shop, wo Stil auf Funktionalität trifft! Entdecken Sie unsere kuratierte Sammlung exquisiter Möbel, Dekorationen und Accessoires, die sorgfältig ausgewählt wurden, um Ihre Wohnräume in Oasen des Komforts und der Eleganz zu verwandeln.",
+    "All products": "Alle Produkte",
+    "Clocks": "Uhren",
+    "Images": "Bilder",
+    "Trays": "Tabletts",
+    "About us": "Über uns",
+    "FAQ": "FAQ",
+    "Contact": "Kontakt",
+    "Shop": "Geschäft",
+    "Information": "Information",
+    "Home": "Startseite",
+    "Cart": "Einkaufswagen"
   }
 }
