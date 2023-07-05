@@ -12,6 +12,16 @@
     "Shop": "Geschäft",
     "Information": "Information",
     "Home": "Startseite",
-    "Cart": "Einkaufswagen"
+    "Cart": "Einkaufswagen",
+    "Add to cart": "In den Warenkorb legen",
+    "Buy now": "Kaufe jetzt",
+    "Materials": "Materialien",
+    "Dimensions": "Maße",
+    "Height": "Höhe",
+    "Width": "Breite",
+    "Length": "Länge",
+    "Weight": "Gewicht",
+    "Care instructions": "Pflegehinweise",
+    "Product not found": "Produkt nicht gefunden"
   }
 }

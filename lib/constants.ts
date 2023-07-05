@@ -1,5 +1,8 @@
 import { Category, LanguageSelectorItem } from '@/lib/types';
 
+export const API_URL = process.env.NEXT_PUBLIC_COMMERCE_PROVIDER_API_URL;
+export const API_TOKEN = process.env.NEXT_PUBLIC_COMMERCE_PROVIDER_ACCESS_TOKEN;
+
 export const screenSizes = {
     SMALL: '768px',
     MEDIUM: '1024px',
@@ -35,3 +38,5 @@ export const languages: LanguageSelectorItem[] = [
         name: 'English',
     },
 ];
+
+export const GALLERY_THUMBNAIL_HEIGHT = 80;
