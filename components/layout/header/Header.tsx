@@ -8,6 +8,8 @@ import {
     MobileNavigationContainer,
     HeaderNavItem,
     ShopMenuItem,
+    MobileHeader,
+    MobileLogo,
 } from '@/components/layout/header/style';
 import { useTranslations } from 'next-intl';
 import Dropdown from '@/components/layout/dropdown/Dropdown';
@@ -77,6 +79,15 @@ const Header = () => {
                     {t('FAQ')}
                 </NavLink>
             </DesktopNavigation>
+            <MobileHeader>
+                <MobileLogo
+                    alt="Logo"
+                    src={'/assets/logos/logo.png'}
+                    width={100}
+                    height={100}
+                    priority
+                />
+            </MobileHeader>
         </HeaderContainer>
     );
 };

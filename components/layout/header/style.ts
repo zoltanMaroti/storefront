@@ -100,3 +100,22 @@ export const MobileNavigationContainer = styled.div`
         width: 100%;
     }
 `;
+
+export const MobileHeader = styled.div`
+    display: none;
+
+    @media screen and (max-width: ${screenSizes.SMALL}) {
+        display: flex;
+        justify-content: center;
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+`;
+
+export const MobileLogo = styled(Image)`
+    max-width: 100%;
+    height: auto;
+`;
