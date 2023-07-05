@@ -59,3 +59,36 @@ export type LanguageSelectorItem = {
     code: Locale;
     name: string;
 };
+
+export type ProductPageProps = PageProps & {
+    params: { slug: string };
+};
+
+export type ProductImage = {
+    filename: string;
+    alt: string;
+};
+
+export type ProductContent = {
+    name: string;
+    description: string;
+    images: ProductImage[];
+    price: string;
+    inventory_level: string;
+    care_instructions: string;
+    materials: string;
+    width: string;
+    height: string;
+    length: string;
+    weight: string;
+    category: string;
+    is_active: boolean;
+};
+
+export type Product = {
+    uuid: string;
+    content: ProductContent;
+    tag_list: string[];
+    slug: string;
+    quantity?: number;
+};
