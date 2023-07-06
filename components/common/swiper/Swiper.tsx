@@ -4,12 +4,17 @@ import { GenericSwiperProps } from '@/lib/types';
 
 const Swiper = <T extends { uuid: string }>({
     items,
+    maxItemWidth,
     Renderer,
 }: GenericSwiperProps<T>) => {
     return (
         <SwiperContainer>
             {items.map((item) => (
-                <Renderer key={item.uuid} item={item} />
+                <Renderer
+                    key={item.uuid}
+                    item={item}
+                    maxItemWidth={maxItemWidth}
+                />
             ))}
         </SwiperContainer>
     );

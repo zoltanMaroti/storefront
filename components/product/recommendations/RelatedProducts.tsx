@@ -5,6 +5,8 @@ import { useLocale } from 'next-intl';
 import { notFound } from 'next/navigation';
 import Swiper from '@/components/common/swiper/Swiper';
 import ProductCard from '@/components/product/card/ProductCard';
+import SectionTitle from '@/components/product/recommendations/SectionTitle';
+import { PRODUCT_CARD_MAX_WIDTH } from '@/lib/constants';
 
 const RelatedProducts = async ({ product }: RelatedProductsProps) => {
     const locale = useLocale();
@@ -18,7 +20,16 @@ const RelatedProducts = async ({ product }: RelatedProductsProps) => {
     if (!product) {
         return notFound();
     }
-    return <Swiper<Product> items={products} Renderer={ProductCard} />;
+    return (
+        <>
+            <SectionTitle />
+            <Swiper<Product>
+                items={products}
+                maxItemWidth={PRODUCT_CARD_MAX_WIDTH}
+                Renderer={ProductCard}
+            />
+        </>
+    );
 };
 
 export default RelatedProducts;

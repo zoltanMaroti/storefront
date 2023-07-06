@@ -40,3 +40,5 @@ export const languages: LanguageSelectorItem[] = [
 ];
 
 export const GALLERY_THUMBNAIL_HEIGHT = 80;
+
+export const PRODUCT_CARD_MAX_WIDTH = '300px';

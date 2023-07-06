@@ -117,6 +117,7 @@ export type ButtonProps = {
 
 export type GenericSwiperProps<T> = {
     items: T[];
+    maxItemWidth?: string;
     Renderer: ElementType;
 };
 
@@ -126,5 +127,5 @@ export type RelatedProductsProps = {
 
 export type ProductCardProps = {
     item: Product;
-    maxWidth?: string;
+    maxItemWidth?: string;
 };

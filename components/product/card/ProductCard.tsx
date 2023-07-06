@@ -8,11 +8,11 @@ import {
     ProductName,
 } from '@/components/product/card/style';
 
-const ProductCard = ({ item, maxWidth }: ProductCardProps) => {
+const ProductCard = ({ item, maxItemWidth }: ProductCardProps) => {
     return (
         <ProductCardContainer
             href={`/product/${item.slug}`}
-            maxWidth={maxWidth}
+            maxItemWidth={maxItemWidth}
         >
             <ProductImageContainer>
                 <ProductImage

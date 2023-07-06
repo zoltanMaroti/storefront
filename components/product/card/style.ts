@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { css } from '@emotion/react';
 import { screenSizes } from '@/lib/constants';
 
-export const ProductCardContainer = styled(Link)<{ maxWidth?: string }>`
+export const ProductCardContainer = styled(Link)<{ maxItemWidth?: string }>`
     display: flex;
     flex-direction: column;
     gap: var(--spacing-sm);
@@ -18,10 +18,10 @@ export const ProductCardContainer = styled(Link)<{ maxWidth?: string }>`
         min-width: 100px;
     }
 
-    ${({ maxWidth }) =>
-        maxWidth &&
+    ${({ maxItemWidth }) =>
+        maxItemWidth &&
         css`
-            max-width: ${maxWidth};
+            max-width: ${maxItemWidth};
         `}
 `;
 
