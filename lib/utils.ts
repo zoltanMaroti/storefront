@@ -23,3 +23,14 @@ export const calculateCartSize = (products: Product[]) => {
     }
     return quantity;
 };
+
+export const calculateTotalPrice = (products: Product[]) => {
+    let totalPrice = 0;
+    for (const product of products) {
+        if (product.quantity) {
+            totalPrice += +product.quantity * +product.content.price;
+        }
+    }
+
+    return totalPrice;
+};

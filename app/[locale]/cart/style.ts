@@ -2,8 +2,8 @@
 
 import styled from '@emotion/styled';
 import { screenSizes } from '@/lib/constants';
-import Image from 'next/image';
 import { StyledDivider } from '@/components/common/divider/style';
+import { Price } from '@/components/cart/style';
 
 export const Headers = styled.div`
     display: grid;
@@ -15,7 +15,7 @@ export const Headers = styled.div`
     }
 `;
 
-export const CartItemsContainer = styled.div`
+export const CartItems = styled.div`
     display: grid;
     grid-template-columns: 1fr 0.25fr 0.25fr;
     gap: var(--spacing-sm);
@@ -26,7 +26,7 @@ export const CartItemsContainer = styled.div`
     }
 `;
 
-export const ColumnHeading = styled.p`
+export const Header = styled.p`
     color: var(--color-font-secondary);
     text-transform: uppercase;
     font-size: var(--font-size-sm);
@@ -54,6 +54,39 @@ export const ColumnHeading = styled.p`
     }
 `;
 
+export const ProductDivider = styled(StyledDivider)`
+    display: none;
+
+    @media screen and (max-width: ${screenSizes.SMALL}) {
+        display: block;
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+
+    &:last-of-type {
+        display: none;
+    }
+`;
+
+export const CheckoutContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    align-items: flex-end;
+
+    @media screen and (max-width: ${screenSizes.SMALL}) {
+        button {
+            width: 100%;
+        }
+    }
+`;
+
+export const TotalContainer = styled.div`
+    display: flex;
+    gap: var(--spacing-sm);
+    align-items: center;
+`;
+
 export const EmptyCartContainer = styled.div`
     display: flex;
     flex-direction: column;
@@ -62,4 +95,8 @@ export const EmptyCartContainer = styled.div`
     justify-content: center;
     height: 45vh;
     text-align: center;
+`;
+
+export const TotalPrice = styled(Price)`
+    font-size: var(--font-size-lg);
 `;

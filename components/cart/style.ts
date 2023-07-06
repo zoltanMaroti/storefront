@@ -29,10 +29,6 @@ export const Price = styled.p`
     color: var(--color-font-secondary);
 `;
 
-export const TotalPrice = styled(Price)`
-    font-size: var(--font-size-lg);
-`;
-
 export const ButtonsContainer = styled.div`
     display: flex;
     gap: var(--spacing-sm);
