@@ -6,6 +6,7 @@ import { LayoutProps } from '@/lib/types';
 import Footer from '@/components/layout/footer/Footer';
 import getRequestConfig from '@/i18n';
 import Header from '@/components/layout/header/Header';
+import { Providers } from '@/lib/providers';
 
 const montserrat = Montserrat({
     subsets: ['latin'],
@@ -24,11 +25,13 @@ export default async function RootLayout({ children }: LayoutProps) {
     return (
         <html lang={locale}>
             <NextIntlClientProvider locale={locale} messages={messages}>
-                <body className={montserrat.className}>
-                    <Header />
-                    <main>{children}</main>
-                    <Footer />
-                </body>
+                <Providers>
+                    <body className={montserrat.className}>
+                        <Header />
+                        <main>{children}</main>
+                        <Footer />
+                    </body>
+                </Providers>
             </NextIntlClientProvider>
         </html>
     );
