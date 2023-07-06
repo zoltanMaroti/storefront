@@ -133,3 +133,7 @@ export type ProductCardProps = {
 export type CartState = {
     products: Product[];
 };
+
+export type AddToCartProps = {
+    product: Product;
+};
