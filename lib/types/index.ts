@@ -1,4 +1,4 @@
-import React, { ReactNode, ElementType } from 'react';
+import { ReactNode, ElementType } from 'react';
 
 export type Locale = 'en' | 'fr' | 'de';
 
