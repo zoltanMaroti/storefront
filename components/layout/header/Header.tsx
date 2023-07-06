@@ -13,6 +13,8 @@ import {
     IconsContainer,
     InnerContainer,
     LanguageSelectorContainer,
+    CartIconContainer,
+    CartSizeIndicator,
 } from '@/components/layout/header/style';
 import { useTranslations } from 'next-intl';
 import Dropdown from '@/components/layout/dropdown/Dropdown';
@@ -22,12 +24,15 @@ import MobileNavigation from '@/components/layout/navigation/MobileNavigation';
 import NavLink from '@/components/layout/navigation/NavLink';
 import Link from 'next/link';
 import LanguageSelector from '@/components/layout/header/language/LanguageSelector';
+import { useSelector } from 'react-redux';
+import { selectCartSize } from '@/lib/selectors/cart';
 
 const Header = () => {
     const t = useTranslations('common');
 
     const [isDropdownOpen, setDropdownOpen] = useState<boolean>(false);
     const [isMenuOpen, setMenuOpen] = useState<boolean>(false);
+    const cartSize = useSelector(selectCartSize);
 
     const onMouseOver = () => setDropdownOpen(true);
     const onMouseOut = () => setDropdownOpen(false);
@@ -106,7 +111,14 @@ const Header = () => {
                         <FiSearch size={24} />
                     </Link>
                     <Link href={'/cart'}>
-                        <FiShoppingBag size={24} />
+                        <CartIconContainer>
+                            <FiShoppingBag size={24} />
+                            {cartSize ? (
+                                <CartSizeIndicator>
+                                    {cartSize}
+                                </CartSizeIndicator>
+                            ) : null}
+                        </CartIconContainer>
                     </Link>
                 </InnerContainer>
             </IconsContainer>

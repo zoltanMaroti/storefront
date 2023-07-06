@@ -147,3 +147,24 @@ export const LanguageSelectorContainer = styled.div`
         display: none;
     }
 `;
+
+export const CartIconContainer = styled.div`
+    position: relative;
+`;
+
+export const CartSizeIndicator = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 3px solid var(--color-background-primary);
+    background: var(--color-danger);
+    color: var(--color-background-secondary);
+    font-weight: bold;
+    font-size: var(--font-size-sm);
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 20px;
+    height: 20px;
+`;

@@ -1,4 +1,4 @@
-import { ProductImage } from '@/lib/types';
+import { Product, ProductImage } from '@/lib/types';
 import { ReactImageGalleryItem } from 'react-image-gallery';
 import { GALLERY_THUMBNAIL_HEIGHT } from '@/lib/constants';
 
@@ -12,4 +12,14 @@ export const normalizeImages = (
             thumbnailHeight: GALLERY_THUMBNAIL_HEIGHT,
         };
     });
+};
+
+export const calculateCartSize = (products: Product[]) => {
+    let quantity = 0;
+    for (const product of products) {
+        if (product.quantity) {
+            quantity += product.quantity;
+        }
+    }
+    return quantity;
 };
