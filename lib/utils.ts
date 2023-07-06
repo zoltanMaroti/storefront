@@ -1,6 +1,6 @@
 import { Product, ProductImage } from '@/lib/types';
 import { ReactImageGalleryItem } from 'react-image-gallery';
-import { GALLERY_THUMBNAIL_HEIGHT } from '@/lib/constants';
+import { DEFAULT_CURRENCY, GALLERY_THUMBNAIL_HEIGHT } from '@/lib/constants';
 
 export const normalizeImages = (
     images: ProductImage[]
@@ -33,4 +33,15 @@ export const calculateTotalPrice = (products: Product[]) => {
     }
 
     return totalPrice;
+};
+
+export const formatCurrency = (
+    locale: string,
+    amount: number,
+    currency = DEFAULT_CURRENCY
+) => {
+    return new Intl.NumberFormat(locale, {
+        style: 'currency',
+        currency,
+    }).format(amount);
 };

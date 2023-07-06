@@ -3,7 +3,6 @@
 import styled from '@emotion/styled';
 import { screenSizes } from '@/lib/constants';
 import { StyledDivider } from '@/components/common/divider/style';
-import { Price } from '@/components/cart/style';
 
 export const Headers = styled.div`
     display: grid;
@@ -99,8 +98,4 @@ export const EmptyCartContainer = styled.div`
     justify-content: center;
     height: 45vh;
     text-align: center;
-`;
-
-export const TotalPrice = styled(Price)`
-    font-size: var(--font-size-lg);
 `;

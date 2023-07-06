@@ -8,7 +8,6 @@ import {
     ProductDetailsContainer,
     Description,
     Name,
-    Price,
 } from '@/components/product/datasheet/style';
 import { useTranslations } from 'next-intl';
 import Accordion from '@/components/layout/accordion/Accordion';
@@ -16,6 +15,7 @@ import { RxDimensions } from 'react-icons/rx';
 import { TbTexture, TbWashGentle } from 'react-icons/tb';
 import AddToCart from '@/components/product/cart/AddToCart';
 import { ButtonText } from '@/components/common/button/style';
+import Price from '@/components/common/price/Price';
 
 const ProductDetails = ({ product }: { product: Product }) => {
     const t = useTranslations('common');
@@ -25,7 +25,7 @@ const ProductDetails = ({ product }: { product: Product }) => {
     return (
         <ProductDetailsContainer>
             <Name>{product.content.name}</Name>
-            <Price>€ {product.content.price}</Price>
+            <Price amount={parseFloat(product.content.price)} />
             <AddToCart product={product} />
             <Button onClick={onBuyNowClick} loading={false} disabled={false}>
                 <ButtonText>{t('Buy now')}</ButtonText>

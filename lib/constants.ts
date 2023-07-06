@@ -47,3 +47,5 @@ export const cart = {
     MIN_QUANTITY: 1,
     MAX_QUANTITY: 3,
 };
+
+export const DEFAULT_CURRENCY = 'EUR';

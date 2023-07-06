@@ -2,7 +2,6 @@ import React from 'react';
 import { CartItemProps } from '@/lib/types';
 import Link from 'next/link';
 import {
-    Price,
     ProductContainer,
     ProductDataContainer,
     ProductImage,
@@ -12,6 +11,7 @@ import {
 } from '@/components/cart/style';
 import QuantitySelector from '@/components/cart/quantity/QuantitySelector';
 import RemoveFromCart from '@/components/cart/remove/RemoveFromCart';
+import Price from '@/components/common/price/Price';
 
 const CartItem = ({ product }: CartItemProps) => {
     return (
@@ -28,7 +28,7 @@ const CartItem = ({ product }: CartItemProps) => {
                     </div>
                     <ProductDataContainer>
                         <Name>{product.content.name}</Name>
-                        <Price>€{product.content.price}</Price>
+                        <Price amount={parseFloat(product.content.price)} />
                     </ProductDataContainer>
                 </ProductContainer>
             </Link>
@@ -37,7 +37,7 @@ const CartItem = ({ product }: CartItemProps) => {
                 <RemoveFromCart product={product} />
             </ButtonsContainer>
             <QuantityPrice>
-                €{+product.quantity! * +product.content.price}
+                <Price amount={+product.quantity! * +product.content.price} />
             </QuantityPrice>
         </>
     );

@@ -11,7 +11,6 @@ import {
     Headers,
     ProductDivider,
     TotalContainer,
-    TotalPrice,
 } from '@/app/[locale]/cart/style';
 import { useSelector } from 'react-redux';
 import { selectCart, selectTotalPrice } from '@/lib/selectors/cart';
@@ -20,6 +19,7 @@ import Button from '@/components/common/button/Button';
 import CartItem from '@/components/cart/CartItem';
 import Divider from '@/components/common/divider/Divider';
 import Checkout from '@/components/cart/checkout/Checkout';
+import Price from '@/components/common/price/Price';
 
 const Page = () => {
     const t = useTranslations('common');
@@ -57,7 +57,7 @@ const Page = () => {
             <CheckoutContainer>
                 <TotalContainer>
                     <div>{t('Total')}: </div>
-                    <TotalPrice>€{totalPrice}</TotalPrice>
+                    <Price amount={totalPrice} />
                 </TotalContainer>
                 <Checkout />
             </CheckoutContainer>

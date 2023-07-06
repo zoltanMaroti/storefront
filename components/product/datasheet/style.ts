@@ -12,10 +12,6 @@ export const Name = styled.h1`
     font-size: var(--font-size-lg);
 `;
 
-export const Price = styled.p`
-    color: var(--color-font-secondary);
-`;
-
 export const Description = styled.p`
     font-size: var(--font-size-md);
     line-height: var(--line-height-sm);
