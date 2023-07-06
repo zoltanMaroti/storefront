@@ -126,4 +126,5 @@ export type RelatedProductsProps = {
 
 export type ProductCardProps = {
     item: Product;
+    maxWidth?: string;
 };
