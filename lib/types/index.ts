@@ -119,3 +119,11 @@ export type GenericSwiperProps<T> = {
     items: T[];
     Renderer: ElementType;
 };
+
+export type RelatedProductsProps = {
+    product: Product;
+};
+
+export type ProductCardProps = {
+    item: Product;
+};
