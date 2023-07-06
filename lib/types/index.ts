@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import { ReactNode, ElementType } from 'react';
 
 export type Locale = 'en' | 'fr' | 'de';
 
@@ -47,7 +47,7 @@ export type NavLinkProps = {
     children: ReactNode;
     onClick?: () => void;
     size?: string;
-    renderer?: React.ElementType;
+    renderer?: ElementType;
     isActive?: boolean;
 };
 
@@ -113,4 +113,19 @@ export type ButtonProps = {
     variant?: 'primary' | 'secondary';
     children: ReactNode;
     onClick?: () => void;
+};
+
+export type GenericSwiperProps<T> = {
+    items: T[];
+    maxItemWidth?: string;
+    Renderer: ElementType;
+};
+
+export type RelatedProductsProps = {
+    product: Product;
+};
+
+export type ProductCardProps = {
+    item: Product;
+    maxItemWidth?: string;
 };
