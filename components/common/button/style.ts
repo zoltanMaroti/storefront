@@ -41,3 +41,7 @@ export const SecondaryButton = styled(BaseButton)`
     color: var(--color-font-primary);
     border: 1px solid var(--color-font-primary);
 `;
+
+export const ButtonText = styled.p`
+    text-transform: uppercase;
+`;

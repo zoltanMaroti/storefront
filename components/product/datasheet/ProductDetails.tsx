@@ -5,7 +5,6 @@ import Button from '@/components/common/button/Button';
 import React from 'react';
 import {
     AccordionLabel,
-    ButtonText,
     ProductDetailsContainer,
     Description,
     Name,
@@ -15,11 +14,11 @@ import { useTranslations } from 'next-intl';
 import Accordion from '@/components/layout/accordion/Accordion';
 import { RxDimensions } from 'react-icons/rx';
 import { TbTexture, TbWashGentle } from 'react-icons/tb';
+import AddToCart from '@/components/product/cart/AddToCart';
+import { ButtonText } from '@/components/common/button/style';
 
 const ProductDetails = ({ product }: { product: Product }) => {
     const t = useTranslations('common');
-
-    const onAddToCartClick = (product: Product) => {};
 
     const onBuyNowClick = () => {};
 
@@ -27,12 +26,7 @@ const ProductDetails = ({ product }: { product: Product }) => {
         <ProductDetailsContainer>
             <Name>{product.content.name}</Name>
             <Price>€ {product.content.price}</Price>
-            <Button
-                variant={'secondary'}
-                onClick={() => onAddToCartClick(product)}
-            >
-                <ButtonText>{t('Add to cart')}</ButtonText>
-            </Button>
+            <AddToCart product={product} />
             <Button onClick={onBuyNowClick} loading={false} disabled={false}>
                 <ButtonText>{t('Buy now')}</ButtonText>
             </Button>

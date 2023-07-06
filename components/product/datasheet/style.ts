@@ -16,10 +16,6 @@ export const Price = styled.p`
     color: var(--color-font-secondary);
 `;
 
-export const ButtonText = styled.p`
-    text-transform: uppercase;
-`;
-
 export const Description = styled.p`
     font-size: var(--font-size-md);
     line-height: var(--line-height-sm);
