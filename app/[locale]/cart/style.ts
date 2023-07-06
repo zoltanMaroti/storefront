@@ -52,6 +52,10 @@ export const Header = styled.p`
             background: var(--color-background-secondary);
         }
     }
+
+    &:last-of-type {
+        text-align: right;
+    }
 `;
 
 export const ProductDivider = styled(StyledDivider)`
