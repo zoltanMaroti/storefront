@@ -24,11 +24,6 @@ export const Name = styled.p`
     font-weight: 700;
 `;
 
-export const Price = styled.p`
-    font-size: var(--font-size-md);
-    color: var(--color-font-secondary);
-`;
-
 export const ButtonsContainer = styled.div`
     display: flex;
     gap: var(--spacing-sm);
@@ -41,7 +36,7 @@ export const ButtonsContainer = styled.div`
     }
 `;
 
-export const QuantityPrice = styled.p`
+export const QuantityPrice = styled.div`
     text-align: right;
 
     @media screen and (max-width: ${screenSizes.SMALL}) {

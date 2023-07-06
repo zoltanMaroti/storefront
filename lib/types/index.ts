@@ -141,3 +141,8 @@ export type AddToCartProps = {
 export type CartItemProps = {
     product: Product;
 };
+
+export type PriceProps = {
+    amount: number;
+    currency?: string;
+};
