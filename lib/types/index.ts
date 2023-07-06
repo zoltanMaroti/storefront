@@ -137,3 +137,7 @@ export type CartState = {
 export type AddToCartProps = {
     product: Product;
 };
+
+export type CartItemProps = {
+    product: Product;
+};
