@@ -1,4 +1,9 @@
-import { ReactNode, ElementType } from 'react';
+import {
+    ReactNode,
+    ElementType,
+    HTMLInputTypeAttribute,
+    ChangeEvent,
+} from 'react';
 
 export type Locale = 'en' | 'fr' | 'de';
 
@@ -163,4 +168,12 @@ export type ErrorPageProps = {
 
 export type ProductPageTitleProps = {
     category?: string;
+};
+
+export type InputBaseProps = {
+    type: HTMLInputTypeAttribute;
+    placeholder?: string;
+    disabled?: boolean;
+    icon?: ReactNode;
+    onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 };
