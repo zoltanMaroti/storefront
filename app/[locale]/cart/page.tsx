@@ -7,33 +7,29 @@ import {
     CartItems,
     CheckoutContainer,
     Header,
-    EmptyCartContainer,
     Headers,
     ProductDivider,
     TotalContainer,
 } from '@/app/[locale]/cart/style';
 import { useSelector } from 'react-redux';
 import { selectCart, selectTotalPrice } from '@/lib/selectors/cart';
-import Link from 'next/link';
-import Button from '@/components/common/button/Button';
 import CartItem from '@/components/cart/CartItem';
 import Divider from '@/components/common/divider/Divider';
 import Checkout from '@/components/cart/checkout/Checkout';
 import Price from '@/components/common/price/Price';
+import ContinueShopping from '@/components/common/button/shopping/ContinueShopping';
 
-const Page = () => {
+const CartPage = () => {
     const t = useTranslations('common');
     const cart = useSelector(selectCart);
     const totalPrice = useSelector(selectTotalPrice);
 
     if (!cart.length) {
         return (
-            <EmptyCartContainer>
+            <PageContainer center={true}>
                 <h2>{t('Your shopping cart is empty')}</h2>
-                <Link href={'/products'}>
-                    <Button>{t('Continue shopping')}</Button>
-                </Link>
-            </EmptyCartContainer>
+                <ContinueShopping />
+            </PageContainer>
         );
     }
 
@@ -65,4 +61,4 @@ const Page = () => {
     );
 };
 
-export default Page;
+export default CartPage;
