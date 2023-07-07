@@ -93,8 +93,13 @@ export type Product = {
     quantity?: number;
 };
 
+export type ProductGridProps = {
+    products: Product[];
+};
+
 export type GenericContainerProps = {
     children: ReactNode;
+    center?: boolean;
 };
 
 export type GalleryProps = {
@@ -145,4 +150,9 @@ export type CartItemProps = {
 export type PriceProps = {
     amount: number;
     currency?: string;
+};
+
+export type ErrorPageProps = {
+    error: Error;
+    reset: () => void;
 };
