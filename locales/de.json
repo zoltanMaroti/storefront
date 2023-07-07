@@ -30,6 +30,8 @@
     "Total": "Gesamt",
     "Your shopping cart is empty": "Dein Einkaufswagen ist leer",
     "Continue shopping": "Mit dem Einkaufen fortfahren",
-    "Check out": "Kasse"
+    "Check out": "Kasse",
+    "Something went wrong": "Etwas ist schief gelaufen",
+    "Reset": "Zurücksetzen"
   }
 }
