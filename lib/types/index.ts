@@ -64,6 +64,10 @@ export type ProductPageProps = PageProps & {
     params: { slug: string };
 };
 
+export type ProductsPageProps = PageProps & {
+    params: { category: string };
+};
+
 export type ProductImage = {
     filename: string;
     alt: string;
