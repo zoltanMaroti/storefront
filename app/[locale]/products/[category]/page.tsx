@@ -4,6 +4,7 @@ import { useLocale } from 'next-intl';
 import { ProductsPageProps } from '@/lib/types';
 import PageContainer from '@/components/layout/container/PageContainer';
 import ProductGrid from '@/components/product/grid/ProductGrid';
+import { notFound } from 'next/navigation';
 
 const ProductsByCategoryPage = async ({
     params: { category },
@@ -13,6 +14,10 @@ const ProductsByCategoryPage = async ({
         locale,
         category
     );
+
+    if (!products.length) {
+        return notFound();
+    }
 
     return (
         <PageContainer>
