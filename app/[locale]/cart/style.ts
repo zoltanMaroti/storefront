@@ -89,13 +89,3 @@ export const TotalContainer = styled.div`
     gap: var(--spacing-sm);
     align-items: center;
 `;
-
-export const EmptyCartContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-md);
-    align-items: center;
-    justify-content: center;
-    height: 45vh;
-    text-align: center;
-`;

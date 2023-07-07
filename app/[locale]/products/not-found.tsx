@@ -8,7 +8,7 @@ const NotFound = () => {
 
     return (
         <PageContainer center={true}>
-            <h2>{t('Product not found')}</h2>
+            <h2>{t('There are no products in this category')}</h2>
             <ContinueShopping />
         </PageContainer>
     );

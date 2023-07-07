@@ -64,6 +64,10 @@ export type ProductPageProps = PageProps & {
     params: { slug: string };
 };
 
+export type ProductsPageProps = PageProps & {
+    params: { category: string };
+};
+
 export type ProductImage = {
     filename: string;
     alt: string;
@@ -93,8 +97,13 @@ export type Product = {
     quantity?: number;
 };
 
+export type ProductGridProps = {
+    products: Product[];
+};
+
 export type GenericContainerProps = {
     children: ReactNode;
+    center?: boolean;
 };
 
 export type GalleryProps = {
@@ -145,4 +154,13 @@ export type CartItemProps = {
 export type PriceProps = {
     amount: number;
     currency?: string;
+};
+
+export type ErrorPageProps = {
+    error: Error;
+    reset: () => void;
+};
+
+export type ProductPageTitleProps = {
+    category?: string;
 };

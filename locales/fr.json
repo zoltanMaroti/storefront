@@ -30,6 +30,9 @@
     "Total": "Total",
     "Your shopping cart is empty": "Votre panier est vide",
     "Continue shopping": "Continuer vos achats",
-    "Check out": "Vérifier"
+    "Check out": "Vérifier",
+    "Something went wrong": "Quelque chose s'est mal passé",
+    "Reset": "Réinitialiser",
+    "There are no products in this category": "Il n'y a pas de produits dans cette catégorie"
   }
 }
