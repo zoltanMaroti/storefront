@@ -1,6 +1,10 @@
 import { Product, ProductImage } from '@/lib/types';
 import { ReactImageGalleryItem } from 'react-image-gallery';
-import { DEFAULT_CURRENCY, GALLERY_THUMBNAIL_HEIGHT } from '@/lib/constants';
+import {
+    CATEGORIES,
+    DEFAULT_CURRENCY,
+    GALLERY_THUMBNAIL_HEIGHT,
+} from '@/lib/constants';
 
 export const normalizeImages = (
     images: ProductImage[]
@@ -44,4 +48,14 @@ export const formatCurrency = (
         style: 'currency',
         currency,
     }).format(amount);
+};
+
+export const getCategoryNameBySlug = (slug: string) => {
+    const category = CATEGORIES.find((category) => category.slug === slug);
+
+    if (!category) {
+        throw new Error('Unsupported category');
+    }
+
+    return category.name;
 };

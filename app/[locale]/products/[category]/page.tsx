@@ -5,6 +5,7 @@ import { ProductsPageProps } from '@/lib/types';
 import PageContainer from '@/components/layout/container/PageContainer';
 import ProductGrid from '@/components/product/grid/ProductGrid';
 import { notFound } from 'next/navigation';
+import ProductPageTitle from '@/components/product/title/ProductPageTitle';
 
 const ProductsByCategoryPage = async ({
     params: { category },
@@ -21,6 +22,7 @@ const ProductsByCategoryPage = async ({
 
     return (
         <PageContainer>
+            <ProductPageTitle category={category} />
             <ProductGrid products={products} />
         </PageContainer>
     );

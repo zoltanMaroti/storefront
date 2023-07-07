@@ -160,3 +160,7 @@ export type ErrorPageProps = {
     error: Error;
     reset: () => void;
 };
+
+export type ProductPageTitleProps = {
+    category?: string;
+};
