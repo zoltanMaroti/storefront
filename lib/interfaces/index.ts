@@ -8,4 +8,8 @@ export interface ICommerceApiClient {
         uuid: string
     ) => Promise<Product[]>;
     getProducts: (language: string) => Promise<Product[]>;
+    getProductsByCategory: (
+        language: string,
+        category: string
+    ) => Promise<Product[]>;
 }
