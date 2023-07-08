@@ -4,6 +4,7 @@ import {
     HTMLInputTypeAttribute,
     ChangeEvent,
 } from 'react';
+import { SortDirection } from '@/lib/constants';
 
 export type Locale = 'en' | 'fr' | 'de';
 
@@ -176,4 +177,13 @@ export type InputBaseProps = {
     disabled?: boolean;
     icon?: ReactNode;
     onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+};
+
+export type SearchParams = {
+    searchTerm: string;
+    language: string;
+    category?: string;
+    minPrice?: number;
+    maxPrice?: number;
+    sort?: SortDirection;
 };

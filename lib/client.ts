@@ -25,5 +25,7 @@ export const graphQLRequest = (
     query: RequestDocument,
     variables = {}
 ): Promise<any> => {
-    return client.request(query, variables);
+    return client.request(query, variables).catch((error) => {
+        return Promise.reject(error);
+    });
 };

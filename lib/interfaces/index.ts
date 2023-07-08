@@ -1,4 +1,5 @@
 import { Product } from '@/lib/types';
+import { SortDirection } from '@/lib/constants';
 
 export interface ICommerceApiClient {
     getProduct: (slug: string, language: string) => Promise<Product>;
@@ -11,5 +12,13 @@ export interface ICommerceApiClient {
     getProductsByCategory: (
         language: string,
         category: string
+    ) => Promise<Product[]>;
+    search: (
+        searchTerm: string,
+        language: string,
+        category?: string,
+        minPrice?: number,
+        maxPrice?: number,
+        sort?: SortDirection
     ) => Promise<Product[]>;
 }

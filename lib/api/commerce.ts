@@ -6,7 +6,9 @@ import {
     GetProductRecommendationsQuery,
     getProductsByCategoryQuery,
     getProductsQuery,
+    searchProductQuery,
 } from '@/lib/queries/product';
+import { SortDirection } from '@/lib/constants';
 
 export const CommerceApiClient: ICommerceApiClient = {
     getProduct: async (slug, language): Promise<Product> => {
@@ -46,6 +48,25 @@ export const CommerceApiClient: ICommerceApiClient = {
             starts_with: `${language}/*`,
             language,
             category,
+        });
+
+        return response.ProductItems.items;
+    },
+    search: async (
+        searchTerm: string,
+        language: string,
+        category?: string,
+        minPrice?: number,
+        maxPrice?: number,
+        sort?: SortDirection
+    ): Promise<Product[]> => {
+        const response = await graphQLRequest(searchProductQuery, {
+            starts_with: `${language}/*`,
+            search_term: searchTerm,
+            ...(category && { category: category }),
+            ...(minPrice && { minPrice: minPrice }),
+            ...(maxPrice && { maxPrice: maxPrice }),
+            ...(sort && { sort: `content.price:${sort}` }),
         });
 
         return response.ProductItems.items;
