@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { ChangeEvent } from 'react';
 import Input from '@/components/common/input/Input';
 import { FiSearch } from 'react-icons/fi';
 import {
@@ -10,11 +10,16 @@ import {
     Title,
 } from '@/components/search/style';
 import { useTranslations } from 'next-intl';
+import { useDispatch } from 'react-redux';
+import { setSearchConfig } from '@/lib/store/slices/search';
 
 const SearchHeader = () => {
     const t = useTranslations('common');
+    const dispatch = useDispatch();
 
-    const onChange = () => {};
+    const onChange = (event: ChangeEvent<HTMLInputElement>) => {
+        dispatch(setSearchConfig({ searchTerm: event.target.value }));
+    };
 
     return (
         <SearchContainer>
