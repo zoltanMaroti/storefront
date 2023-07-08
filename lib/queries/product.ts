@@ -128,7 +128,7 @@ export const searchProductQuery = gql`
         $maxPrice: Int
         $sort: String
     ) {
-        ProductItem(
+        ProductItems(
             search_term: $search_term
             starts_with: $starts_with
             filter_query_v2: {
