@@ -187,3 +187,7 @@ export type SearchParams = {
     maxPrice?: number;
     sort?: SortDirection;
 };
+
+export type SearchConfig = {
+    [key: string]: string | number | undefined;
+};
