@@ -11,3 +11,7 @@ export const selectCategory = createSelector(
     getSearch,
     (search) => search.category as string
 );
+export const selectPriceRange = createSelector(
+    getSearch,
+    (search) => [search.minPrice, search.maxPrice] as number[]
+);
