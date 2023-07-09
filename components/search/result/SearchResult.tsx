@@ -8,11 +8,13 @@ import { useSelector } from 'react-redux';
 import { selectSearchTerm } from '@/lib/selectors/search';
 import Loading from '@/components/common/loading/Loading';
 import { Text } from '@/components/search/result/style';
+import useDebounce from '@/lib/hooks/useDebounce';
 
 const SearchResult = () => {
     const t = useTranslations('common');
     const locale = useLocale();
     const searchTerm = useSelector(selectSearchTerm);
+    const debouncedSearchTerm = useDebounce(searchTerm);
 
     const {
         data: products,
@@ -20,7 +22,7 @@ const SearchResult = () => {
         isError,
         error,
     } = useSearch({
-        searchTerm,
+        searchTerm: debouncedSearchTerm,
         language: locale,
     });
 
