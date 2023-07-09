@@ -1,20 +1,43 @@
-import { Product, SearchParams } from '@/lib/types';
+import { Product } from '@/lib/types';
 import { useQuery } from '@tanstack/react-query';
 import { CommerceApiClient } from '@/lib/api/commerce';
+import { useSelector } from 'react-redux';
+import {
+    selectCategory,
+    selectPriceRange,
+    selectSearchTerm,
+    selectSort,
+} from '@/lib/selectors/search';
+import useDebounce from '@/lib/hooks/useDebounce';
+import { useLocale } from 'next-intl';
 
-export const useSearch = (searchParams: SearchParams) => {
-    const { searchTerm, language, category, minPrice, maxPrice, sort } =
-        searchParams;
+export const useSearch = () => {
+    const language = useLocale();
+    const category = useSelector(selectCategory);
+    const priceRange = useSelector(selectPriceRange);
+    const searchTerm = useSelector(selectSearchTerm);
+    const debouncedSearchTerm = useDebounce(searchTerm);
+    const sort = useSelector(selectSort);
 
     return useQuery<Product[], Error>({
-        queryKey: ['search', JSON.stringify(searchParams)],
-        queryFn: () =>
-            CommerceApiClient.search(
-                searchTerm,
+        queryKey: [
+            'search',
+            JSON.stringify({
+                debouncedSearchTerm,
                 language,
                 category,
-                minPrice,
-                maxPrice,
+                minPrice: priceRange[0],
+                maxPrice: priceRange[1],
+                sort,
+            }),
+        ],
+        queryFn: () =>
+            CommerceApiClient.search(
+                debouncedSearchTerm,
+                language,
+                category,
+                priceRange[0],
+                priceRange[1],
                 sort
             ),
         keepPreviousData: true,

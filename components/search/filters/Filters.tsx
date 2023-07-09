@@ -17,6 +17,7 @@ import CategoryFilter from '@/components/search/filters/category/CategoryFilter'
 import PriceFilter from '@/components/search/filters/price/PriceFilter';
 import Divider from '@/components/common/divider/Divider';
 import Sort from '@/components/search/filters/sort/Sort';
+import { useSearch } from '@/lib/hooks/useSearch';
 
 const Filters = () => {
     const t = useTranslations('common');
@@ -25,12 +26,18 @@ const Filters = () => {
         DrawerContent | undefined
     >(undefined);
 
+    const { data: products, isLoading } = useSearch();
+
     const toggleDrawer = () => setFilterOpen((prevState) => !prevState);
 
     const onClick = (content: DrawerContent) => {
         toggleDrawer();
         setDrawerContent(content);
     };
+
+    if (!products?.length) {
+        return null;
+    }
 
     return (
         <div>
@@ -66,7 +73,9 @@ const Filters = () => {
                             </>
                         )}
                     </DrawerInnerContainer>
-                    <Button onClick={toggleDrawer}>{t('Search')}</Button>
+                    <Button onClick={toggleDrawer}>
+                        {t('Search')} ({(products && products.length) || 0})
+                    </Button>
                 </DrawerBody>
             </Drawer>
         </div>
