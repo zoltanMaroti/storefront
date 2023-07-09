@@ -16,6 +16,7 @@ import Button from '@/components/common/button/Button';
 import CategoryFilter from '@/components/search/filters/category/CategoryFilter';
 import PriceFilter from '@/components/search/filters/price/PriceFilter';
 import Divider from '@/components/common/divider/Divider';
+import Sort from '@/components/search/filters/sort/Sort';
 
 const Filters = () => {
     const t = useTranslations('common');
@@ -61,6 +62,7 @@ const Filters = () => {
                                 <DrawerHeader>
                                     <h3>{t('Sort')}</h3>
                                 </DrawerHeader>
+                                <Sort />
                             </>
                         )}
                     </DrawerInnerContainer>

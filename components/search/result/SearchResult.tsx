@@ -9,6 +9,7 @@ import {
     selectCategory,
     selectPriceRange,
     selectSearchTerm,
+    selectSort,
 } from '@/lib/selectors/search';
 import Loading from '@/components/common/loading/Loading';
 import { Text } from '@/components/search/result/style';
@@ -21,6 +22,7 @@ const SearchResult = () => {
     const priceRange = useSelector(selectPriceRange);
     const searchTerm = useSelector(selectSearchTerm);
     const debouncedSearchTerm = useDebounce(searchTerm);
+    const sort = useSelector(selectSort);
 
     const {
         data: products,
@@ -33,6 +35,7 @@ const SearchResult = () => {
         minPrice: priceRange[0],
         maxPrice: priceRange[1],
         category,
+        sort,
     });
 
     if (isError) {

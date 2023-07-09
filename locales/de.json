@@ -42,6 +42,8 @@
     "Sort": "Sortieren",
     "Search": "Suchen",
     "Category": "Kategorie",
-    "Price": "Preis"
+    "Price": "Preis",
+    "Increasing": "Increasing",
+    "Decreasing": "Decreasing"
   }
 }

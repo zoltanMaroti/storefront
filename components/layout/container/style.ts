@@ -15,6 +15,7 @@ export const StyledPageContainer = styled.div<{
 
     @media screen and (max-width: ${screenSizes.SMALL}) {
         padding: var(--spacing-sm);
+        gap: var(--spacing-sm);
     }
   
     ${({ center }) =>
