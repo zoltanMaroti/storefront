@@ -14,6 +14,7 @@ import { DrawerContent } from '@/lib/types';
 import Drawer from '@/components/layout/drawer/Drawer';
 import Button from '@/components/common/button/Button';
 import CategoryFilter from '@/components/search/filters/category/CategoryFilter';
+import PriceFilter from '@/components/search/filters/price/PriceFilter';
 
 const Filters = () => {
     const t = useTranslations('common');
@@ -51,6 +52,7 @@ const Filters = () => {
                                     <h3>{t('Filter')}</h3>
                                 </DrawerHeader>
                                 <CategoryFilter />
+                                <PriceFilter />
                             </>
                         ) : (
                             <>

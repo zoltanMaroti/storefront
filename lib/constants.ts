@@ -54,3 +54,5 @@ export enum SortDirection {
     ASCENDING = 'asd',
     DESCENDING = 'desc',
 }
+
+export const MAX_PRICE = 200;

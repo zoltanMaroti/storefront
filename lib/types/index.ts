@@ -159,7 +159,7 @@ export type CartItemProps = {
 
 export type PriceProps = {
     amount: number;
-    currency?: string;
+    config?: {};
 };
 
 export type ErrorPageProps = {
