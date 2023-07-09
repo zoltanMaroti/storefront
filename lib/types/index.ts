@@ -191,3 +191,5 @@ export type SearchParams = {
 export type SearchConfig = {
     [key: string]: string | number | undefined;
 };
+
+export type DrawerContent = 'filter' | 'sort';
