@@ -13,6 +13,7 @@ import { useTranslations } from 'next-intl';
 import { DrawerContent } from '@/lib/types';
 import Drawer from '@/components/layout/drawer/Drawer';
 import Button from '@/components/common/button/Button';
+import CategoryFilter from '@/components/search/filters/category/CategoryFilter';
 
 const Filters = () => {
     const t = useTranslations('common');
@@ -29,7 +30,7 @@ const Filters = () => {
     };
 
     return (
-        <>
+        <div>
             <FilterButtonsContainer>
                 <InnerContainer>
                     <FilterButton onClick={() => onClick('filter')}>
@@ -49,6 +50,7 @@ const Filters = () => {
                                 <DrawerHeader>
                                     <h3>{t('Filter')}</h3>
                                 </DrawerHeader>
+                                <CategoryFilter />
                             </>
                         ) : (
                             <>
@@ -61,7 +63,7 @@ const Filters = () => {
                     <Button onClick={toggleDrawer}>{t('Search')}</Button>
                 </DrawerBody>
             </Drawer>
-        </>
+        </div>
     );
 };
 

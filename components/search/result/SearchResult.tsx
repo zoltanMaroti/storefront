@@ -5,7 +5,7 @@ import { useLocale, useTranslations } from 'next-intl';
 import ProductGrid from '@/components/product/grid/ProductGrid';
 import { useSearch } from '@/lib/hooks/useSearch';
 import { useSelector } from 'react-redux';
-import { selectSearchTerm } from '@/lib/selectors/search';
+import { selectCategory, selectSearchTerm } from '@/lib/selectors/search';
 import Loading from '@/components/common/loading/Loading';
 import { Text } from '@/components/search/result/style';
 import useDebounce from '@/lib/hooks/useDebounce';
@@ -13,6 +13,7 @@ import useDebounce from '@/lib/hooks/useDebounce';
 const SearchResult = () => {
     const t = useTranslations('common');
     const locale = useLocale();
+    const category = useSelector(selectCategory);
     const searchTerm = useSelector(selectSearchTerm);
     const debouncedSearchTerm = useDebounce(searchTerm);
 
@@ -24,6 +25,7 @@ const SearchResult = () => {
     } = useSearch({
         searchTerm: debouncedSearchTerm,
         language: locale,
+        category,
     });
 
     if (isError) {

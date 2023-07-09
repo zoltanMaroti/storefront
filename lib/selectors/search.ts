@@ -7,3 +7,7 @@ export const selectSearchTerm = createSelector(
     getSearch,
     (search) => search.searchTerm as string
 );
+export const selectCategory = createSelector(
+    getSearch,
+    (search) => search.category as string
+);
