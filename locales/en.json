@@ -44,6 +44,7 @@
     "Category": "Category",
     "Price": "Price",
     "Increasing": "Increasing",
-    "Decreasing": "Decreasing"
+    "Decreasing": "Decreasing",
+    "Clear all": "Clear all"
   }
 }

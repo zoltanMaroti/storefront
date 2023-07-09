@@ -59,3 +59,11 @@ export const DrawerHeader = styled.div`
     justify-content: space-between;
     align-items: center;
 `;
+
+export const ClearAll = styled.button`
+    font-size: var(--font-size-md);
+    background: none;
+    border: none;
+    font-family: inherit;
+    cursor: pointer;
+`;

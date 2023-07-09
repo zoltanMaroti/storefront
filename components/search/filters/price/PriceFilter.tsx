@@ -12,8 +12,9 @@ import { getTrackBackground, Range } from 'react-range';
 import useDebounce from '@/lib/hooks/useDebounce';
 import { MAX_PRICE } from '@/lib/constants';
 import Price from '@/components/common/price/Price';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { setSearchConfig } from '@/lib/store/slices/search';
+import { selectPriceRange } from '@/lib/selectors/search';
 
 const priceConfig = {
     minimumFractionDigits: 0,
@@ -22,7 +23,8 @@ const priceConfig = {
 const PriceFilter = () => {
     const t = useTranslations('common');
     const dispatch = useDispatch();
-    const [values, setValues] = useState<number[]>([0, MAX_PRICE]);
+    const priceRange = useSelector(selectPriceRange);
+    const [values, setValues] = useState<number[]>(priceRange);
     const debouncedPriceRange = useDebounce(values);
 
     const onChange = useCallback((values: number[]) => {
@@ -37,6 +39,10 @@ const PriceFilter = () => {
             })
         );
     }, [dispatch, debouncedPriceRange]);
+
+    useEffect(() => {
+        setValues(priceRange);
+    }, [priceRange]);
 
     const onContextMenu = (event: MouseEvent<HTMLDivElement>) =>
         event.preventDefault();

@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import {
+    ClearAll,
     DrawerBody,
     DrawerHeader,
     DrawerInnerContainer,
@@ -18,9 +19,12 @@ import PriceFilter from '@/components/search/filters/price/PriceFilter';
 import Divider from '@/components/common/divider/Divider';
 import Sort from '@/components/search/filters/sort/Sort';
 import { useSearch } from '@/lib/hooks/useSearch';
+import { resetSearch } from '@/lib/store/slices/search';
+import { useDispatch } from 'react-redux';
 
 const Filters = () => {
     const t = useTranslations('common');
+    const dispatch = useDispatch();
     const [isFilterOpen, setFilterOpen] = useState<boolean>(false);
     const [drawerContent, setDrawerContent] = useState<
         DrawerContent | undefined
@@ -35,7 +39,9 @@ const Filters = () => {
         setDrawerContent(content);
     };
 
-    if (!products?.length) {
+    const onClickClearAll = () => dispatch(resetSearch());
+
+    if (isLoading) {
         return null;
     }
 
@@ -59,6 +65,9 @@ const Filters = () => {
                             <>
                                 <DrawerHeader>
                                     <h3>{t('Filter')}</h3>
+                                    <ClearAll onClick={onClickClearAll}>
+                                        {t('Clear all')}
+                                    </ClearAll>
                                 </DrawerHeader>
                                 <CategoryFilter />
                                 <Divider />
@@ -68,6 +77,9 @@ const Filters = () => {
                             <>
                                 <DrawerHeader>
                                     <h3>{t('Sort')}</h3>
+                                    <ClearAll onClick={onClickClearAll}>
+                                        {t('Clear all')}
+                                    </ClearAll>
                                 </DrawerHeader>
                                 <Sort />
                             </>
