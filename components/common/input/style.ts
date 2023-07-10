@@ -1,6 +1,7 @@
 'use client';
 
 import styled from '@emotion/styled';
+import { FiX } from 'react-icons/fi';
 
 export const InputContainer = styled.div`
     position: relative;
@@ -10,8 +11,17 @@ export const InputContainer = styled.div`
 export const IconContainer = styled.div`
     position: absolute;
     padding: var(--spacing-sm);
-    line-height: 1;
     color: var(--color-font-secondary);
+    font-size: var(--font-size-lg);
+`;
+
+export const ClearIconContainer = styled(IconContainer)`
+    right: 0;
+    top: 0;
+`;
+
+export const StyledClearIcon = styled(FiX)`
+    cursor: pointer;
 `;
 
 export const StyledInput = styled.input`

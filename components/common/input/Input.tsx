@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { ChangeEvent, useState } from 'react';
 import { InputBaseProps } from '@/lib/types';
 import {
+    ClearIconContainer,
     IconContainer,
     InputContainer,
+    StyledClearIcon,
     StyledInput,
 } from '@/components/common/input/style';
 
@@ -12,7 +14,20 @@ const Input = ({
     disabled,
     icon,
     onChange,
+    onClear,
 }: InputBaseProps) => {
+    const [value, setValue] = useState<string>();
+
+    const onChangeInput = (event: ChangeEvent<HTMLInputElement>) => {
+        setValue(event.target.value);
+        onChange(event);
+    };
+
+    const onClickClear = () => {
+        onClear();
+        setValue('');
+    };
+
     return (
         <InputContainer>
             <IconContainer>{icon}</IconContainer>
@@ -20,8 +35,14 @@ const Input = ({
                 type={type}
                 placeholder={placeholder}
                 disabled={disabled}
-                onChange={onChange}
+                onChange={onChangeInput}
+                value={value}
             />
+            {value && (
+                <ClearIconContainer>
+                    <StyledClearIcon onClick={onClickClear} />
+                </ClearIconContainer>
+            )}
         </InputContainer>
     );
 };

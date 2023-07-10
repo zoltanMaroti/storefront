@@ -26,8 +26,16 @@ export const searchSlice = createSlice({
             state.minPrice = 0;
             state.maxPrice = MAX_PRICE;
         },
+        resetSearchTerm: (state) => {
+            state.searchTerm = undefined;
+        },
     },
 });
 
-export const { setSearchConfig, resetSearch, resetCategory, resetPriceRange } =
-    searchSlice.actions;
+export const {
+    setSearchConfig,
+    resetSearch,
+    resetCategory,
+    resetSearchTerm,
+    resetPriceRange,
+} = searchSlice.actions;
