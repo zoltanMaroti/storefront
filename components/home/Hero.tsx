@@ -14,6 +14,7 @@ import {
 import Link from 'next/link';
 import Button from '@/components/common/button/Button';
 import { useTranslations } from 'next-intl';
+import { HERO_METADATA } from '@/lib/constants';
 
 const Hero = () => {
     const t = useTranslations('common');
@@ -22,17 +23,18 @@ const Hero = () => {
         return (
             <HeroItemContainer>
                 <TitleContainer>
-                    <SubTitle>{item.originalAlt}</SubTitle>
-                    <Title>{item.originalTitle}</Title>
+                    <SubTitle>{t(item.originalAlt)}</SubTitle>
+                    <Title>{t(item.originalTitle)}</Title>
                 </TitleContainer>
                 <HeroImage
                     src={item.original}
-                    srcSet={item.srcSet}
                     sizes={item.sizes}
-                    fetchPriority={'high'}
+                    priority={true}
+                    fill={true}
+                    alt={t(item.originalAlt) || t('Product')}
                 />
                 <Link href={item.thumbnailAlt || '/products'}>
-                    <Button width={'200px'}>{item.thumbnailTitle}</Button>
+                    <Button width={'200px'}>{t(item.thumbnailTitle)}</Button>
                 </Link>
             </HeroItemContainer>
         );
@@ -42,29 +44,7 @@ const Hero = () => {
         <div>
             <Global styles={GlobalStyles} />
             <ImageGallery
-                items={[
-                    {
-                        original: '/assets/images/hero-1.jpeg',
-                        originalAlt: t('New Collection'),
-                        originalTitle: t('Elegant & timeless'),
-                        thumbnailAlt: '/products',
-                        thumbnailTitle: t('Show now'),
-                    },
-                    {
-                        original: '/assets/images/hero-2.jpeg',
-                        originalAlt: t('Back in stock'),
-                        originalTitle: t('Quality materials'),
-                        thumbnailAlt: '/products',
-                        thumbnailTitle: t('View collection'),
-                    },
-                    {
-                        original: '/assets/images/hero-3.jpeg',
-                        originalAlt: t('New Collection'),
-                        originalTitle: t('Craftsmanship'),
-                        thumbnailAlt: '/products',
-                        thumbnailTitle: t('View collection'),
-                    },
-                ]}
+                items={HERO_METADATA}
                 renderItem={HeroItem}
                 showPlayButton={false}
                 showFullscreenButton={false}

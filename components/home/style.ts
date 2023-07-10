@@ -2,6 +2,7 @@
 
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
+import Image from 'next/image';
 
 export const GlobalStyles = css`
     .image-gallery-slide {
@@ -41,7 +42,7 @@ export const HeroItemContainer = styled.div`
     z-index: 1;
 `;
 
-export const HeroImage = styled.img`
+export const HeroImage = styled(Image)`
     width: 100%;
     height: 100%;
     object-fit: cover;
