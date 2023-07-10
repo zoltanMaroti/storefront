@@ -13,6 +13,10 @@ import {
 import { resetCategory, resetPriceRange } from '@/lib/store/slices/search';
 import Price from '@/components/common/price/Price';
 
+const priceConfig = {
+    minimumFractionDigits: 0,
+};
+
 const ActiveFilters = () => {
     const dispatch = useDispatch();
     const category = useSelector(selectCategory);
@@ -31,9 +35,9 @@ const ActiveFilters = () => {
             {!isDefaultPriceRange && (
                 <Tag onClick={() => dispatch(resetPriceRange())}>
                     <PriceRangeContainer>
-                        <Price amount={priceRange[0]} />
+                        <Price amount={priceRange[0]} config={priceConfig} />
                         <span>-</span>
-                        <Price amount={priceRange[1]} />
+                        <Price amount={priceRange[1]} config={priceConfig} />
                     </PriceRangeContainer>
                 </Tag>
             )}
