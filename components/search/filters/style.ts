@@ -30,6 +30,7 @@ export const FilterButton = styled.button`
     font-size: var(--font-size-md);
     cursor: pointer;
     border-left: 1px solid var(--color-background-secondary);
+    color: var(--color-font-primary);
 
     @media screen and (max-width: ${screenSizes.SMALL}) {
         &:first-of-type {
@@ -65,5 +66,6 @@ export const ClearAll = styled.button`
     background: none;
     border: none;
     font-family: inherit;
+    color: var(--color-font-primary);
     cursor: pointer;
 `;
