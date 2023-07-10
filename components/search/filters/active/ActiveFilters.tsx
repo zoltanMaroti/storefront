@@ -12,12 +12,14 @@ import {
 } from '@/lib/selectors/search';
 import { resetCategory, resetPriceRange } from '@/lib/store/slices/search';
 import Price from '@/components/common/price/Price';
+import { useTranslations } from 'next-intl';
 
 const priceConfig = {
     minimumFractionDigits: 0,
 };
 
 const ActiveFilters = () => {
+    const t = useTranslations('common');
     const dispatch = useDispatch();
     const category = useSelector(selectCategory);
     const isDefaultPriceRange = useSelector(selectIsDefaultPriceRange);
@@ -30,7 +32,9 @@ const ActiveFilters = () => {
     return (
         <FiltersContainer>
             {category && (
-                <Tag onClick={() => dispatch(resetCategory())}>{category}</Tag>
+                <Tag onClick={() => dispatch(resetCategory())}>
+                    {t(category)}
+                </Tag>
             )}
             {!isDefaultPriceRange && (
                 <Tag onClick={() => dispatch(resetPriceRange())}>
