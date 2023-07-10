@@ -1,4 +1,5 @@
 import { Category, LanguageSelectorItem } from '@/lib/types';
+import { ReactImageGalleryItem } from 'react-image-gallery';
 
 export const API_URL = process.env.NEXT_PUBLIC_COMMERCE_PROVIDER_API_URL;
 export const API_TOKEN = process.env.NEXT_PUBLIC_COMMERCE_PROVIDER_ACCESS_TOKEN;
@@ -56,3 +57,27 @@ export enum SortDirection {
 }
 
 export const MAX_PRICE = 200;
+
+export const HERO_METADATA: ReactImageGalleryItem[] = [
+    {
+        original: '/assets/images/hero-1.jpeg',
+        originalAlt: 'New Collection',
+        originalTitle: 'Elegant & timeless',
+        thumbnailAlt: '/products',
+        thumbnailTitle: 'Show now',
+    },
+    {
+        original: '/assets/images/hero-2.jpeg',
+        originalAlt: 'Back in stock',
+        originalTitle: 'Quality materials',
+        thumbnailAlt: '/products',
+        thumbnailTitle: 'View collection',
+    },
+    {
+        original: '/assets/images/hero-3.jpeg',
+        originalAlt: 'New Collection',
+        originalTitle: 'Craftsmanship',
+        thumbnailAlt: '/products',
+        thumbnailTitle: 'View collection',
+    },
+];
