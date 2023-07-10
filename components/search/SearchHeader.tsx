@@ -11,7 +11,7 @@ import {
 } from '@/components/search/style';
 import { useTranslations } from 'next-intl';
 import { useDispatch } from 'react-redux';
-import { setSearchConfig } from '@/lib/store/slices/search';
+import { resetSearchTerm, setSearchConfig } from '@/lib/store/slices/search';
 
 const SearchHeader = () => {
     const t = useTranslations('common');
@@ -20,6 +20,8 @@ const SearchHeader = () => {
     const onChange = (event: ChangeEvent<HTMLInputElement>) => {
         dispatch(setSearchConfig({ searchTerm: event.target.value }));
     };
+
+    const onClear = () => dispatch(resetSearchTerm());
 
     return (
         <SearchContainer>
@@ -31,6 +33,7 @@ const SearchHeader = () => {
                         placeholder={t('Search for products')}
                         icon={<FiSearch />}
                         onChange={onChange}
+                        onClear={onClear}
                     />
                 </InputContainer>
             </InnerContainer>
