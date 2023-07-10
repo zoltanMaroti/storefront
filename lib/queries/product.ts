@@ -118,3 +118,47 @@ export const getProductsByCategoryQuery = gql`
         }
     }
 `;
+
+export const searchProductQuery = gql`
+    query SearchProducts(
+        $search_term: String
+        $starts_with: String
+        $category: String
+        $minPrice: Int
+        $maxPrice: Int
+        $sort: String
+    ) {
+        ProductItems(
+            search_term: $search_term
+            starts_with: $starts_with
+            filter_query_v2: {
+                category: { like: $category }
+                price: { gt_int: $minPrice, lt_int: $maxPrice }
+            }
+            sort_by: $sort
+        ) {
+            items {
+                uuid
+                slug
+                content {
+                    name
+                    description
+                    images {
+                        filename
+                        alt
+                    }
+                    price
+                    inventory_level
+                    care_instructions
+                    materials
+                    width
+                    height
+                    length
+                    weight
+                    category
+                    is_active
+                }
+            }
+        }
+    }
+`;

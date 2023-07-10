@@ -20,7 +20,7 @@ export const QuantityButton = styled.button`
 export const QuantityInput = styled.input`
     padding-left: var(--spacing-sm);
     font-family: inherit;
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius-sm);
 
     &::-webkit-outer-spin-button,
     ::-webkit-inner-spin-button {

@@ -39,14 +39,11 @@ export const calculateTotalPrice = (products: Product[]) => {
     return totalPrice;
 };
 
-export const formatCurrency = (
-    locale: string,
-    amount: number,
-    currency = DEFAULT_CURRENCY
-) => {
+export const formatCurrency = (locale: string, amount: number, config?: {}) => {
     return new Intl.NumberFormat(locale, {
         style: 'currency',
-        currency,
+        currency: DEFAULT_CURRENCY,
+        ...config,
     }).format(amount);
 };
 

@@ -1,4 +1,10 @@
-import { ReactNode, ElementType } from 'react';
+import {
+    ReactNode,
+    ElementType,
+    HTMLInputTypeAttribute,
+    ChangeEvent,
+} from 'react';
+import { SortDirection } from '@/lib/constants';
 
 export type Locale = 'en' | 'fr' | 'de';
 
@@ -153,7 +159,7 @@ export type CartItemProps = {
 
 export type PriceProps = {
     amount: number;
-    currency?: string;
+    config?: {};
 };
 
 export type ErrorPageProps = {
@@ -163,4 +169,32 @@ export type ErrorPageProps = {
 
 export type ProductPageTitleProps = {
     category?: string;
+};
+
+export type InputBaseProps = {
+    type: HTMLInputTypeAttribute;
+    placeholder?: string;
+    disabled?: boolean;
+    icon?: ReactNode;
+    onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+};
+
+export type SearchParams = {
+    searchTerm: string;
+    language: string;
+    category?: string;
+    minPrice?: number;
+    maxPrice?: number;
+    sort?: SortDirection;
+};
+
+export type SearchConfig = {
+    [key: string]: string | number | undefined;
+};
+
+export type DrawerContent = 'filter' | 'sort';
+
+export type TagProps = {
+    children: ReactNode;
+    onClick: () => void;
 };

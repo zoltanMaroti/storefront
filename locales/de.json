@@ -33,6 +33,18 @@
     "Check out": "Kasse",
     "Something went wrong": "Etwas ist schief gelaufen",
     "Reset": "Zurücksetzen",
-    "There are no products in this category": "Es gibt keine Produkte in dieser Kategorie"
+    "There are no products in this category": "Es gibt keine Produkte in dieser Kategorie",
+    "Search for products": "Nach Produkten suchen",
+    "Explore our design collection": "Entdecken Sie unsere Designkollektion",
+    "Searching": "Suchen",
+    "Looks like we don't have any matches": "Sieht so aus, als hätten wir keine Übereinstimmungen",
+    "Filter": "Filter",
+    "Sort": "Sortieren",
+    "Search": "Suchen",
+    "Category": "Kategorie",
+    "Price": "Preis",
+    "Increasing": "Increasing",
+    "Decreasing": "Decreasing",
+    "Clear all": "Alles löschen"
   }
 }

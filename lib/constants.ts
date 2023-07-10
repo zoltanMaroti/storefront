@@ -49,3 +49,10 @@ export const cart = {
 };
 
 export const DEFAULT_CURRENCY = 'EUR';
+
+export enum SortDirection {
+    ASCENDING = 'asd',
+    DESCENDING = 'desc',
+}
+
+export const MAX_PRICE = 200;
