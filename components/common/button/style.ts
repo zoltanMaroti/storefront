@@ -12,7 +12,7 @@ export const BaseButton = styled.button<{ width?: string }>`
     font-family: inherit;
     letter-spacing: var(--letter-spacing);
     cursor: pointer;
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius-sm);
     outline: none;
     border: none;
     width: 100%;

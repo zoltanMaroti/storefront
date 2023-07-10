@@ -193,3 +193,8 @@ export type SearchConfig = {
 };
 
 export type DrawerContent = 'filter' | 'sort';
+
+export type TagProps = {
+    children: ReactNode;
+    onClick: () => void;
+};

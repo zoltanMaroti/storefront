@@ -21,6 +21,7 @@ import Sort from '@/components/search/filters/sort/Sort';
 import { useSearch } from '@/lib/hooks/useSearch';
 import { resetSearch } from '@/lib/store/slices/search';
 import { useDispatch } from 'react-redux';
+import ActiveFilters from '@/components/search/filters/active/ActiveFilters';
 
 const Filters = () => {
     const t = useTranslations('common');
@@ -57,6 +58,8 @@ const Filters = () => {
                     </FilterButton>
                 </InnerContainer>
             </FilterButtonsContainer>
+
+            <ActiveFilters />
 
             <Drawer isOpen={isFilterOpen} onClick={toggleDrawer}>
                 <DrawerBody>

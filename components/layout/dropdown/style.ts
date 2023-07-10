@@ -31,8 +31,8 @@ export const InnerContainer = styled.div`
     padding: var(--spacing-sm);
     display: flex;
     flex-direction: column;
-    border-bottom-left-radius: var(--border-radius);
-    border-bottom-right-radius: var(--border-radius);
+    border-bottom-left-radius: var(--border-radius-sm);
+    border-bottom-right-radius: var(--border-radius-sm);
     gap: var(--spacing-sm);
     list-style: none;
     will-change: auto;

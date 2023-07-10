@@ -1,7 +1,7 @@
 import { RootState } from '@/lib/store';
 import { SearchConfig } from '@/lib/types';
 import { createSelector } from 'reselect';
-import { SortDirection } from '@/lib/constants';
+import { MAX_PRICE, SortDirection } from '@/lib/constants';
 
 const getSearch = (state: RootState): SearchConfig => state.search;
 export const selectSearchTerm = createSelector(
@@ -19,4 +19,9 @@ export const selectPriceRange = createSelector(
 export const selectSort = createSelector(
     getSearch,
     (search) => search.sort as SortDirection
+);
+
+export const selectIsDefaultPriceRange = createSelector(
+    getSearch,
+    (search) => search.minPrice === 0 && search.maxPrice === MAX_PRICE
 );
