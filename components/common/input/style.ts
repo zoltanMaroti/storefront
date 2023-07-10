@@ -20,4 +20,5 @@ export const StyledInput = styled.input`
     border: 1px solid var(--color-font-primary);
     font-family: inherit;
     width: 100%;
+    font-size: var(--font-size-lg);
 `;
