@@ -15,7 +15,7 @@ export const ProductCardContainer = styled(Link)<{ maxItemWidth?: string }>`
     cursor: pointer;
 
     @media screen and (max-width: ${screenSizes.SMALL}) {
-        min-width: 100px;
+        min-width: 150px;
     }
 
     ${({ maxItemWidth }) =>
@@ -27,6 +27,7 @@ export const ProductCardContainer = styled(Link)<{ maxItemWidth?: string }>`
 
 export const ProductImage = styled(Image)`
     object-fit: cover;
+    border-radius: var(--border-radius-sm);
 `;
 
 export const ProductImageContainer = styled.div`
