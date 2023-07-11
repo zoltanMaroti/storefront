@@ -21,4 +21,5 @@ export interface ICommerceApiClient {
         maxPrice?: number,
         sort?: SortDirection
     ) => Promise<Product[]>;
+    getHighlightedProducts: (language: string) => Promise<Product[]>;
 }

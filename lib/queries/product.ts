@@ -162,3 +162,35 @@ export const searchProductQuery = gql`
         }
     }
 `;
+
+export const getHighlightedProducts = gql`
+    query GetHighlightedProducts($starts_with: String) {
+        ProductItems(
+            starts_with: $starts_with
+            filter_query_v2: { is_highlighted: { like: "true" } }
+        ) {
+            items {
+                uuid
+                slug
+                content {
+                    name
+                    description
+                    images {
+                        filename
+                        alt
+                    }
+                    price
+                    inventory_level
+                    care_instructions
+                    materials
+                    width
+                    height
+                    length
+                    weight
+                    category
+                    is_active
+                }
+            }
+        }
+    }
+`;

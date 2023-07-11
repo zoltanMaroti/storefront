@@ -2,6 +2,7 @@ import { ICommerceApiClient } from '@/lib/interfaces';
 import { Product } from '@/lib/types';
 import { graphQLRequest } from '@/lib/client';
 import {
+    getHighlightedProducts,
     getProductQuery,
     GetProductRecommendationsQuery,
     getProductsByCategoryQuery,
@@ -67,6 +68,13 @@ export const CommerceApiClient: ICommerceApiClient = {
             ...(minPrice && { minPrice: minPrice }),
             ...(maxPrice && { maxPrice: maxPrice }),
             ...(sort && { sort: `content.price:${sort}` }),
+        });
+
+        return response.ProductItems.items;
+    },
+    getHighlightedProducts: async (language: string): Promise<Product[]> => {
+        const response = await graphQLRequest(getHighlightedProducts, {
+            starts_with: `${language}/*`,
         });
 
         return response.ProductItems.items;
