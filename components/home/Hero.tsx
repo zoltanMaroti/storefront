@@ -7,14 +7,12 @@ import {
     GlobalStyles,
     HeroImage,
     HeroItemContainer,
-    SubTitle,
-    Title,
-    TitleContainer,
 } from '@/components/home/style';
 import Link from 'next/link';
 import Button from '@/components/common/button/Button';
 import { useTranslations } from 'next-intl';
 import { HERO_METADATA } from '@/lib/constants';
+import Heading from '@/components/common/heading/Heading';
 
 const Hero = () => {
     const t = useTranslations('common');
@@ -22,10 +20,10 @@ const Hero = () => {
     const HeroItem = (item: ReactImageGalleryItem) => {
         return (
             <HeroItemContainer>
-                <TitleContainer>
-                    <SubTitle>{t(item.originalAlt)}</SubTitle>
-                    <Title>{t(item.originalTitle)}</Title>
-                </TitleContainer>
+                <Heading
+                    title={t(item.originalTitle)}
+                    subTitle={t(item.originalAlt)}
+                />
                 <HeroImage
                     src={item.original}
                     sizes={item.sizes}

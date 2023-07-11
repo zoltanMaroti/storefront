@@ -52,7 +52,7 @@ export const HeaderNavItem = styled.span<{ isActive?: boolean }>`
     position: relative;
     padding: 0.2rem 0;
     text-transform: uppercase;
-    letter-spacing: var(--letter-spacing);
+    letter-spacing: var(--letter-spacing-sm);
     cursor: pointer;
     white-space: nowrap;
     z-index: 1;

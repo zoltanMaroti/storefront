@@ -30,6 +30,7 @@ export const GlobalStyles = css`
 `;
 export const HeroItemContainer = styled.div`
     background: var(--color-font-primary);
+    color: var(--color-background-primary);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -51,22 +52,4 @@ export const HeroImage = styled(Image)`
     top: 0;
     left: 0;
     z-index: -1;
-`;
-
-export const TitleContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-xs);
-    color: var(--color-background-primary);
-    text-transform: uppercase;
-    z-index: 1;
-`;
-
-export const Title = styled.h1`
-    font-size: var(--font-size-xl);
-    letter-spacing: var(--letter-spacing);
-`;
-
-export const SubTitle = styled.h2`
-    font-size: var(--font-size-md);
 `;

@@ -37,7 +37,7 @@ export const ProductImageContainer = styled.div`
 export const ProductName = styled.h2`
     font-size: var(--font-size-md);
     text-transform: uppercase;
-    letter-spacing: var(--letter-spacing);
+    letter-spacing: var(--letter-spacing-sm);
     text-align: center;
     margin-bottom: var(--spacing-xs);
     font-weight: 500;

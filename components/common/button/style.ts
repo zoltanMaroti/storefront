@@ -10,7 +10,7 @@ export const BaseButton = styled.button<{ width?: string }>`
     gap: var(--spacing-xs);
     padding: var(--spacing-sm);
     font-family: inherit;
-    letter-spacing: var(--letter-spacing);
+    letter-spacing: var(--letter-spacing-sm);
     cursor: pointer;
     border-radius: var(--border-radius-sm);
     outline: none;

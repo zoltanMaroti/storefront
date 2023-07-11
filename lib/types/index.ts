@@ -21,6 +21,7 @@ export type PageProps = {
 export type Category = {
     slug: string;
     name: string;
+    image: string;
 };
 
 export type DrawerProps = {
@@ -198,4 +199,9 @@ export type DrawerContent = 'filter' | 'sort';
 export type TagProps = {
     children: ReactNode;
     onClick: () => void;
+};
+
+export type HeadingProps = {
+    title: string;
+    subTitle?: string;
 };
