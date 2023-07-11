@@ -29,7 +29,7 @@ export const Header = styled.p`
     color: var(--color-font-secondary);
     text-transform: uppercase;
     font-size: var(--font-size-sm);
-    letter-spacing: var(--letter-spacing);
+    letter-spacing: var(--letter-spacing-sm);
     position: relative;
     text-align: center;
     margin-bottom: 1rem;

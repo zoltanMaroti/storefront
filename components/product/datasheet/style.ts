@@ -8,7 +8,7 @@ export const ProductDetailsContainer = styled.div`
 
 export const Name = styled.h1`
     text-transform: uppercase;
-    letter-spacing: var(--letter-spacing);
+    letter-spacing: var(--letter-spacing-sm);
     font-size: var(--font-size-lg);
 `;
 

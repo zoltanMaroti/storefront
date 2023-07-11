@@ -26,7 +26,7 @@ export const FilterButton = styled.button`
     font-family: inherit;
     padding: var(--spacing-sm);
     text-transform: uppercase;
-    letter-spacing: var(--letter-spacing);
+    letter-spacing: var(--letter-spacing-sm);
     font-size: var(--font-size-md);
     cursor: pointer;
     border-left: 1px solid var(--color-background-secondary);

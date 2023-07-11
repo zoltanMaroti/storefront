@@ -14,14 +14,17 @@ export const CATEGORIES: Category[] = [
     {
         name: 'Clocks',
         slug: 'clocks',
+        image: '/assets/images/clocks.jpeg',
     },
     {
         name: 'Images',
         slug: 'images',
+        image: '/assets/images/images.jpeg',
     },
     {
         name: 'Trays',
         slug: 'trays',
+        image: '/assets/images/trays.jpeg',
     },
 ];
 
