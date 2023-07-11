@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import styled from '@emotion/styled';
 import { screenSizes } from '@/lib/constants';
+import Link from 'next/link';
 
 export const CategoriesContainer = styled.div`
     width: 100%;
@@ -19,17 +20,23 @@ export const InnerContainer = styled.div`
 
     @media screen and (max-width: ${screenSizes.SMALL}) {
         grid-template-columns: repeat(2, 1fr);
-        gap: var(--spacing-xs);
+        gap: var(--spacing-sm);
     }
 `;
 
-export const CategoryCard = styled.div`
+export const CategoryCard = styled(Link)`
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     height: 30vh;
-    z-index: -2;
+
+    @media screen and (max-width: ${screenSizes.SMALL}) {
+        &:last-of-type {
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+    }
 `;
 
 export const CategoryImage = styled(Image)`

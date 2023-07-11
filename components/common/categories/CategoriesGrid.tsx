@@ -11,7 +11,6 @@ import {
     NameContainer,
     Name,
 } from '@/components/common/categories/style';
-import Link from 'next/link';
 
 const CategoriesGrid = () => {
     const t = useTranslations('common');
@@ -20,21 +19,19 @@ const CategoriesGrid = () => {
         <CategoriesContainer>
             <InnerContainer>
                 {CATEGORIES.map((category) => (
-                    <Link
+                    <CategoryCard
                         key={category.slug}
                         href={`/products/${category.slug}`}
                     >
-                        <CategoryCard>
-                            <NameContainer>
-                                <Name>{t(category.name)}</Name>
-                            </NameContainer>
-                            <CategoryImage
-                                src={category.image}
-                                fill={true}
-                                alt={t(category.name)}
-                            />
-                        </CategoryCard>
-                    </Link>
+                        <NameContainer>
+                            <Name>{t(category.name)}</Name>
+                        </NameContainer>
+                        <CategoryImage
+                            src={category.image}
+                            fill={true}
+                            alt={t(category.name)}
+                        />
+                    </CategoryCard>
                 ))}
             </InnerContainer>
         </CategoriesContainer>
