@@ -7,7 +7,7 @@ import {
 } from '@/components/layout/navigation/style';
 import { MobileNavigationProps } from '@/lib/types';
 import Divider from '@/components/common/divider/Divider';
-import Accordion from '@/components/layout/accordion/Accordion';
+import Accordion from '@/components/common/accordion/Accordion';
 import { CATEGORIES } from '@/lib/constants';
 import NavLink from '@/components/layout/navigation/NavLink';
 import LanguageSelector from '@/components/layout/header/language/LanguageSelector';

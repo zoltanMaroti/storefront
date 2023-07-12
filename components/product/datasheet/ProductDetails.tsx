@@ -10,7 +10,7 @@ import {
     Name,
 } from '@/components/product/datasheet/style';
 import { useTranslations } from 'next-intl';
-import Accordion from '@/components/layout/accordion/Accordion';
+import Accordion from '@/components/common/accordion/Accordion';
 import { RxDimensions } from 'react-icons/rx';
 import { TbTexture, TbWashGentle } from 'react-icons/tb';
 import AddToCart from '@/components/product/cart/AddToCart';

@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState, MouseEvent } from 'react';
 import { useTranslations } from 'next-intl';
-import Accordion from '@/components/layout/accordion/Accordion';
-import { AccordionLabel } from '@/components/layout/accordion/style';
+import Accordion from '@/components/common/accordion/Accordion';
+import { AccordionLabel } from '@/components/common/accordion/style';
 import {
     PriceRangeContainer,
     Thumb,

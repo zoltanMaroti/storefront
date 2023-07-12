@@ -7,7 +7,7 @@ import {
     AccordionContent,
     IconContainer,
     LabelContainer,
-} from '@/components/layout/accordion/style';
+} from '@/components/common/accordion/style';
 import { AccordionProps } from '@/lib/types';
 
 const Accordion = ({

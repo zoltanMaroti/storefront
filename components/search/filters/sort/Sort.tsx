@@ -3,11 +3,11 @@ import { useDispatch } from 'react-redux';
 import { useTranslations } from 'next-intl';
 import { SortDirection } from '@/lib/constants';
 import { setSearchConfig } from '@/lib/store/slices/search';
-import Accordion from '@/components/layout/accordion/Accordion';
+import Accordion from '@/components/common/accordion/Accordion';
 import {
     AccordionItem,
     AccordionLabel,
-} from '@/components/layout/accordion/style';
+} from '@/components/common/accordion/style';
 import { AccordionContent } from '@/components/search/filters/category/style';
 
 const Sort = () => {
