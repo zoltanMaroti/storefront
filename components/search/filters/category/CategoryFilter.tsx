@@ -4,11 +4,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Category } from '@/lib/types';
 import { setSearchConfig } from '@/lib/store/slices/search';
 import { useTranslations } from 'next-intl';
-import Accordion from '@/components/layout/accordion/Accordion';
+import Accordion from '@/components/common/accordion/Accordion';
 import {
     AccordionItem,
     AccordionLabel,
-} from '@/components/layout/accordion/style';
+} from '@/components/common/accordion/style';
 import { AccordionContent } from '@/components/search/filters/category/style';
 import { selectCategory } from '@/lib/selectors/search';
 

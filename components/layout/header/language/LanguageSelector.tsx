@@ -16,7 +16,7 @@ import Dropdown from '@/components/layout/dropdown/Dropdown';
 import { useLocale } from 'next-intl';
 import { useRouter } from 'next/navigation';
 import { usePathname } from 'next-intl/client';
-import Accordion from '@/components/layout/accordion/Accordion';
+import Accordion from '@/components/common/accordion/Accordion';
 
 const LanguageSelector = ({ inline }: LanguageSelectorProps) => {
     const [isOpen, setOpen] = useState<boolean>(false);

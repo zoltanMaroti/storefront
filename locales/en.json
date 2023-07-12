@@ -56,5 +56,93 @@
     "Where style meets functionality": "Where style meets functionality",
     "Welcome to our store": "Welcome to our store",
     "Popular picks": "Popular picks"
+  },
+  "faq": {
+    "order": {
+      "label": "Order",
+      "question_1": {
+        "question": "How can I place an order?",
+        "answer": "To place an order, simply browse our online store and add the desired items to your shopping cart. Once you have finished selecting your products, proceed to the checkout page and follow the prompts to enter your shipping and payment information. Finally, review your order details and confirm the purchase."
+      },
+      "question_2": {
+        "question": "Can I cancel or modify my order after it has been placed?",
+        "answer": "We understand that you may need to make changes to your order. If you wish to cancel or modify your order, please contact our customer support team as soon as possible. We will do our best to accommodate your request, but please note that once an order has been shipped, it cannot be canceled or modified."
+      },
+      "question_3": {
+        "question": "How long will it take to receive my order?",
+        "answer": "The delivery time depends on your location and the shipping method chosen. Typically, orders are processed and shipped within 1-2 business days. Once your order has been shipped, you will receive a confirmation email with tracking information. Delivery times may vary, but we strive to deliver your order as quickly as possible."
+      }
+    },
+    "payment": {
+      "label": "Payment",
+      "question_1": {
+        "question": "What payment methods do you accept?",
+        "answer": "We accept various payment methods, including credit cards (Visa, Mastercard, American Express), debit cards, and PayPal. Please note that the available payment options may vary depending on your location."
+      },
+      "question_2": {
+        "question": "Is my payment information secure?",
+        "answer": "Yes, we take your security seriously. Our website employs industry-standard encryption technology to protect your payment information. Rest assured that your data is handled securely and in compliance with all relevant regulations."
+      }
+    },
+    "shipping": {
+      "label": "Shipping",
+      "question_1": {
+        "question": "Where do you ship to?",
+        "answer": "We offer shipping to the following countries: Luxemburg, Germany, Belgium, France, The Netherlands."
+      },
+      "question_2": {
+        "question": "Do you offer international shipping?",
+        "answer": "Yes, we offer international shipping to select countries. During the checkout process, you can enter your shipping address to check if we ship to your location. Please note that international orders may be subject to customs fees, import duties, and taxes imposed by the destination country. These charges are the responsibility of the recipient."
+      },
+      "question_3": {
+        "question": "How do I track my order?",
+        "answer": "Once your order has been shipped, you will receive a shipping confirmation email containing a tracking number. You can use this tracking number to monitor the progress of your shipment on our website or the shipping carrier's website."
+      },
+      "question_4": {
+        "question": "What if I receive a defective or damaged item?",
+        "answer": "We apologize for any inconvenience caused by a defective or damaged item. If you receive such an item, please contact our customer support team immediately. We will work with you to resolve the issue promptly, either by arranging a replacement or issuing a refund."
+      }
+    },
+    "returns": {
+      "label": "Returns and exchanges",
+      "question_1": {
+        "question": "What is your return and exchange policy?",
+        "answer": "We want you to be completely satisfied with your purchase. If you are not happy with your order, you may return the item(s) within 30 days of delivery for a refund or exchange. The item(s) must be unused, in their original packaging, and in resalable condition. Please refer to our Returns and Exchanges page for detailed instructions on how to initiate a return."
+      }
+    },
+    "care": {
+      "label": "Product care",
+      "question_1": {
+        "question": "How should I clean epoxy resin design products?",
+        "answer": "To clean epoxy resin design products, use a mild, non-abrasive soap or dish detergent mixed with warm water. Gently wipe the surface with a soft cloth or sponge. Avoid using harsh chemicals, abrasive cleaners, or scrubbing brushes as they can damage the resin finish. Dry the product thoroughly after cleaning."
+      },
+      "question_2": {
+        "question": "Can epoxy resin design products be exposed to direct sunlight?",
+        "answer": "While epoxy resin is UV-resistant to some extent, prolonged exposure to direct sunlight can cause discoloration and yellowing over time. It's best to keep epoxy resin design products away from direct sunlight or use them in areas with minimal sun exposure. If displaying your product in a sunny location is unavoidable, consider applying a protective coating or keeping it covered when not in use."
+      },
+      "question_3": {
+        "question": "How should I handle and store epoxy resin design products?",
+        "answer": "When handling epoxy resin design products, it's important to avoid excessive pressure or force that could cause cracks or damage. Handle them with care and avoid dropping or banging them against hard surfaces. When not in use, store them in a clean and dry area away from extreme temperatures and direct sunlight. Use padding or protective covers to prevent scratching or accidental damage."
+      },
+      "question_4": {
+        "question": "Can epoxy resin design products be used for hot items?",
+        "answer": "Epoxy resin can withstand moderate heat, but it's generally not recommended to place hot items directly on the surface of epoxy resin design products. High temperatures can cause the resin to soften or warp. It's advisable to use trivets, coasters, or heat-resistant pads underneath hot objects to protect the resin finish and prevent any potential damage."
+      },
+      "question_5": {
+        "question": "How do I maintain the glossy appearance of epoxy resin design products?",
+        "answer": "Epoxy resin design products can maintain their glossy appearance with proper care. Avoid using abrasive materials or harsh cleaners that can dull the shine. Regularly dust the surface with a soft, lint-free cloth or use a gentle cleaner specifically designed for resin surfaces. Applying a thin coat of resin-safe polish or wax can also help restore and preserve the glossy finish."
+      },
+      "question_6": {
+        "question": "What should I do if my epoxy resin design product gets scratched?",
+        "answer": "Minor scratches on epoxy resin design products can often be buffed out using a fine-grit polishing compound or a resin-safe scratch remover. Follow the manufacturer's instructions or seek professional assistance if the scratch is deep or extensive. Preventing scratches is best achieved by handling the product with care and avoiding contact with abrasive surfaces."
+      }
+    },
+    "support": {
+      "label": "Support",
+      "question_1": {
+        "question": "How can I contact your customer support?",
+        "answer": "You can reach our customer support team by visiting our Contact Us page on our website. We provide multiple channels of communication, including email, live chat, and phone support. Our support representatives are available during business hours to assist you with any questions or concerns you may have."
+      }
+    }
   }
 }
