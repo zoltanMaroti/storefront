@@ -56,5 +56,93 @@
     "Where style meets functionality": "Wo Stil auf Funktionalität trifft",
     "Welcome to our store": "Willkommen in unserem Geschäft",
     "Popular picks": "Beliebte Tipps"
+  },
+  "faq": {
+    "order": {
+      "label": "Befehl",
+      "question_1": {
+        "question": "Wie kann ich eine Bestellung aufgeben?",
+        "answer": "Um eine Bestellung aufzugeben, stöbern Sie einfach in unserem Online-Shop und legen Sie die gewünschten Artikel in Ihren Warenkorb. Wenn Sie mit der Auswahl Ihrer Produkte fertig sind, gehen Sie zur Checkout-Seite und befolgen Sie die Anweisungen zur Eingabe Ihrer Versand- und Zahlungsinformationen. Überprüfen Sie abschließend Ihre Bestelldaten und bestätigen Sie den Kauf."
+      },
+      "question_2": {
+        "question": "Kann ich meine Bestellung stornieren oder ändern, nachdem sie aufgegeben wurde?",
+        "answer": "Wir verstehen, dass Sie möglicherweise Änderungen an Ihrer Bestellung vornehmen müssen. Wenn Sie Ihre Bestellung stornieren oder ändern möchten, wenden Sie sich bitte so schnell wie möglich an unseren Kundendienst. Wir werden unser Bestes tun, um Ihrer Anfrage nachzukommen. Bitte beachten Sie jedoch, dass eine Bestellung nach dem Versand nicht mehr storniert oder geändert werden kann."
+      },
+      "question_3": {
+        "question": "Wie lange dauert es, bis ich meine Bestellung erhalte?",
+        "answer": "Die Lieferzeit hängt von Ihrem Standort und der gewählten Versandart ab. Normalerweise werden Bestellungen innerhalb von 1-2 Werktagen bearbeitet und versendet. Sobald Ihre Bestellung versandt wurde, erhalten Sie eine Bestätigungs-E-Mail mit Informationen zur Sendungsverfolgung. Die Lieferzeiten können variieren, wir bemühen uns jedoch, Ihre Bestellung so schnell wie möglich zu liefern."
+      }
+    },
+    "payment": {
+      "label": "Zahlung",
+      "question_1": {
+        "question": "Welche Zahlungsmethoden werden akzeptiert?",
+        "answer": "Wir akzeptieren verschiedene Zahlungsmethoden, darunter Kreditkarten (Visa, Mastercard, American Express), Debitkarten und PayPal. Bitte beachten Sie, dass die verfügbaren Zahlungsoptionen je nach Standort variieren können."
+      },
+      "question_2": {
+        "question": "Sind meine Zahlungsinformationen sicher?",
+        "answer": "Ja, wir nehmen Ihre Sicherheit ernst. Unsere Website verwendet branchenübliche Verschlüsselungstechnologie, um Ihre Zahlungsinformationen zu schützen. Seien Sie versichert, dass Ihre Daten sicher und unter Einhaltung aller relevanten Vorschriften behandelt werden.s"
+      }
+    },
+    "shipping": {
+      "label": "Versand",
+      "question_1": {
+        "question": "Wohin versenden Sie?",
+        "answer": "Wir bieten den Versand in folgende Länder an: Luxemburg, Deutschland, Belgien, Frankreich, Niederlande."
+      },
+      "question_2": {
+        "question": "Bieten Sie internationalen Versand an?",
+        "answer": "Ja, wir bieten internationalen Versand in ausgewählte Länder an. Während des Bestellvorgangs können Sie Ihre Lieferadresse eingeben, um zu prüfen, ob wir an Ihren Standort versenden. Bitte beachten Sie, dass bei internationalen Bestellungen möglicherweise Zollgebühren, Einfuhrzölle und Steuern des Ziellandes anfallen. Diese Gebühren liegen in der Verantwortung des Empfängers."
+      },
+      "question_3": {
+        "question": "Wie kann ich meine Bestellung verfolgen?",
+        "answer": "Sobald Ihre Bestellung versandt wurde, erhalten Sie eine Versandbestätigung per E-Mail mit einer Sendungsverfolgungsnummer. Mit dieser Sendungsverfolgungsnummer können Sie den Fortschritt Ihrer Sendung auf unserer Website oder der Website des Versanddienstleisters verfolgen."
+      },
+      "question_4": {
+        "question": "Was passiert, wenn ich einen defekten oder beschädigten Artikel erhalte?",
+        "answer": "Wir entschuldigen uns für etwaige Unannehmlichkeiten, die durch einen defekten oder beschädigten Artikel entstehen. Wenn Sie einen solchen Artikel erhalten, wenden Sie sich bitte umgehend an unseren Kundendienst. Wir werden mit Ihnen zusammenarbeiten, um das Problem umgehend zu lösen, indem wir entweder einen Ersatz veranlassen oder eine Rückerstattung veranlassen."
+      }
+    },
+    "returns": {
+      "label": "Rückgabe und Umtausch",
+      "question_1": {
+        "question": "Wie lauten Ihre Rückgabe- und Umtauschbedingungen?",
+        "answer": "Wir möchten, dass Sie mit Ihrem Kauf rundum zufrieden sind. Wenn Sie mit Ihrer Bestellung nicht zufrieden sind, können Sie die Artikel innerhalb von 30 Tagen nach Lieferung gegen Rückerstattung oder Umtausch zurücksenden. Die Artikel müssen unbenutzt, in der Originalverpackung und in wiederverkaufsfähigem Zustand sein. Detaillierte Anweisungen zum Einleiten einer Rücksendung finden Sie auf unserer Seite „Rückgaben und Umtausch“."
+      }
+    },
+    "care": {
+      "label": "Produktpflege",
+      "question_1": {
+        "question": "Wie reinige ich Designprodukte aus Epoxidharz?",
+        "answer": "Verwenden Sie zum Reinigen von Epoxidharz-Designprodukten eine milde, nicht scheuernde Seife oder ein Geschirrspülmittel gemischt mit warmem Wasser. Wischen Sie die Oberfläche vorsichtig mit einem weichen Tuch oder Schwamm ab. Vermeiden Sie die Verwendung aggressiver Chemikalien, Scheuermittel oder Scheuerbürsten, da diese die Harzoberfläche beschädigen können. Trocknen Sie das Produkt nach der Reinigung gründlich ab."
+      },
+      "question_2": {
+        "question": "Können Designprodukte aus Epoxidharz direktem Sonnenlicht ausgesetzt werden?",
+        "answer": "Während Epoxidharz bis zu einem gewissen Grad UV-beständig ist, kann es bei längerer Einwirkung von direktem Sonnenlicht mit der Zeit zu Verfärbungen und Vergilbungen kommen. Bewahren Sie Epoxidharz-Designprodukte am besten vor direkter Sonneneinstrahlung auf oder verwenden Sie sie in Bereichen mit minimaler Sonneneinstrahlung. Wenn es unumgänglich ist, Ihr Produkt an einem sonnigen Ort auszustellen, sollten Sie darüber nachdenken, es mit einer Schutzschicht zu versehen oder es abgedeckt aufzubewahren, wenn es nicht verwendet wird."
+      },
+      "question_3": {
+        "question": "Wie soll ich Designprodukte aus Epoxidharz handhaben und lagern?",
+        "answer": "Beim Umgang mit Designprodukten aus Epoxidharz ist es wichtig, übermäßigen Druck oder Gewalt zu vermeiden, die zu Rissen oder Schäden führen könnten. Behandeln Sie sie vorsichtig und vermeiden Sie es, sie fallen zu lassen oder gegen harte Oberflächen zu schlagen. Bewahren Sie sie bei Nichtgebrauch an einem sauberen und trockenen Ort auf, geschützt vor extremen Temperaturen und direkter Sonneneinstrahlung. Verwenden Sie Polster oder Schutzhüllen, um Kratzer oder versehentliche Beschädigungen zu vermeiden."
+      },
+      "question_4": {
+        "question": "Können Epoxidharz-Designprodukte für heiße Gegenstände verwendet werden?",
+        "answer": "Epoxidharz hält mäßiger Hitze stand, es wird jedoch generell davon abgeraten, heiße Gegenstände direkt auf die Oberfläche von Epoxidharz-Designprodukten zu legen. Hohe Temperaturen können dazu führen, dass das Harz weich wird oder sich verzieht. Es empfiehlt sich, Untersetzer, Untersetzer oder hitzebeständige Unterlagen unter heißen Gegenständen zu verwenden, um die Harzoberfläche zu schützen und möglichen Schäden vorzubeugen."
+      },
+      "question_5": {
+        "question": "Wie halte ich das glänzende Aussehen von Epoxidharz-Designprodukten aufrecht?",
+        "answer": "Designprodukte aus Epoxidharz können bei richtiger Pflege ihr glänzendes Aussehen behalten. Vermeiden Sie die Verwendung von scheuernden Materialien oder scharfen Reinigungsmitteln, die den Glanz trüben können. Stauben Sie die Oberfläche regelmäßig mit einem weichen, fusselfreien Tuch ab oder verwenden Sie einen sanften Reiniger, der speziell für Harzoberflächen entwickelt wurde. Auch das Auftragen einer dünnen Schicht harzsicherer Politur oder eines Wachses kann dabei helfen, den Glanz wiederherzustellen und zu bewahren."
+      },
+      "question_6": {
+        "question": "Was soll ich tun, wenn mein Designprodukt aus Epoxidharz zerkratzt wird?",
+        "answer": "Kleinere Kratzer auf Designprodukten aus Epoxidharz lassen sich häufig mit einer feinkörnigen Polierpaste oder einem harzverträglichen Kratzerentferner auspolieren. Befolgen Sie die Anweisungen des Herstellers oder suchen Sie professionelle Hilfe auf, wenn der Kratzer tief oder großflächig ist. Die Vermeidung von Kratzern lässt sich am besten dadurch erreichen, dass man das Produkt vorsichtig behandelt und den Kontakt mit abrasiven Oberflächen vermeidet."
+      }
+    },
+    "support": {
+      "label": "Unterstützung",
+      "question_1": {
+        "question": "Wie kann ich Ihren Kundensupport kontaktieren?",
+        "answer": "Sie können unser Kundensupport-Team erreichen, indem Sie die Seite „Kontakt“ auf unserer Website besuchen. Wir bieten mehrere Kommunikationskanäle, darunter E-Mail, Live-Chat und Telefonsupport. Unsere Support-Mitarbeiter stehen Ihnen während der Geschäftszeiten zur Verfügung, um Ihnen bei Fragen oder Anliegen behilflich zu sein."
+      }
+    }
   }
 }

@@ -56,5 +56,93 @@
     "Where style meets functionality": "Où le style rencontre la fonctionnalité",
     "Welcome to our store": "Bienvenue dans notre magasin",
     "Popular picks": "Choix populaires"
+  },
+  "faq": {
+    "order": {
+      "label": "Commande",
+      "question_1": {
+        "question": "Comment puis-je passer une commande?",
+        "answer": "Pour passer une commande, il vous suffit de parcourir notre boutique en ligne et d'ajouter les articles souhaités à votre panier. Une fois que vous avez fini de sélectionner vos produits, passez à la page de paiement et suivez les invites pour entrer vos informations d'expédition et de paiement. Enfin, vérifiez les détails de votre commande et confirmez l'achat."
+      },
+      "question_2": {
+        "question": "Puis-je annuler ou modifier ma commande après l'avoir passée?",
+        "answer": "Nous comprenons que vous devrez peut-être apporter des modifications à votre commande. Si vous souhaitez annuler ou modifier votre commande, veuillez contacter notre service client dès que possible. Nous ferons de notre mieux pour répondre à votre demande, mais veuillez noter qu'une fois qu'une commande a été expédiée, elle ne peut être ni annulée ni modifiée."
+      },
+      "question_3": {
+        "question": "Combien de temps faudra-t-il pour recevoir ma commande?",
+        "answer": "Le délai de livraison dépend de votre emplacement et de la méthode d'expédition choisie. En règle générale, les commandes sont traitées et expédiées dans un délai de 1 à 2 jours ouvrables. Une fois votre commande expédiée, vous recevrez un e-mail de confirmation avec les informations de suivi. Les délais de livraison peuvent varier, mais nous nous efforçons de livrer votre commande le plus rapidement possible."
+      }
+    },
+    "payment": {
+      "label": "Paiement",
+      "question_1": {
+        "question": "Quels modes de paiement acceptez-vous?",
+        "answer": "Nous acceptons divers modes de paiement, y compris les cartes de crédit (Visa, Mastercard, American Express), les cartes de débit et PayPal. Veuillez noter que les options de paiement disponibles peuvent varier en fonction de votre emplacement."
+      },
+      "question_2": {
+        "question": "Mes informations de paiement sont-elles sécurisées?",
+        "answer": "Oui, nous prenons votre sécurité au sérieux. Notre site Web utilise une technologie de cryptage standard pour protéger vos informations de paiement. Soyez assuré que vos données sont traitées en toute sécurité et conformément à toutes les réglementations en vigueur."
+      }
+    },
+    "shipping": {
+      "label": "Expédition",
+      "question_1": {
+        "question": "Où livrez-vous?",
+        "answer": "Nous proposons la livraison dans les pays suivants : Luxembourg, Allemagne, Belgique, France, Pays-Bas."
+      },
+      "question_2": {
+        "question": "Proposez-vous le transport maritime international?",
+        "answer": "Oui, nous offrons l'expédition internationale vers certains pays. Au cours du processus de paiement, vous pouvez entrer votre adresse de livraison pour vérifier si nous expédions à votre emplacement. Veuillez noter que les commandes internationales peuvent être soumises à des frais de douane, des droits d'importation et des taxes imposées par le pays de destination. Ces frais sont à la charge du destinataire."
+      },
+      "question_3": {
+        "question": "Comment suivre ma commande?",
+        "answer": "Une fois votre commande expédiée, vous recevrez un e-mail de confirmation d'expédition contenant un numéro de suivi. Vous pouvez utiliser ce numéro de suivi pour suivre la progression de votre envoi sur notre site Web ou sur le site Web du transporteur."
+      },
+      "question_4": {
+        "question": "Que faire si je reçois un article défectueux ou endommagé ?",
+        "answer": "Nous nous excusons pour tout inconvénient causé par un article défectueux ou endommagé. Si vous recevez un tel article, veuillez contacter immédiatement notre équipe d'assistance à la clientèle. Nous travaillerons avec vous pour résoudre le problème rapidement, soit en organisant un remplacement, soit en émettant un remboursement."
+      }
+    },
+    "returns": {
+      "label": "Retours et échanges",
+      "question_1": {
+        "question": "Quelle est votre politique de retour et d'échange?",
+        "answer": "Nous voulons que vous soyez entièrement satisfait de votre achat. Si vous n'êtes pas satisfait de votre commande, vous pouvez retourner le ou les articles dans les 30 jours suivant la livraison pour un remboursement ou un échange. Le ou les articles doivent être inutilisés, dans leur emballage d'origine et en état de revente. Veuillez vous référer à notre page Retours et échanges pour des instructions détaillées sur la façon d'initier un retour."
+      }
+    },
+    "care": {
+      "label": "Entretien du produit",
+      "question_1": {
+        "question": "Comment nettoyer les produits design en résine époxy?",
+        "answer": "Pour nettoyer les produits design en résine époxy, utilisez un savon ou un détergent à vaisselle doux et non abrasif mélangé à de l'eau tiède. Essuyez délicatement la surface avec un chiffon doux ou une éponge. Évitez d'utiliser des produits chimiques agressifs, des nettoyants abrasifs ou des brosses à récurer car ils peuvent endommager la finition en résine. Bien sécher le produit après le nettoyage."
+      },
+      "question_2": {
+        "question": "Les produits de conception en résine époxy peuvent-ils être exposés à la lumière directe du soleil ?",
+        "answer": "Bien que la résine époxy résiste dans une certaine mesure aux UV, une exposition prolongée à la lumière directe du soleil peut provoquer une décoloration et un jaunissement au fil du temps. Il est préférable de garder les produits de conception en résine époxy à l'abri de la lumière directe du soleil ou de les utiliser dans des zones peu exposées au soleil. S'il est inévitable d'exposer votre produit dans un endroit ensoleillé, envisagez d'appliquer un revêtement protecteur ou de le couvrir lorsqu'il n'est pas utilisé."
+      },
+      "question_3": {
+        "question": "Comment dois-je manipuler et stocker les produits de conception en résine époxy?",
+        "answer": "Lors de la manipulation de produits de conception en résine époxy, il est important d'éviter une pression ou une force excessive qui pourrait provoquer des fissures ou des dommages. Manipulez-les avec soin et évitez de les faire tomber ou de les cogner contre des surfaces dures. Lorsqu'ils ne sont pas utilisés, rangez-les dans un endroit propre et sec, à l'abri des températures extrêmes et de la lumière directe du soleil. Utilisez des rembourrages ou des housses de protection pour éviter les rayures ou les dommages accidentels."
+      },
+      "question_4": {
+        "question": "Les produits de conception en résine époxy peuvent-ils être utilisés pour les articles chauds?",
+        "answer": "La résine époxy peut résister à une chaleur modérée, mais il n'est généralement pas recommandé de placer des objets chauds directement sur la surface des produits de conception en résine époxy. Des températures élevées peuvent ramollir ou déformer la résine. Il est conseillé d'utiliser des sous-plats, des sous-verres ou des tampons résistants à la chaleur sous les objets chauds pour protéger la finition en résine et éviter tout dommage potentiel."
+      },
+      "question_5": {
+        "question": "Comment conserver l'aspect brillant des produits design en résine époxy?",
+        "answer": "Les produits de conception en résine époxy peuvent conserver leur aspect brillant avec des soins appropriés. Évitez d'utiliser des matériaux abrasifs ou des nettoyants agressifs qui peuvent ternir la brillance. Époussetez régulièrement la surface avec un chiffon doux non pelucheux ou utilisez un nettoyant doux spécialement conçu pour les surfaces en résine. L'application d'une fine couche de vernis ou de cire sans danger pour la résine peut également aider à restaurer et à préserver la finition brillante."
+      },
+      "question_6": {
+        "question": "Que dois-je faire si mon produit design en résine époxy est rayé?",
+        "answer": "Les rayures mineures sur les produits de conception en résine époxy peuvent souvent être polies à l'aide d'un composé de polissage à grain fin ou d'un dissolvant de rayures sans danger pour la résine. Suivez les instructions du fabricant ou demandez l'aide d'un professionnel si la rayure est profonde ou étendue. Pour éviter les rayures, il est préférable de manipuler le produit avec soin et d'éviter tout contact avec des surfaces abrasives."
+      }
+    },
+    "support": {
+      "label": "Soutien",
+      "question_1": {
+        "question": "Comment puis-je contacter votre support client?",
+        "answer": "Vous pouvez joindre notre équipe de soutien à la clientèle en visitant notre page Contactez-nous sur notre site Web. Nous fournissons plusieurs canaux de communication, y compris le courrier électronique, le chat en direct et l'assistance téléphonique. Nos représentants de l'assistance sont disponibles pendant les heures ouvrables pour vous aider avec toutes les questions ou préoccupations que vous pourriez avoir."
+      }
+    }
   }
 }
