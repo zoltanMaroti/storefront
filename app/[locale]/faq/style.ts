@@ -21,7 +21,7 @@ export const NavigationContainer = styled.nav`
     padding: var(--spacing-md);
     position: sticky;
     top: 20vh;
-    max-height: 38vh;
+    max-height: 290px;
     min-width: 250px;
     gap: var(--spacing-xs);
 
