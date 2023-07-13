@@ -23,3 +23,7 @@ export interface ICommerceApiClient {
     ) => Promise<Product[]>;
     getHighlightedProducts: (language: string) => Promise<Product[]>;
 }
+
+export interface IPaymentApiClient {
+    getCheckoutSessionUrl: (products: Product[]) => Promise<string>;
+}
