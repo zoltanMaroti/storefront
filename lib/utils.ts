@@ -69,3 +69,8 @@ export const getEnv = (env: string) => {
 };
 
 export const convertToCents = (amount: number) => amount * CENTS_MULTIPLIER;
+
+export const setDefaultQuantity = (product: Product) => {
+    product.quantity = 1;
+    return product;
+};

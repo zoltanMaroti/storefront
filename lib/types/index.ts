@@ -206,4 +206,10 @@ export type HeadingProps = {
     subTitle?: string;
 };
 
-export type CheckoutRequestBody = { products: Product[] };
+export type CheckoutRequestBody = Product[];
+
+export type CheckoutSessionResponse = { url: string };
+
+export type BuyNowProps = {
+    product: Product;
+};

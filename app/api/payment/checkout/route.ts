@@ -3,8 +3,7 @@ import { createCheckoutSession } from '@/lib/services/checkout';
 import { CheckoutRequestBody } from '@/lib/types';
 
 export async function POST(request: NextRequest) {
-    const body: CheckoutRequestBody = await request.json();
-    const { products } = body;
+    const products: CheckoutRequestBody = await request.json();
 
     try {
         const { url } = await createCheckoutSession(products);

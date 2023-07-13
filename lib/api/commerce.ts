@@ -10,6 +10,7 @@ import {
     searchProductQuery,
 } from '@/lib/queries/product';
 import { SortDirection } from '@/lib/constants';
+import { setDefaultQuantity } from '@/lib/utils';
 
 export const CommerceApiClient: ICommerceApiClient = {
     getProduct: async (slug, language): Promise<Product> => {
@@ -17,6 +18,10 @@ export const CommerceApiClient: ICommerceApiClient = {
             slug: `${language}/products/${slug}`,
             language,
         });
+
+        if (response.ProductItem) {
+            return setDefaultQuantity(response.ProductItem);
+        }
 
         return response.ProductItem;
     },
