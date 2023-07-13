@@ -213,3 +213,7 @@ export type CheckoutSessionResponse = { url: string };
 export type BuyNowProps = {
     product: Product;
 };
+
+export type CheckoutProps = {
+    cart: Product[];
+};

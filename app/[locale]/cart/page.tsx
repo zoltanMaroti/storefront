@@ -55,7 +55,7 @@ const CartPage = () => {
                     <div>{t('Total')}: </div>
                     <Price amount={totalPrice} />
                 </TotalContainer>
-                <Checkout />
+                <Checkout cart={cart} />
             </CheckoutContainer>
         </PageContainer>
     );
