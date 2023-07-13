@@ -84,3 +84,5 @@ export const HERO_METADATA: ReactImageGalleryItem[] = [
         thumbnailTitle: 'View collection',
     },
 ];
+
+export const CENTS_MULTIPLIER = 100;

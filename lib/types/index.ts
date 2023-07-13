@@ -205,3 +205,5 @@ export type HeadingProps = {
     title: string;
     subTitle?: string;
 };
+
+export type CheckoutRequestBody = { products: Product[] };
