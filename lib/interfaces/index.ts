@@ -5,8 +5,7 @@ export interface ICommerceApiClient {
     getProduct: (slug: string, language: string) => Promise<Product>;
     getProductRecommendations: (
         tags: string[],
-        language: string,
-        uuid: string
+        language: string
     ) => Promise<Product[]>;
     getProducts: (language: string) => Promise<Product[]>;
     getProductsByCategory: (

@@ -25,11 +25,7 @@ export const CommerceApiClient: ICommerceApiClient = {
 
         return response.ProductItem;
     },
-    getProductRecommendations: async (
-        tags,
-        language,
-        uuid
-    ): Promise<Product[]> => {
+    getProductRecommendations: async (tags, language): Promise<Product[]> => {
         const response = await graphQLRequest(GetProductRecommendationsQuery, {
             starts_with: `${language}/*`,
             with_tag: tags.toString(),

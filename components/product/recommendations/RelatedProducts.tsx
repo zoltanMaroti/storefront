@@ -10,11 +10,10 @@ import { PRODUCT_CARD_MAX_WIDTH } from '@/lib/constants';
 
 const RelatedProducts = async ({ product }: RelatedProductsProps) => {
     const locale = useLocale();
-    const { tag_list, uuid } = product;
+    const { tag_list } = product;
     const products = await CommerceApiClient.getProductRecommendations(
         tag_list,
-        locale,
-        uuid
+        locale
     );
 
     if (!product) {
