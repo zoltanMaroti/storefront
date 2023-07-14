@@ -49,3 +49,15 @@ export const createCheckoutSession = async (
         throw new Error(error as string);
     }
 };
+
+export const retrieveSession = async (
+    sessionId: string
+): Promise<Stripe.Checkout.Session> => {
+    const stripe = getStripeInstance();
+
+    try {
+        return await stripe.checkout.sessions.retrieve(sessionId);
+    } catch (error: any) {
+        throw new Error('Failed to retrieve checkout session: ', error);
+    }
+};
