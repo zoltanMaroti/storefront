@@ -1,5 +1,5 @@
 import { IPaymentApiClient } from '@/lib/interfaces';
-import { CheckoutSessionResponse, Product } from '@/lib/types';
+import { CheckoutSessionUrl, CheckoutSession, Product } from '@/lib/types';
 
 export const PaymentApiClient: IPaymentApiClient = {
     getCheckoutSessionUrl: async (products: Product[]): Promise<string> => {
@@ -15,8 +15,22 @@ export const PaymentApiClient: IPaymentApiClient = {
             throw new Error('Failed to fetch checkout session url');
         }
 
-        const data: CheckoutSessionResponse = await response.json();
+        const data: CheckoutSessionUrl = await response.json();
 
         return data.url;
+    },
+    getCheckoutSession: async (sessionId: string): Promise<CheckoutSession> => {
+        const response = await fetch(
+            `${process.env.BASE_URL}/api/payment/checkout/success?session_id=${sessionId}`,
+            {
+                method: 'GET',
+            }
+        );
+
+        if (!response.ok) {
+            throw new Error('Failed to fetch checkout session');
+        }
+
+        return await response.json();
     },
 };

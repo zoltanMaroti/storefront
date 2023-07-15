@@ -208,7 +208,7 @@ export type HeadingProps = {
 
 export type CheckoutRequestBody = Product[];
 
-export type CheckoutSessionResponse = { url: string };
+export type CheckoutSessionUrl = { url: string };
 
 export type BuyNowProps = {
     product: Product;
@@ -216,4 +216,12 @@ export type BuyNowProps = {
 
 export type CheckoutProps = {
     cart: Product[];
+};
+
+export type CheckoutSession = {
+    customer: {
+        name: string;
+        email: string;
+    };
+    order_number: string;
 };
