@@ -2,6 +2,7 @@ import { Product, ProductImage } from '@/lib/types';
 import { ReactImageGalleryItem } from 'react-image-gallery';
 import {
     CATEGORIES,
+    CENTS_MULTIPLIER,
     DEFAULT_CURRENCY,
     GALLERY_THUMBNAIL_HEIGHT,
 } from '@/lib/constants';
@@ -55,4 +56,21 @@ export const getCategoryNameBySlug = (slug: string) => {
     }
 
     return category.name;
+};
+
+export const getEnv = (env: string) => {
+    const value = process.env[env];
+
+    if (!value) {
+        throw new Error(`The environment variable ${env} is missing`);
+    }
+
+    return value;
+};
+
+export const convertToCents = (amount: number) => amount * CENTS_MULTIPLIER;
+
+export const setDefaultQuantity = (product: Product) => {
+    product.quantity = 1;
+    return product;
 };

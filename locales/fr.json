@@ -144,5 +144,14 @@
         "answer": "Vous pouvez joindre notre équipe de soutien à la clientèle en visitant notre page Contactez-nous sur notre site Web. Nous fournissons plusieurs canaux de communication, y compris le courrier électronique, le chat en direct et l'assistance téléphonique. Nos représentants de l'assistance sont disponibles pendant les heures ouvrables pour vous aider avec toutes les questions ou préoccupations que vous pourriez avoir."
       }
     }
+  },
+  "checkout": {
+    "Order confirmed": "Commande confirmée",
+    "Order number": "Numéro de commande",
+    "Thank you for your purchase": "Merci pour votre achat",
+    "You will receive an order confirmation email shortly with the expected delivery date to this email address": "Vous recevrez sous peu un e-mail de confirmation de commande avec la date de livraison prévue à cette adresse e-mail",
+    "Checkout cancelled": "Paiement annulé",
+    "This checkout has failed to complete": "Cette commande n'a pas abouti",
+    "If you having issues please contact our support": "Si vous rencontrez des problèmes, veuillez contacter notre support"
   }
 }

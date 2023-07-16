@@ -54,6 +54,10 @@ export const cart = {
 
 export const DEFAULT_CURRENCY = 'EUR';
 
+export const DEFAULT_SHIPPING_RATE = 15;
+
+export const DEFAULT_SHIPPING_PROVIDER = 'DHL';
+
 export enum SortDirection {
     ASCENDING = 'asd',
     DESCENDING = 'desc',
@@ -84,3 +88,5 @@ export const HERO_METADATA: ReactImageGalleryItem[] = [
         thumbnailTitle: 'View collection',
     },
 ];
+
+export const CENTS_MULTIPLIER = 100;

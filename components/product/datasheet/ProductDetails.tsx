@@ -1,7 +1,6 @@
 'use client';
 
 import { Product } from '@/lib/types';
-import Button from '@/components/common/button/Button';
 import React from 'react';
 import {
     AccordionLabel,
@@ -14,22 +13,18 @@ import Accordion from '@/components/common/accordion/Accordion';
 import { RxDimensions } from 'react-icons/rx';
 import { TbTexture, TbWashGentle } from 'react-icons/tb';
 import AddToCart from '@/components/product/cart/AddToCart';
-import { ButtonText } from '@/components/common/button/style';
 import Price from '@/components/common/price/Price';
+import BuyNow from '@/components/product/datasheet/BuyNow';
 
 const ProductDetails = ({ product }: { product: Product }) => {
     const t = useTranslations('common');
-
-    const onBuyNowClick = () => {};
 
     return (
         <ProductDetailsContainer>
             <Name>{product.content.name}</Name>
             <Price amount={parseFloat(product.content.price)} />
             <AddToCart product={product} />
-            <Button onClick={onBuyNowClick} loading={false} disabled={false}>
-                <ButtonText>{t('Buy now')}</ButtonText>
-            </Button>
+            <BuyNow product={product} />
             <Description>{product.content.description}</Description>
             <div>
                 <Accordion

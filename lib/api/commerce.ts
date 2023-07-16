@@ -10,6 +10,7 @@ import {
     searchProductQuery,
 } from '@/lib/queries/product';
 import { SortDirection } from '@/lib/constants';
+import { setDefaultQuantity } from '@/lib/utils';
 
 export const CommerceApiClient: ICommerceApiClient = {
     getProduct: async (slug, language): Promise<Product> => {
@@ -18,13 +19,13 @@ export const CommerceApiClient: ICommerceApiClient = {
             language,
         });
 
+        if (response.ProductItem) {
+            return setDefaultQuantity(response.ProductItem);
+        }
+
         return response.ProductItem;
     },
-    getProductRecommendations: async (
-        tags,
-        language,
-        uuid
-    ): Promise<Product[]> => {
+    getProductRecommendations: async (tags, language): Promise<Product[]> => {
         const response = await graphQLRequest(GetProductRecommendationsQuery, {
             starts_with: `${language}/*`,
             with_tag: tags.toString(),

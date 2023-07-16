@@ -144,5 +144,14 @@
         "answer": "You can reach our customer support team by visiting our Contact Us page on our website. We provide multiple channels of communication, including email, live chat, and phone support. Our support representatives are available during business hours to assist you with any questions or concerns you may have."
       }
     }
+  },
+  "checkout": {
+    "Order confirmed": "Order confirmed",
+    "Order number": "Order number",
+    "Thank you for your purchase": "Thank you for your purchase",
+    "You will receive an order confirmation email shortly with the expected delivery date to this email address": "You will receive an order confirmation email shortly with the expected delivery date to this email address",
+    "Checkout cancelled": "Checkout cancelled",
+    "This checkout has failed to complete": "This checkout has failed to complete",
+    "If you having issues please contact our support": "If you having issues please contact our support"
   }
 }
