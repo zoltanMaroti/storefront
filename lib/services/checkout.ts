@@ -1,7 +1,11 @@
 import Stripe from 'stripe';
 import { Product } from '@/lib/types';
 import { convertToCents, getEnv } from '@/lib/utils';
-import { DEFAULT_CURRENCY } from '@/lib/constants';
+import {
+    DEFAULT_CURRENCY,
+    DEFAULT_SHIPPING_PROVIDER,
+    DEFAULT_SHIPPING_RATE,
+} from '@/lib/constants';
 
 const getStripeInstance = () => {
     const apiKey = getEnv('PAYMENT_GATEWAY_SECRET_KEY');
@@ -38,6 +42,28 @@ export const createCheckoutSession = async (
         shipping_address_collection: {
             allowed_countries: ['LU', 'BE', 'DE', 'FR'],
         },
+        shipping_options: [
+            {
+                shipping_rate_data: {
+                    type: 'fixed_amount',
+                    fixed_amount: {
+                        amount: convertToCents(DEFAULT_SHIPPING_RATE),
+                        currency: DEFAULT_CURRENCY,
+                    },
+                    display_name: DEFAULT_SHIPPING_PROVIDER,
+                    delivery_estimate: {
+                        minimum: {
+                            unit: 'business_day',
+                            value: 1,
+                        },
+                        maximum: {
+                            unit: 'business_day',
+                            value: 3,
+                        },
+                    },
+                },
+            },
+        ],
         mode: 'payment',
         success_url: `${successUrl}?session_id={CHECKOUT_SESSION_ID}`,
         cancel_url: cancelUrl,
