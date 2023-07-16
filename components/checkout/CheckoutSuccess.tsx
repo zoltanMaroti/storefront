@@ -4,7 +4,7 @@ import React from 'react';
 import { CheckoutSession } from '@/lib/types';
 import { useTranslations } from 'next-intl';
 import {
-    CheckoutSuccessContainer,
+    CheckoutMessageContainer,
     OrderNumber,
     SuccessIcon,
 } from '@/components/checkout/style';
@@ -13,7 +13,7 @@ const CheckoutSuccess = ({ order_number, customer }: CheckoutSession) => {
     const t = useTranslations('checkout');
 
     return (
-        <CheckoutSuccessContainer>
+        <CheckoutMessageContainer>
             <SuccessIcon size={48} />
             <div>
                 <h1>{t('Order confirmed')}</h1>
@@ -33,7 +33,7 @@ const CheckoutSuccess = ({ order_number, customer }: CheckoutSession) => {
                 </p>
                 <p>{customer.email}</p>
             </div>
-        </CheckoutSuccessContainer>
+        </CheckoutMessageContainer>
     );
 };
 

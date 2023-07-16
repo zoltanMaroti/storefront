@@ -149,6 +149,9 @@
     "Order confirmed": "Bestellung bestätigt",
     "Order number": "Bestellnummer",
     "Thank you for your purchase": "Danke für Ihren Einkauf",
-    "You will receive an order confirmation email shortly with the expected delivery date to this email address": "Sie erhalten in Kürze eine Bestellbestätigungs-E-Mail mit dem voraussichtlichen Liefertermin an diese E-Mail-Adresse"
+    "You will receive an order confirmation email shortly with the expected delivery date to this email address": "Sie erhalten in Kürze eine Bestellbestätigungs-E-Mail mit dem voraussichtlichen Liefertermin an diese E-Mail-Adresse",
+    "Checkout cancelled": "Kasse abgebrochen",
+    "This checkout has failed to complete": "Dieser Checkout konnte nicht abgeschlossen werden",
+    "If you having issues please contact our support": "Bei Problemen wenden Sie sich bitte an unseren Support"
   }
 }
