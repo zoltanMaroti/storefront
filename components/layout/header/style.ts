@@ -4,7 +4,6 @@ import styled from '@emotion/styled';
 import Image from 'next/image';
 import { css } from '@emotion/react';
 import { screenSizes } from '@/lib/constants';
-import { FiChevronDown } from 'react-icons/fi';
 
 export const HeaderContainer = styled.header`
     background: var(--color-background-primary);
