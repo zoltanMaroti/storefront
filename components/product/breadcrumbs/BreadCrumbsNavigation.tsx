@@ -5,7 +5,7 @@ import { ProductBreadCrumbsProps } from '@/lib/types';
 import { useTranslations } from 'next-intl';
 import { capitalize } from '@/lib/utils';
 
-const ProductBreadCrumbs = ({
+const BreadCrumbsNavigation = ({
     name,
     slug,
     category,
@@ -14,13 +14,18 @@ const ProductBreadCrumbs = ({
 
     return (
         <BreadCrumbs>
+            <BreadCrumb href={'/'}>{t('Home')}</BreadCrumb>
             <BreadCrumb href={'/products'}>{t('Products')}</BreadCrumb>
-            <BreadCrumb href={`/products/${category}`}>
-                {t(capitalize(category))}
-            </BreadCrumb>
-            <BreadCrumb href={`/products/${slug}`}>{name}</BreadCrumb>
+            {category && (
+                <BreadCrumb href={`/products/${category}`}>
+                    {t(capitalize(category))}
+                </BreadCrumb>
+            )}
+            {name && slug && (
+                <BreadCrumb href={`/products/${slug}`}>{name}</BreadCrumb>
+            )}
         </BreadCrumbs>
     );
 };
 
-export default ProductBreadCrumbs;
+export default BreadCrumbsNavigation;

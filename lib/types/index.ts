@@ -231,7 +231,7 @@ export type BreadCrumbProps = GenericContainerProps & {
 };
 
 export type ProductBreadCrumbsProps = {
-    name: string;
-    slug: string;
-    category: string;
+    name?: string;
+    slug?: string;
+    category?: string;
 };

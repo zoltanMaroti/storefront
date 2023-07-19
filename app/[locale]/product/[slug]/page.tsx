@@ -8,7 +8,7 @@ import { Column, ProductContainer } from '@/app/[locale]/product/[slug]/style';
 import Gallery from '@/components/product/gallery/Gallery';
 import ProductDetails from '@/components/product/datasheet/ProductDetails';
 import RelatedProducts from '@/components/product/recommendations/RelatedProducts';
-import ProductBreadCrumbs from '@/components/product/breadcrumbs/ProductBreadCrumbs';
+import BreadCrumbsNavigation from '@/components/product/breadcrumbs/BreadCrumbsNavigation';
 
 const ProductPage = async ({ params: { slug } }: ProductPageProps) => {
     const locale = useLocale();
@@ -22,7 +22,7 @@ const ProductPage = async ({ params: { slug } }: ProductPageProps) => {
         <PageContainer>
             <ProductContainer>
                 <Column>
-                    <ProductBreadCrumbs
+                    <BreadCrumbsNavigation
                         slug={product.slug}
                         name={product.content.name}
                         category={product.content.category}
