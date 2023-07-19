@@ -28,9 +28,11 @@ import Link from 'next/link';
 import LanguageSelector from '@/components/layout/header/language/LanguageSelector';
 import { useSelector } from 'react-redux';
 import { selectCartSize } from '@/lib/selectors/cart';
+import { usePathname } from 'next/navigation';
 
 const Header = () => {
     const t = useTranslations('common');
+    const pathname = usePathname();
 
     const [isDropdownOpen, setDropdownOpen] = useState<boolean>(false);
     const [isMenuOpen, setMenuOpen] = useState<boolean>(false);
@@ -55,7 +57,9 @@ const Header = () => {
                     <NavLink
                         href={'#'}
                         renderer={HeaderNavItem}
-                        isActive={isDropdownOpen}
+                        isActive={
+                            isDropdownOpen || pathname.includes('products')
+                        }
                     >
                         <ShopMenuInnerContainer>
                             {t('Shop')}
