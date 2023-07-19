@@ -4,10 +4,11 @@ import { CommerceApiClient } from '@/lib/api/commerce';
 import { useLocale } from 'next-intl';
 import { notFound } from 'next/navigation';
 import PageContainer from '@/components/layout/container/PageContainer';
-import { ProductContainer } from '@/app/[locale]/product/[slug]/style';
+import { Column, ProductContainer } from '@/app/[locale]/product/[slug]/style';
 import Gallery from '@/components/product/gallery/Gallery';
 import ProductDetails from '@/components/product/datasheet/ProductDetails';
 import RelatedProducts from '@/components/product/recommendations/RelatedProducts';
+import ProductBreadCrumbs from '@/components/product/breadcrumbs/ProductBreadCrumbs';
 
 const ProductPage = async ({ params: { slug } }: ProductPageProps) => {
     const locale = useLocale();
@@ -20,7 +21,14 @@ const ProductPage = async ({ params: { slug } }: ProductPageProps) => {
     return (
         <PageContainer>
             <ProductContainer>
-                <Gallery images={product.content.images} />
+                <Column>
+                    <ProductBreadCrumbs
+                        slug={product.slug}
+                        name={product.content.name}
+                        category={product.content.category}
+                    />
+                    <Gallery images={product.content.images} />
+                </Column>
                 <ProductDetails product={product} />
             </ProductContainer>
             <Suspense>

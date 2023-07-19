@@ -12,3 +12,8 @@ export const ProductContainer = styled.div`
         grid-template-columns: 1fr;
     }
 `;
+
+export const Column = styled.div`
+    display: grid;
+    gap: var(--spacing-sm);
+`;
