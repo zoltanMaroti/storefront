@@ -15,20 +15,24 @@ import {
     LanguageSelectorContainer,
     CartIconContainer,
     CartSizeIndicator,
+    ShopMenuInnerContainer,
+    IconContainer,
 } from '@/components/layout/header/style';
 import { useTranslations } from 'next-intl';
 import Dropdown from '@/components/layout/dropdown/Dropdown';
 import { CATEGORIES } from '@/lib/constants';
-import { FiSearch, FiShoppingBag, FiMenu } from 'react-icons/fi';
+import { FiSearch, FiShoppingBag, FiMenu, FiChevronDown } from 'react-icons/fi';
 import MobileNavigation from '@/components/layout/navigation/MobileNavigation';
 import NavLink from '@/components/layout/navigation/NavLink';
 import Link from 'next/link';
 import LanguageSelector from '@/components/layout/header/language/LanguageSelector';
 import { useSelector } from 'react-redux';
 import { selectCartSize } from '@/lib/selectors/cart';
+import { usePathname } from 'next/navigation';
 
 const Header = () => {
     const t = useTranslations('common');
+    const pathname = usePathname();
 
     const [isDropdownOpen, setDropdownOpen] = useState<boolean>(false);
     const [isMenuOpen, setMenuOpen] = useState<boolean>(false);
@@ -53,9 +57,16 @@ const Header = () => {
                     <NavLink
                         href={'#'}
                         renderer={HeaderNavItem}
-                        isActive={isDropdownOpen}
+                        isActive={
+                            isDropdownOpen || pathname.includes('products')
+                        }
                     >
-                        {t('Shop')}
+                        <ShopMenuInnerContainer>
+                            {t('Shop')}
+                            <IconContainer isOpen={isDropdownOpen}>
+                                <FiChevronDown size={16} />
+                            </IconContainer>
+                        </ShopMenuInnerContainer>
                     </NavLink>
                     <Dropdown isActive={isDropdownOpen}>
                         <NavLink

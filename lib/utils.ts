@@ -74,3 +74,7 @@ export const setDefaultQuantity = (product: Product) => {
     product.quantity = 1;
     return product;
 };
+
+export const capitalize = (text: string) => {
+    return text.charAt(0).toUpperCase() + text.slice(1);
+};

@@ -225,3 +225,13 @@ export type CheckoutSession = {
     };
     order_number: string;
 };
+
+export type BreadCrumbProps = GenericContainerProps & {
+    href: string;
+};
+
+export type ProductBreadCrumbsProps = {
+    name?: string;
+    slug?: string;
+    category?: string;
+};

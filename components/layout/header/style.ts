@@ -89,6 +89,27 @@ export const ShopMenuItem = styled.li`
     position: relative;
 `;
 
+export const ShopMenuInnerContainer = styled.span`
+    display: flex;
+    align-items: center;
+`;
+
+export const IconContainer = styled.span<{ isOpen: boolean }>`
+    display: flex;
+    align-items: center;
+
+    transform: rotate(0deg);
+    transition: all 300ms ease-in-out;
+    will-change: auto;
+
+    ${({ isOpen }) =>
+        isOpen &&
+        css`
+            transform: rotate(-180deg);
+            transition: all 300ms ease-in-out;
+        `}
+`;
+
 export const MobileNavigationContainer = styled.div`
     visibility: hidden;
     display: flex;
