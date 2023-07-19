@@ -15,11 +15,13 @@ import {
     LanguageSelectorContainer,
     CartIconContainer,
     CartSizeIndicator,
+    ShopMenuInnerContainer,
+    IconContainer,
 } from '@/components/layout/header/style';
 import { useTranslations } from 'next-intl';
 import Dropdown from '@/components/layout/dropdown/Dropdown';
 import { CATEGORIES } from '@/lib/constants';
-import { FiSearch, FiShoppingBag, FiMenu } from 'react-icons/fi';
+import { FiSearch, FiShoppingBag, FiMenu, FiChevronDown } from 'react-icons/fi';
 import MobileNavigation from '@/components/layout/navigation/MobileNavigation';
 import NavLink from '@/components/layout/navigation/NavLink';
 import Link from 'next/link';
@@ -55,7 +57,12 @@ const Header = () => {
                         renderer={HeaderNavItem}
                         isActive={isDropdownOpen}
                     >
-                        {t('Shop')}
+                        <ShopMenuInnerContainer>
+                            {t('Shop')}
+                            <IconContainer isOpen={isDropdownOpen}>
+                                <FiChevronDown size={16} />
+                            </IconContainer>
+                        </ShopMenuInnerContainer>
                     </NavLink>
                     <Dropdown isActive={isDropdownOpen}>
                         <NavLink

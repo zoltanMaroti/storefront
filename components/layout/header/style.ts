@@ -4,6 +4,7 @@ import styled from '@emotion/styled';
 import Image from 'next/image';
 import { css } from '@emotion/react';
 import { screenSizes } from '@/lib/constants';
+import { FiChevronDown } from 'react-icons/fi';
 
 export const HeaderContainer = styled.header`
     background: var(--color-background-primary);
@@ -87,6 +88,27 @@ export const HeaderNavItem = styled.span<{ isActive?: boolean }>`
 
 export const ShopMenuItem = styled.li`
     position: relative;
+`;
+
+export const ShopMenuInnerContainer = styled.span`
+    display: flex;
+    align-items: center;
+`;
+
+export const IconContainer = styled.span<{ isOpen: boolean }>`
+    display: flex;
+    align-items: center;
+
+    transform: rotate(0deg);
+    transition: all 300ms ease-in-out;
+    will-change: auto;
+
+    ${({ isOpen }) =>
+        isOpen &&
+        css`
+            transform: rotate(-180deg);
+            transition: all 300ms ease-in-out;
+        `}
 `;
 
 export const MobileNavigationContainer = styled.div`
