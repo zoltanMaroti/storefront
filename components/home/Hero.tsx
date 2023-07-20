@@ -32,7 +32,7 @@ const Hero = () => {
                     alt={t(item.originalAlt) || t('Product')}
                 />
                 <Link href={item.thumbnailAlt || '/products'}>
-                    <Button width={'200px'}>{t(item.thumbnailTitle)}</Button>
+                    <Button width={'220px'}>{t(item.thumbnailTitle)}</Button>
                 </Link>
             </HeroItemContainer>
         );

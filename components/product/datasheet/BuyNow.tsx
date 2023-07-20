@@ -7,6 +7,7 @@ import Button from '@/components/common/button/Button';
 import { BuyNowProps } from '@/lib/types';
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/navigation';
+import { FiShoppingCart } from 'react-icons/fi';
 
 const BuyNow = ({ product }: BuyNowProps) => {
     const router = useRouter();
@@ -26,6 +27,8 @@ const BuyNow = ({ product }: BuyNowProps) => {
             onClick={onBuyNowClick}
             loading={isButtonDisabled}
             disabled={isButtonDisabled}
+            color={'var(--color-accent-primary)'}
+            Icon={FiShoppingCart}
         >
             <ButtonText>{t('Buy now')}</ButtonText>
         </Button>

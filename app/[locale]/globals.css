@@ -22,7 +22,9 @@
     --color-font-secondary: #6a6a6a;
     --color-danger: #cd5c5cff;
     --color-disabled: #717070;
-    --color-success: #24A854;
+    --color-success: #3ed168;
+    --color-accent-primary: #084653;
+    --color-accent-secondary: #9a8268;
 
     --screen-size-sm: 640px;
 
