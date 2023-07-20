@@ -9,9 +9,8 @@ export const HeaderContainer = styled.header`
     background: var(--color-background-primary);
     display: grid;
     grid-template-columns: 1fr 140px;
-    padding: var(--spacing-sm);
-    padding-right: var(--spacing-md);
-    gap: var(--spacing-sm);
+    padding: var(--spacing-xs) var(--spacing-md);
+    gap: var(--spacing-md);
     font-size: 13px;
     position: sticky;
     top: 0;
@@ -20,7 +19,7 @@ export const HeaderContainer = styled.header`
 
     @media screen and (max-width: ${screenSizes.SMALL}) {
         grid-template-columns: 80px 1fr 80px;
-        padding-right: unset;
+        padding: var(--spacing-xs) var(--spacing-sm);
     }
 `;
 
@@ -29,8 +28,9 @@ export const DesktopNavigation = styled.nav`
     list-style-type: none;
     align-items: flex-end;
     width: 100%;
-    max-width: 800px;
+    max-width: var(--max-width);
     gap: var(--spacing-md);
+    justify-content: space-between;
 
     @media screen and (max-width: ${screenSizes.SMALL}) {
         display: none;
@@ -39,9 +39,7 @@ export const DesktopNavigation = styled.nav`
 
 export const DesktopLogo = styled(Image)`
     max-width: 100%;
-    min-width: 120px;
     height: auto;
-    padding: 0 var(--spacing-sm);
 `;
 
 export const HeaderNavItem = styled.span<{ isActive?: boolean }>`
@@ -69,7 +67,7 @@ export const HeaderNavItem = styled.span<{ isActive?: boolean }>`
     &:hover::after,
     &:focus::after {
         opacity: 1;
-        transform: translate3d(0, 0.2em, 0);
+        transform: translate3d(0, 0.7em, 0);
     }
 
     ${({ isActive }) =>
@@ -77,7 +75,7 @@ export const HeaderNavItem = styled.span<{ isActive?: boolean }>`
         css`
             &::after {
                 opacity: 1;
-                transform: translate3d(0, 0.2em, 0);
+                transform: translate3d(0, 0.7em, 0);
             }
         `}
 `;
@@ -144,10 +142,10 @@ export const IconsContainer = styled.div`
 
 export const InnerContainer = styled.div`
     position: absolute;
-    bottom: -10px;
+    bottom: 5px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    align-items: center;
+    align-items: flex-end;
     justify-items: flex-end;
     height: 100%;
     width: 100%;
@@ -156,6 +154,8 @@ export const InnerContainer = styled.div`
 
     @media screen and (max-width: ${screenSizes.SMALL}) {
         bottom: unset;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
     }
 `;
 
@@ -184,4 +184,9 @@ export const CartSizeIndicator = styled.div`
     left: 15px;
     width: 20px;
     height: 20px;
+`;
+
+export const DesktopMenuContainer = styled.div`
+    display: flex;
+    gap: var(--spacing-sm);
 `;

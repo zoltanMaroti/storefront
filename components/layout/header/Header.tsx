@@ -17,6 +17,7 @@ import {
     CartSizeIndicator,
     ShopMenuInnerContainer,
     IconContainer,
+    DesktopMenuContainer,
 } from '@/components/layout/header/style';
 import { useTranslations } from 'next-intl';
 import Dropdown from '@/components/layout/dropdown/Dropdown';
@@ -54,53 +55,58 @@ const Header = () => {
                     <DesktopLogo
                         alt="Logo"
                         src={'/assets/logos/logo.png'}
-                        width={150}
-                        height={150}
+                        width={100}
+                        height={100}
                         priority
                     />
                 </Link>
-                <NavLink href={'/'} renderer={HeaderNavItem}>
-                    {t('Home')}
-                </NavLink>
-                <ShopMenuItem onMouseOver={onMouseOver} onMouseOut={onMouseOut}>
-                    <NavLink
-                        href={'#'}
-                        renderer={HeaderNavItem}
-                        isActive={
-                            isDropdownOpen || pathname.includes('products')
-                        }
+                <DesktopMenuContainer>
+                    <ShopMenuItem
+                        onMouseOver={onMouseOver}
+                        onMouseOut={onMouseOut}
                     >
-                        <ShopMenuInnerContainer>
-                            {t('Shop')}
-                            <IconContainer isOpen={isDropdownOpen}>
-                                <FiChevronDown size={16} />
-                            </IconContainer>
-                        </ShopMenuInnerContainer>
-                    </NavLink>
-                    <Dropdown isActive={isDropdownOpen}>
                         <NavLink
-                            href={'/products'}
-                            size={'var(--font-size-md)'}
+                            href={'#'}
+                            renderer={HeaderNavItem}
+                            isActive={
+                                isDropdownOpen || pathname.includes('products')
+                            }
                         >
-                            {t('All products')}
+                            <ShopMenuInnerContainer>
+                                {t('Shop')}
+                                <IconContainer isOpen={isDropdownOpen}>
+                                    <FiChevronDown size={16} />
+                                </IconContainer>
+                            </ShopMenuInnerContainer>
                         </NavLink>
-                        {CATEGORIES.map((category) => (
+                        <Dropdown isActive={isDropdownOpen}>
                             <NavLink
-                                key={category.slug}
-                                href={`/products/${category.slug}`}
+                                href={'/products'}
                                 size={'var(--font-size-md)'}
                             >
-                                {t(`${category.name}`)}
+                                {t('All products')}
                             </NavLink>
-                        ))}
-                    </Dropdown>
-                </ShopMenuItem>
-                <NavLink href={'/about'} renderer={HeaderNavItem}>
-                    {t('About us')}
-                </NavLink>
-                <NavLink href={'/faq'} renderer={HeaderNavItem}>
-                    {t('FAQ')}
-                </NavLink>
+                            {CATEGORIES.map((category) => (
+                                <NavLink
+                                    key={category.slug}
+                                    href={`/products/${category.slug}`}
+                                    size={'var(--font-size-md)'}
+                                >
+                                    {t(`${category.name}`)}
+                                </NavLink>
+                            ))}
+                        </Dropdown>
+                    </ShopMenuItem>
+                    <NavLink href={'/about'} renderer={HeaderNavItem}>
+                        {t('About us')}
+                    </NavLink>
+                    <NavLink href={'/faq'} renderer={HeaderNavItem}>
+                        {t('FAQ')}
+                    </NavLink>
+                    <NavLink href={'/contact'} renderer={HeaderNavItem}>
+                        {t('Contact')}
+                    </NavLink>
+                </DesktopMenuContainer>
             </DesktopNavigation>
             <MobileHeader>
                 <Link href={'/'}>
