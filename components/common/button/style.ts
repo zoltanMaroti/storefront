@@ -17,6 +17,7 @@ export const BaseButton = styled.button<{ width?: string }>`
     outline: none;
     border: none;
     width: 100%;
+    white-space: nowrap;
 
     ${({ width }) =>
         width &&
@@ -47,10 +48,17 @@ export const PrimaryButton = styled(BaseButton)<{ color?: string }>`
         `}
 `;
 
-export const SecondaryButton = styled(BaseButton)`
+export const SecondaryButton = styled(BaseButton)<{ color?: string }>`
     background: transparent;
     color: var(--color-font-primary);
     border: 1px solid var(--color-font-primary);
+
+    ${({ color }) =>
+        color &&
+        css`
+            color: ${color};
+            border: 1px solid ${color};
+        `}
 `;
 
 export const ButtonText = styled.p`

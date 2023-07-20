@@ -130,6 +130,7 @@ export type ButtonProps = {
     children: ReactNode;
     onClick?: () => void;
     color?: string;
+    Icon?: ElementType;
 };
 
 export type GenericSwiperProps<T> = {

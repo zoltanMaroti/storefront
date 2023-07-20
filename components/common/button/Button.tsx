@@ -13,6 +13,7 @@ const Button = ({
     onClick,
     loading,
     color,
+    Icon,
     variant = 'primary',
 }: ButtonProps) => {
     const Wrapper = variant === 'primary' ? PrimaryButton : SecondaryButton;
@@ -24,6 +25,7 @@ const Button = ({
             onClick={onClick}
             color={color}
         >
+            {Icon && !loading && <Icon size={18} />}
             {loading && <Spinner />}
             {children}
         </Wrapper>

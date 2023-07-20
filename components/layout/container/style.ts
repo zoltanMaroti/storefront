@@ -23,5 +23,6 @@ export const StyledPageContainer = styled.div<{
         center &&
         css`
             align-items: center;
+            justify-content: center;
         `}}
 `;
