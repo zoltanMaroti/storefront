@@ -8,10 +8,9 @@ import { screenSizes } from '@/lib/constants';
 export const HeaderContainer = styled.header`
     background: var(--color-background-primary);
     display: grid;
-    grid-template-columns: 140px 1fr 140px;
-    justify-items: center;
-    padding: var(--spacing-md);
-    padding-bottom: var(--spacing-sm);
+    grid-template-columns: 1fr 140px;
+    padding: var(--spacing-sm);
+    padding-right: var(--spacing-md);
     gap: var(--spacing-sm);
     font-size: 13px;
     position: sticky;
@@ -20,20 +19,18 @@ export const HeaderContainer = styled.header`
     border-bottom: 1px solid var(--color-background-secondary);
 
     @media screen and (max-width: ${screenSizes.SMALL}) {
-        padding: var(--spacing-sm);
         grid-template-columns: 80px 1fr 80px;
+        padding-right: unset;
     }
 `;
 
 export const DesktopNavigation = styled.nav`
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    display: flex;
     list-style-type: none;
-    justify-items: center;
     align-items: flex-end;
     width: 100%;
     max-width: 800px;
-    gap: var(--spacing-sm);
+    gap: var(--spacing-md);
 
     @media screen and (max-width: ${screenSizes.SMALL}) {
         display: none;
@@ -111,13 +108,12 @@ export const IconContainer = styled.span<{ isOpen: boolean }>`
 `;
 
 export const MobileNavigationContainer = styled.div`
-    visibility: hidden;
-    display: flex;
-    align-items: center;
+    display: none;
 
     @media screen and (max-width: ${screenSizes.SMALL}) {
-        visibility: visible;
+        display: flex;
         justify-content: flex-start;
+        align-items: center;
         width: 100%;
     }
 `;

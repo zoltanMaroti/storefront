@@ -50,6 +50,15 @@ const Header = () => {
                 <MobileNavigation isOpen={isMenuOpen} onClick={toggleMenu} />
             </MobileNavigationContainer>
             <DesktopNavigation>
+                <Link href={'/'}>
+                    <DesktopLogo
+                        alt="Logo"
+                        src={'/assets/logos/logo.png'}
+                        width={150}
+                        height={150}
+                        priority
+                    />
+                </Link>
                 <NavLink href={'/'} renderer={HeaderNavItem}>
                     {t('Home')}
                 </NavLink>
@@ -86,15 +95,6 @@ const Header = () => {
                         ))}
                     </Dropdown>
                 </ShopMenuItem>
-                <Link href={'/'}>
-                    <DesktopLogo
-                        alt="Logo"
-                        src={'/assets/logos/logo.png'}
-                        width={150}
-                        height={150}
-                        priority
-                    />
-                </Link>
                 <NavLink href={'/about'} renderer={HeaderNavItem}>
                     {t('About us')}
                 </NavLink>
