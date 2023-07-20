@@ -10,131 +10,137 @@ import {
     NavigationContainer,
 } from '@/app/[locale]/faq/style';
 import Link from 'next/link';
+import BreadCrumb from '@/components/layout/breadcrumbs/BreadCrumb';
+import BreadCrumbs from '@/components/layout/breadcrumbs/BreadCrumbs';
 
 const FaqPage = () => {
-    const t = useTranslations('faq');
+    const t = useTranslations();
 
     return (
         <PageContainer>
+            <BreadCrumbs>
+                <BreadCrumb href={'/'}>{t('common.Home')}</BreadCrumb>
+                <BreadCrumb href={'/faq'}>{t('common.FAQ')}</BreadCrumb>
+            </BreadCrumbs>
             <InnerContainer>
                 <NavigationContainer>
                     <h2>FAQ</h2>
-                    <Link href={'#order'}>{t('order.label')}</Link>
-                    <Link href={'#payment'}>{t('payment.label')}</Link>
-                    <Link href={'#shipping'}>{t('shipping.label')}</Link>
-                    <Link href={'#returns'}>{t('returns.label')}</Link>
-                    <Link href={'#care'}>{t('care.label')}</Link>
-                    <Link href={'#support'}>{t('support.label')}</Link>
+                    <Link href={'#order'}>{t('faq.order.label')}</Link>
+                    <Link href={'#payment'}>{t('faq.payment.label')}</Link>
+                    <Link href={'#shipping'}>{t('faq.shipping.label')}</Link>
+                    <Link href={'#returns'}>{t('faq.returns.label')}</Link>
+                    <Link href={'#care'}>{t('faq.care.label')}</Link>
+                    <Link href={'#support'}>{t('faq.support.label')}</Link>
                 </NavigationContainer>
                 <FaqContainer>
                     <div id={'order'}>
-                        <h2>{t('order.label')}</h2>
+                        <h2>{t('faq.order.label')}</h2>
                         <Accordion
-                            label={t('order.question_1.question')}
+                            label={t('faq.order.question_1.question')}
                             borderBottom={false}
                         >
-                            {t('order.question_1.answer')}
+                            {t('faq.order.question_1.answer')}
                         </Accordion>
                         <Accordion
-                            label={t('order.question_2.question')}
+                            label={t('faq.order.question_2.question')}
                             borderBottom={false}
                         >
-                            {t('order.question_2.answer')}
+                            {t('faq.order.question_2.answer')}
                         </Accordion>
-                        <Accordion label={t('order.question_3.question')}>
-                            {t('order.question_3.answer')}
+                        <Accordion label={t('faq.order.question_3.question')}>
+                            {t('faq.order.question_3.answer')}
                         </Accordion>
                     </div>
 
                     <div id={'payment'}>
-                        <h2>{t('payment.label')}</h2>
+                        <h2>{t('faq.payment.label')}</h2>
                         <Accordion
-                            label={t('payment.question_1.question')}
+                            label={t('faq.payment.question_1.question')}
                             borderBottom={false}
                         >
-                            {t('payment.question_1.answer')}
+                            {t('faq.payment.question_1.answer')}
                         </Accordion>
-                        <Accordion label={t('payment.question_2.question')}>
-                            {t('payment.question_2.answer')}
+                        <Accordion label={t('faq.payment.question_2.question')}>
+                            {t('faq.payment.question_2.answer')}
                         </Accordion>
                     </div>
 
                     <div id={'shipping'}>
-                        <h2>{t('shipping.label')}</h2>
+                        <h2>{t('faq.shipping.label')}</h2>
                         <Accordion
-                            label={t('shipping.question_1.question')}
+                            label={t('faq.shipping.question_1.question')}
                             borderBottom={false}
                         >
-                            {t('shipping.question_1.answer')}
+                            {t('faq.shipping.question_1.answer')}
                         </Accordion>
                         <Accordion
-                            label={t('shipping.question_2.question')}
+                            label={t('faq.shipping.question_2.question')}
                             borderBottom={false}
                         >
-                            {t('shipping.question_2.answer')}
+                            {t('faq.shipping.question_2.answer')}
                         </Accordion>
                         <Accordion
-                            label={t('shipping.question_3.question')}
+                            label={t('faq.shipping.question_3.question')}
                             borderBottom={false}
                         >
-                            {t('shipping.question_3.answer')}
+                            {t('faq.shipping.question_3.answer')}
                         </Accordion>
-                        <Accordion label={t('shipping.question_4.question')}>
-                            {t('shipping.question_4.answer')}
+                        <Accordion label={t('faq.hipping.question_4.question')}>
+                            {t('faq.shipping.question_4.answer')}
                         </Accordion>
                     </div>
 
                     <div id={'returns'}>
-                        <h2>{t('returns.label')}</h2>
-                        <Accordion label={t('returns.question_1.question')}>
-                            {t('returns.question_1.answer')}
+                        <h2>{t('faq.returns.label')}</h2>
+                        <Accordion label={t('faq.returns.question_1.question')}>
+                            {t('faq.returns.question_1.answer')}
                         </Accordion>
                     </div>
 
                     <div id={'care'}>
-                        <h2>{t('care.label')}</h2>
+                        <h2>{t('faq.care.label')}</h2>
                         <Accordion
-                            label={t('care.question_1.question')}
+                            label={t('faq.care.question_1.question')}
                             borderBottom={false}
                         >
-                            {t('care.question_1.answer')}
+                            {t('faq.care.question_1.answer')}
                         </Accordion>
                         <Accordion
-                            label={t('care.question_2.question')}
+                            label={t('faq.care.question_2.question')}
                             borderBottom={false}
                         >
-                            {t('care.question_2.answer')}
+                            {t('faq.care.question_2.answer')}
                         </Accordion>
                         <Accordion
-                            label={t('care.question_3.question')}
+                            label={t('faq.care.question_3.question')}
                             borderBottom={false}
                         >
-                            {t('care.question_3.answer')}
+                            {t('faq.care.question_3.answer')}
                         </Accordion>
                         <Accordion
-                            label={t('care.question_4.question')}
+                            label={t('faq.care.question_4.question')}
                             borderBottom={false}
                         >
-                            {t('care.question_4.answer')}
+                            {t('faq.care.question_4.answer')}
                         </Accordion>
                         <Accordion
-                            label={t('care.question_5.question')}
+                            label={t('faq.care.question_5.question')}
                             borderBottom={false}
                         >
-                            {t('care.question_5.answer')}
+                            {t('faq.care.question_5.answer')}
                         </Accordion>
-                        <Accordion label={t('care.question_6.question')}>
-                            {t('care.question_6.answer')}
+                        <Accordion label={t('faq.care.question_6.question')}>
+                            {t('faq.care.question_6.answer')}
                         </Accordion>
                     </div>
 
                     <div id={'support'}>
-                        <h2>{t('support.label')}</h2>
+                        <h2>{t('faq.support.label')}</h2>
                         <Accordion
-                            label={t('support.question_1.question')}
+                            label={t('faq.support.question_1.question')}
                             borderBottom={false}
                         >
-                            {t('support.question_1.answer')}
+                            {t('faq.support.question_1.answer')}
                         </Accordion>
                     </div>
                 </FaqContainer>
