@@ -40,7 +40,6 @@ export const ProductName = styled.h2`
     text-transform: uppercase;
     letter-spacing: var(--letter-spacing-sm);
     text-align: center;
-    margin-bottom: var(--spacing-xs);
     font-weight: 500;
 `;
 

@@ -234,4 +234,5 @@ export type ProductBreadCrumbsProps = {
     name?: string;
     slug?: string;
     category?: string;
+    renderHome?: boolean;
 };

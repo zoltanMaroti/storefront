@@ -9,12 +9,13 @@ const BreadCrumbsNavigation = ({
     name,
     slug,
     category,
+    renderHome = true,
 }: ProductBreadCrumbsProps) => {
     const t = useTranslations('common');
 
     return (
         <BreadCrumbs>
-            <BreadCrumb href={'/'}>{t('Home')}</BreadCrumb>
+            {renderHome && <BreadCrumb href={'/'}>{t('Home')}</BreadCrumb>}
             <BreadCrumb href={'/products'}>{t('Products')}</BreadCrumb>
             {category && (
                 <BreadCrumb href={`/products/${category}`}>
@@ -22,7 +23,7 @@ const BreadCrumbsNavigation = ({
                 </BreadCrumb>
             )}
             {name && slug && (
-                <BreadCrumb href={`/products/${slug}`}>{name}</BreadCrumb>
+                <BreadCrumb href={`/product/${slug}`}>{name}</BreadCrumb>
             )}
         </BreadCrumbs>
     );
