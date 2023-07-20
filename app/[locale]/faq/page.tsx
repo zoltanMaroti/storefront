@@ -85,7 +85,9 @@ const FaqPage = () => {
                         >
                             {t('faq.shipping.question_3.answer')}
                         </Accordion>
-                        <Accordion label={t('faq.hipping.question_4.question')}>
+                        <Accordion
+                            label={t('faq.shipping.question_4.question')}
+                        >
                             {t('faq.shipping.question_4.answer')}
                         </Accordion>
                     </div>

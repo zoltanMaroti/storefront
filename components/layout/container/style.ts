@@ -12,6 +12,7 @@ export const StyledPageContainer = styled.div<{
     gap: var(--spacing-md);
     padding: var(--spacing-md);
     min-height: 50vh;
+    background: var(--color-background-ternary);
 
     @media screen and (max-width: ${screenSizes.SMALL}) {
         padding: var(--spacing-sm);

@@ -7,6 +7,9 @@ import {
     ProductDetailsContainer,
     Description,
     Name,
+    ButtonsContainer,
+    Text,
+    PriceContainer,
 } from '@/components/product/datasheet/style';
 import { useTranslations } from 'next-intl';
 import Accordion from '@/components/common/accordion/Accordion';
@@ -21,44 +24,51 @@ const ProductDetails = ({ product }: { product: Product }) => {
 
     return (
         <ProductDetailsContainer>
-            <Name>{product.content.name}</Name>
-            <Price amount={parseFloat(product.content.price)} />
-            <AddToCart product={product} />
-            <BuyNow product={product} />
+            <div>
+                <Name>{product.content.name}</Name>
+                <PriceContainer>
+                    <Price amount={parseFloat(product.content.price)} />
+                </PriceContainer>
+            </div>
             <Description>{product.content.description}</Description>
+            <ButtonsContainer>
+                <AddToCart product={product} />
+                <BuyNow product={product} />
+            </ButtonsContainer>
             <div>
                 <Accordion
                     borderBottom={false}
+                    borderTop={false}
                     label={
                         <AccordionLabel>
                             <TbTexture />
-                            <Description>{t('Materials')}</Description>
+                            <Text>{t('Materials')}</Text>
                         </AccordionLabel>
                     }
                 >
-                    <Description>{product.content.materials}</Description>
+                    <Text>{product.content.materials}</Text>
                 </Accordion>
                 <Accordion
                     label={
                         <AccordionLabel>
                             <RxDimensions />
-                            <Description>{t('Dimensions')}</Description>
+                            <Text>{t('Dimensions')}</Text>
                         </AccordionLabel>
                     }
                 >
                     <div>
-                        <Description>
+                        <Text>
                             {t('Height')}: {product.content.height} cm
-                        </Description>
-                        <Description>
+                        </Text>
+                        <Text>
                             {t('Width')}: {product.content.width} cm
-                        </Description>
-                        <Description>
+                        </Text>
+                        <Text>
                             {t('Length')}: {product.content.length} cm
-                        </Description>
-                        <Description>
+                        </Text>
+                        <Text>
                             {t('Weight')}: {product.content.weight} gr
-                        </Description>
+                        </Text>
                     </div>
                 </Accordion>
                 <Accordion
@@ -66,13 +76,11 @@ const ProductDetails = ({ product }: { product: Product }) => {
                     label={
                         <AccordionLabel>
                             <TbWashGentle />
-                            <Description>{t('Care instructions')}</Description>
+                            <Text>{t('Care instructions')}</Text>
                         </AccordionLabel>
                     }
                 >
-                    <Description>
-                        {product.content.care_instructions}
-                    </Description>
+                    <Text>{product.content.care_instructions}</Text>
                 </Accordion>
             </div>
         </ProductDetailsContainer>
