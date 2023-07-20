@@ -188,5 +188,5 @@ export const CartSizeIndicator = styled.div`
 
 export const DesktopMenuContainer = styled.div`
     display: flex;
-    gap: var(--spacing-sm);
+    gap: var(--spacing-md);
 `;

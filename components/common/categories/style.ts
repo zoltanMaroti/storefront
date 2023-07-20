@@ -30,6 +30,7 @@ export const CategoryCard = styled(Link)`
     justify-content: center;
     position: relative;
     height: 30vh;
+    background-color: var(--color-background-secondary);
 
     @media screen and (max-width: ${screenSizes.SMALL}) {
         &:last-of-type {
@@ -43,7 +44,6 @@ export const CategoryImage = styled(Image)`
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: -1;
     border-radius: var(--border-radius-sm);
 `;
 
@@ -51,6 +51,7 @@ export const NameContainer = styled.div`
     background: var(--color-background-primary);
     padding: var(--spacing-xs) var(--spacing-md);
     letter-spacing: var(--letter-spacing-sm);
+    z-index: 1;
 `;
 
 export const Name = styled.p`

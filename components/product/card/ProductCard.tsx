@@ -1,12 +1,17 @@
 import React from 'react';
 import { ProductCardProps } from '@/lib/types';
 import {
-    Price,
     ProductCardContainer,
     ProductImage,
     ProductImageContainer,
-    ProductName,
+    Name,
+    PriceContainer,
 } from '@/components/product/card/style';
+import Price from '@/components/common/price/Price';
+
+const priceConfig = {
+    minimumFractionDigits: 0,
+};
 
 const ProductCard = ({ item, maxItemWidth }: ProductCardProps) => {
     return (
@@ -22,8 +27,13 @@ const ProductCard = ({ item, maxItemWidth }: ProductCardProps) => {
                 />
             </ProductImageContainer>
             <div>
-                <ProductName>{item.content.name}</ProductName>
-                <Price>€{item.content.price}</Price>
+                <Name>{item.content.name}</Name>
+                <PriceContainer>
+                    <Price
+                        amount={parseFloat(item.content.price)}
+                        config={priceConfig}
+                    />
+                </PriceContainer>
             </div>
         </ProductCardContainer>
     );

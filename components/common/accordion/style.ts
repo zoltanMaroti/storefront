@@ -60,6 +60,7 @@ export const AccordionContent = styled.div<{ isOpen: boolean }>`
     overflow: hidden;
     max-height: 0;
     transition: max-height 500ms cubic-bezier(0, 1, 0, 1);
+    color: var(--color-font-secondary);
     will-change: auto;
 
     ${({ isOpen }) =>

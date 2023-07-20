@@ -20,7 +20,7 @@ export const NavigationContainer = styled.nav`
     border-radius: var(--border-radius-sm);
     padding: var(--spacing-md);
     position: sticky;
-    top: 20vh;
+    top: 15vh;
     max-height: 290px;
     min-width: 250px;
     gap: var(--spacing-xs);

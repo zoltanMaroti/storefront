@@ -35,7 +35,7 @@ export const ProductImageContainer = styled.div`
     aspect-ratio: 1 / 1;
 `;
 
-export const ProductName = styled.h2`
+export const Name = styled.h2`
     font-size: var(--font-size-md);
     text-transform: uppercase;
     letter-spacing: var(--letter-spacing-sm);
@@ -43,6 +43,11 @@ export const ProductName = styled.h2`
     font-weight: 500;
 `;
 
-export const Price = styled(ProductName)`
+export const PriceContainer = styled.div`
     color: var(--color-font-secondary);
+    font-size: var(--font-size-md);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-sm);
+    text-align: center;
+    font-weight: 500;
 `;
