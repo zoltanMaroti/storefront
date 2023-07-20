@@ -26,6 +26,7 @@ const ProductPage = async ({ params: { slug } }: ProductPageProps) => {
                         slug={product.slug}
                         name={product.content.name}
                         category={product.content.category}
+                        renderHome={false}
                     />
                     <Gallery images={product.content.images} />
                 </Column>

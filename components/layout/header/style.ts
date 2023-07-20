@@ -8,11 +8,9 @@ import { screenSizes } from '@/lib/constants';
 export const HeaderContainer = styled.header`
     background: var(--color-background-primary);
     display: grid;
-    grid-template-columns: 140px 1fr 140px;
-    justify-items: center;
-    padding: var(--spacing-md);
-    padding-bottom: var(--spacing-sm);
-    gap: var(--spacing-sm);
+    grid-template-columns: 1fr 140px;
+    padding: var(--spacing-xs) var(--spacing-md);
+    gap: var(--spacing-md);
     font-size: 13px;
     position: sticky;
     top: 0;
@@ -20,20 +18,19 @@ export const HeaderContainer = styled.header`
     border-bottom: 1px solid var(--color-background-secondary);
 
     @media screen and (max-width: ${screenSizes.SMALL}) {
-        padding: var(--spacing-sm);
         grid-template-columns: 80px 1fr 80px;
+        padding: var(--spacing-xs) var(--spacing-sm);
     }
 `;
 
 export const DesktopNavigation = styled.nav`
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    display: flex;
     list-style-type: none;
-    justify-items: center;
     align-items: flex-end;
     width: 100%;
-    max-width: 800px;
-    gap: var(--spacing-sm);
+    max-width: var(--max-width);
+    gap: var(--spacing-md);
+    justify-content: space-between;
 
     @media screen and (max-width: ${screenSizes.SMALL}) {
         display: none;
@@ -42,9 +39,7 @@ export const DesktopNavigation = styled.nav`
 
 export const DesktopLogo = styled(Image)`
     max-width: 100%;
-    min-width: 120px;
     height: auto;
-    padding: 0 var(--spacing-sm);
 `;
 
 export const HeaderNavItem = styled.span<{ isActive?: boolean }>`
@@ -72,7 +67,7 @@ export const HeaderNavItem = styled.span<{ isActive?: boolean }>`
     &:hover::after,
     &:focus::after {
         opacity: 1;
-        transform: translate3d(0, 0.2em, 0);
+        transform: translate3d(0, 0.7em, 0);
     }
 
     ${({ isActive }) =>
@@ -80,7 +75,7 @@ export const HeaderNavItem = styled.span<{ isActive?: boolean }>`
         css`
             &::after {
                 opacity: 1;
-                transform: translate3d(0, 0.2em, 0);
+                transform: translate3d(0, 0.7em, 0);
             }
         `}
 `;
@@ -111,13 +106,12 @@ export const IconContainer = styled.span<{ isOpen: boolean }>`
 `;
 
 export const MobileNavigationContainer = styled.div`
-    visibility: hidden;
-    display: flex;
-    align-items: center;
+    display: none;
 
     @media screen and (max-width: ${screenSizes.SMALL}) {
-        visibility: visible;
+        display: flex;
         justify-content: flex-start;
+        align-items: center;
         width: 100%;
     }
 `;
@@ -148,10 +142,10 @@ export const IconsContainer = styled.div`
 
 export const InnerContainer = styled.div`
     position: absolute;
-    bottom: -10px;
+    bottom: 5px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    align-items: center;
+    align-items: flex-end;
     justify-items: flex-end;
     height: 100%;
     width: 100%;
@@ -160,6 +154,8 @@ export const InnerContainer = styled.div`
 
     @media screen and (max-width: ${screenSizes.SMALL}) {
         bottom: unset;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
     }
 `;
 
@@ -188,4 +184,9 @@ export const CartSizeIndicator = styled.div`
     left: 15px;
     width: 20px;
     height: 20px;
+`;
+
+export const DesktopMenuContainer = styled.div`
+    display: flex;
+    gap: var(--spacing-sm);
 `;

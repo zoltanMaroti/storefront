@@ -18,6 +18,7 @@ export const CurrentLanguage = styled.p`
 export const Language = styled.div<{ selected?: boolean }>`
     display: flex;
     gap: var(--spacing-xs);
+    line-height: 1.5;
 
     ${({ selected }) =>
         selected &&
