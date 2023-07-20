@@ -51,6 +51,7 @@ export const NameContainer = styled.div`
     background: var(--color-background-primary);
     padding: var(--spacing-xs) var(--spacing-md);
     letter-spacing: var(--letter-spacing-sm);
+    border-radius: var(--border-radius-sm);
     z-index: 1;
 `;
 

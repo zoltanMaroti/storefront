@@ -129,6 +129,7 @@ export type ButtonProps = {
     variant?: 'primary' | 'secondary';
     children: ReactNode;
     onClick?: () => void;
+    color?: string;
 };
 
 export type GenericSwiperProps<T> = {

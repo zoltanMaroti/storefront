@@ -26,6 +26,7 @@ const BuyNow = ({ product }: BuyNowProps) => {
             onClick={onBuyNowClick}
             loading={isButtonDisabled}
             disabled={isButtonDisabled}
+            color={'var(--color-success)'}
         >
             <ButtonText>{t('Buy now')}</ButtonText>
         </Button>

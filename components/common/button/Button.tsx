@@ -12,12 +12,18 @@ const Button = ({
     width,
     onClick,
     loading,
+    color,
     variant = 'primary',
 }: ButtonProps) => {
     const Wrapper = variant === 'primary' ? PrimaryButton : SecondaryButton;
 
     return (
-        <Wrapper disabled={disabled} width={width} onClick={onClick}>
+        <Wrapper
+            disabled={disabled}
+            width={width}
+            onClick={onClick}
+            color={color}
+        >
             {loading && <Spinner />}
             {children}
         </Wrapper>

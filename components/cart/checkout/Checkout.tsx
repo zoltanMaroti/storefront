@@ -6,6 +6,7 @@ import { useTranslations } from 'next-intl';
 import { CheckoutProps } from '@/lib/types';
 import useCheckoutSessionUrl from '@/lib/hooks/useCheckoutSessionUrl';
 import { useRouter } from 'next/navigation';
+import { ButtonText } from '@/components/common/button/style';
 
 const Checkout = ({ cart }: CheckoutProps) => {
     const router = useRouter();
@@ -26,8 +27,9 @@ const Checkout = ({ cart }: CheckoutProps) => {
             onClick={onClick}
             loading={isButtonDisabled}
             disabled={isButtonDisabled}
+            color={'var(--color-success)'}
         >
-            <p>{t('Check out')}</p>
+            <ButtonText>{t('Check out')}</ButtonText>
         </Button>
     );
 };
