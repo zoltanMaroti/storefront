@@ -5,6 +5,8 @@ import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { NavItem } from '@/components/layout/navigation/style';
 import React from 'react';
+import { useLocale } from 'next-intl';
+import { removeLocale } from '@/lib/utils';
 
 const NavLink = ({
     href,
@@ -16,11 +18,12 @@ const NavLink = ({
 }: NavLinkProps) => {
     const pathname = usePathname();
     const Wrapper = renderer;
+    const locale = useLocale();
 
     return (
-        <Link href={href}>
+        <Link href={`/${locale}${href}`}>
             <Wrapper
-                isActive={isActive || pathname === href}
+                isActive={isActive || removeLocale(pathname, locale) === href}
                 onClick={onClick}
                 size={size}
             >
