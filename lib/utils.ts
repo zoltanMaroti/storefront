@@ -78,3 +78,11 @@ export const setDefaultQuantity = (product: Product) => {
 export const capitalize = (text: string) => {
     return text.charAt(0).toUpperCase() + text.slice(1);
 };
+
+export const removeLocale = (url: string, locale: string) => {
+    if (url.includes(locale)) {
+        return url.slice(url.indexOf('/', 1));
+    }
+
+    return url;
+};

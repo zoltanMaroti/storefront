@@ -11,9 +11,11 @@ import Accordion from '@/components/common/accordion/Accordion';
 import { CATEGORIES } from '@/lib/constants';
 import NavLink from '@/components/layout/navigation/NavLink';
 import LanguageSelector from '@/components/layout/header/language/LanguageSelector';
+import { usePathname } from 'next/navigation';
 
 const MobileNavigation = ({ isOpen, onClick }: MobileNavigationProps) => {
     const t = useTranslations('common');
+    const pathname = usePathname();
 
     return (
         <nav>
@@ -24,7 +26,16 @@ const MobileNavigation = ({ isOpen, onClick }: MobileNavigationProps) => {
                     padding={false}
                     borderTop={false}
                     borderBottom={false}
-                    label={<AccordionLabel>{t('Shop')}</AccordionLabel>}
+                    label={
+                        <AccordionLabel>
+                            <NavLink
+                                href={'#'}
+                                isActive={pathname.includes('products')}
+                            >
+                                {t('Shop')}
+                            </NavLink>
+                        </AccordionLabel>
+                    }
                 >
                     <AccordionContent>
                         <NavLink
