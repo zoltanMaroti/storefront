@@ -180,7 +180,7 @@ export type InputBaseProps = {
     disabled?: boolean;
     icon?: ReactNode;
     onChange: (event: ChangeEvent<HTMLInputElement>) => void;
-    onClear: () => void;
+    onClear?: () => void;
 };
 
 export type SearchParams = {
