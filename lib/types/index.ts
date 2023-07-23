@@ -183,6 +183,11 @@ export type InputBaseProps = {
     onClear?: () => void;
 };
 
+export type TextAreaBaseProps = InputBaseProps & {
+    onChange: (event: ChangeEvent<HTMLTextAreaElement>) => void;
+    rows?: number;
+};
+
 export type SearchParams = {
     searchTerm: string;
     language: string;

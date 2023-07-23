@@ -39,3 +39,12 @@ export const StyledInput = styled.input<{ hasIcon?: boolean }>`
             padding-left: calc(var(--spacing-md) * 1.3);
         `}
 `;
+
+export const StyledTextArea = styled.textarea`
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius-sm);
+    border: 1px solid var(--color-font-primary);
+    font-family: inherit;
+    width: 100%;
+    font-size: var(--font-size-lg);
+`;
