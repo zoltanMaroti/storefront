@@ -154,5 +154,12 @@
     "Checkout cancelled": "Kasse abgebrochen",
     "This checkout has failed to complete": "Dieser Checkout konnte nicht abgeschlossen werden",
     "If you having issues please contact our support": "Bei Problemen wenden Sie sich bitte an unseren Support"
+  },
+  "contact": {
+    "Name": "Name",
+    "Message": "Nachricht",
+    "Send message": "Nachricht senden",
+    "Contact us": "Kontaktiere uns",
+    "Need assistance": "Brauche Unterstützung?"
   }
 }

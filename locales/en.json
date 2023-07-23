@@ -154,5 +154,12 @@
     "Checkout cancelled": "Checkout cancelled",
     "This checkout has failed to complete": "This checkout has failed to complete",
     "If you having issues please contact our support": "If you having issues please contact our support"
+  },
+  "contact": {
+    "Name": "Name",
+    "Message": "Message",
+    "Send message": "Send message",
+    "Contact us": "Contact us",
+    "Need assistance": "Need assistance?"
   }
 }

@@ -154,5 +154,12 @@
     "Checkout cancelled": "Paiement annulé",
     "This checkout has failed to complete": "Cette commande n'a pas abouti",
     "If you having issues please contact our support": "Si vous rencontrez des problèmes, veuillez contacter notre support"
+  },
+  "contact": {
+    "Name": "Nom",
+    "Message": "Message",
+    "Send message": "Envoyer le message",
+    "Contact us": "Contactez-nous",
+    "Need assistance": "Besoin d'assistance?"
   }
 }
