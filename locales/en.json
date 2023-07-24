@@ -167,6 +167,9 @@
     "Please enter your last name": "Please enter your last name",
     "Please enter your email address": "Please enter your email address",
     "Invalid email address": "Invalid email address",
-    "Please enter your message": "Please enter your message"
+    "Please enter your message": "Please enter your message",
+    "Thank you": "Thank you",
+    "Your message has been sent": "Your message has been sent",
+    "New message": "New message"
   }
 }

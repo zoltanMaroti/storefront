@@ -167,6 +167,9 @@
     "Please enter your last name": "Veuillez entrer votre nom de famille",
     "Please enter your email address": "Veuillez saisir votre adresse e-mail",
     "Invalid email address": "Adresse e-mail invalide",
-    "Please enter your message": "Veuillez entrer votre message"
+    "Please enter your message": "Veuillez entrer votre message",
+    "Thank you": "Merci",
+    "Your message has been sent": "Votre message a été envoyé",
+    "New message": "Nouveau message"
   }
 }

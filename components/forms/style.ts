@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { screenSizes } from '@/lib/constants';
+import { FiMail } from 'react-icons/fi';
 
 export const StyledForm = styled.form`
     display: flex;
@@ -27,4 +28,16 @@ export const Row = styled.div`
 export const ErrorMessage = styled.p`
     color: var(--color-danger);
     line-height: 2.5;
+`;
+
+export const MailIcon = styled(FiMail)`
+    color: var(--color-success);
+`;
+
+export const StatusContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+    text-align: center;
 `;

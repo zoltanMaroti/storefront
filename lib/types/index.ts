@@ -251,3 +251,7 @@ export type ContactFormValues = {
 export type FormErrorMessageProps = {
     error: string;
 };
+
+export type ContactFormSuccessProps = {
+    onClick: () => void;
+};

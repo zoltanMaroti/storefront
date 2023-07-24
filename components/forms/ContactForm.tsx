@@ -11,11 +11,12 @@ import { StyledInput, StyledTextArea } from '@/components/common/input/style';
 import FormErrorMessage from '@/components/forms/FormErrorMessage';
 import { validationRules } from '@/lib/constants';
 import useContactForm from '@/lib/hooks/useContactForm';
+import ContactFormSuccess from '@/components/forms/ContactFormSuccess';
 
 const ContactForm = () => {
     const t = useTranslations('contact');
     const {
-        reset,
+        reset: resetForm,
         register,
         handleSubmit,
         formState: { errors },
@@ -24,8 +25,17 @@ const ContactForm = () => {
     const contactFormMutation = useContactForm();
 
     const onSubmit = (contactForm: ContactFormValues) => {
-        contactFormMutation.mutateAsync(contactForm).then(() => reset());
+        contactFormMutation.mutateAsync(contactForm).then(() => resetForm());
     };
+
+    const handleReset = () => {
+        contactFormMutation.reset();
+        resetForm();
+    };
+
+    if (contactFormMutation.isSuccess) {
+        return <ContactFormSuccess onClick={handleReset} />;
+    }
 
     return (
         <StyledForm onSubmit={handleSubmit(onSubmit)}>
