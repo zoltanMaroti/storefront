@@ -24,19 +24,20 @@ const Input = ({
     };
 
     const onClickClear = () => {
-        onClear();
+        onClear && onClear();
         setValue('');
     };
 
     return (
         <InputContainer>
-            <IconContainer>{icon}</IconContainer>
+            {icon && <IconContainer>{icon}</IconContainer>}
             <StyledInput
                 type={type}
                 placeholder={placeholder}
                 disabled={disabled}
                 onChange={onChangeInput}
                 value={value}
+                hasIcon={!!icon}
             />
             {value && (
                 <ClearIconContainer>

@@ -154,5 +154,22 @@
     "Checkout cancelled": "Checkout cancelled",
     "This checkout has failed to complete": "This checkout has failed to complete",
     "If you having issues please contact our support": "If you having issues please contact our support"
+  },
+  "contact": {
+    "Name": "Name",
+    "Message": "Message",
+    "Send message": "Send message",
+    "Contact us": "Contact us",
+    "Need assistance": "Need assistance?",
+    "First name": "First name",
+    "Last name": "Last name",
+    "Please enter your first name": "Please enter your first name",
+    "Please enter your last name": "Please enter your last name",
+    "Please enter your email address": "Please enter your email address",
+    "Invalid email address": "Invalid email address",
+    "Please enter your message": "Please enter your message",
+    "Thank you": "Thank you",
+    "Your message has been sent": "Your message has been sent",
+    "New message": "New message"
   }
 }

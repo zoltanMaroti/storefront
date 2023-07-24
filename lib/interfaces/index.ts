@@ -1,4 +1,4 @@
-import { CheckoutSession, Product } from '@/lib/types';
+import { CheckoutSession, ContactFormValues, Product } from '@/lib/types';
 import { SortDirection } from '@/lib/constants';
 
 export interface ICommerceApiClient {
@@ -26,4 +26,8 @@ export interface ICommerceApiClient {
 export interface IPaymentApiClient {
     getCheckoutSessionUrl: (products: Product[]) => Promise<string>;
     getCheckoutSession: (sessionId: string) => Promise<CheckoutSession>;
+}
+
+export interface IEmailApiClient {
+    sendContactForm: (contactForm: ContactFormValues) => Promise<string>;
 }

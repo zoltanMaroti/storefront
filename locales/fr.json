@@ -154,5 +154,22 @@
     "Checkout cancelled": "Paiement annulé",
     "This checkout has failed to complete": "Cette commande n'a pas abouti",
     "If you having issues please contact our support": "Si vous rencontrez des problèmes, veuillez contacter notre support"
+  },
+  "contact": {
+    "Name": "Nom",
+    "Message": "Message",
+    "Send message": "Envoyer le message",
+    "Contact us": "Contactez-nous",
+    "Need assistance": "Besoin d'assistance?",
+    "First name": "Prénom",
+    "Last name": "Nom de famille",
+    "Please enter your first name": "Entrez votre prénom s'il vous plait",
+    "Please enter your last name": "Veuillez entrer votre nom de famille",
+    "Please enter your email address": "Veuillez saisir votre adresse e-mail",
+    "Invalid email address": "Adresse e-mail invalide",
+    "Please enter your message": "Veuillez entrer votre message",
+    "Thank you": "Merci",
+    "Your message has been sent": "Votre message a été envoyé",
+    "New message": "Nouveau message"
   }
 }

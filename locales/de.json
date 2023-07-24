@@ -154,5 +154,22 @@
     "Checkout cancelled": "Kasse abgebrochen",
     "This checkout has failed to complete": "Dieser Checkout konnte nicht abgeschlossen werden",
     "If you having issues please contact our support": "Bei Problemen wenden Sie sich bitte an unseren Support"
+  },
+  "contact": {
+    "Name": "Name",
+    "Message": "Nachricht",
+    "Send message": "Nachricht senden",
+    "Contact us": "Kontaktiere uns",
+    "Need assistance": "Brauche Unterstützung?",
+    "First name": "Vorname",
+    "Last name": "Nachname",
+    "Please enter your first name": "Bitte geben Sie Ihren Vornamen ein",
+    "Please enter your last name": "Bitte geben Sie ihren Nachnamen ein",
+    "Please enter your email address": "Geben Sie bitte Ihre Email-Adresse ein",
+    "Invalid email address": "Ungültige E-Mail-Adresse",
+    "Please enter your message": "Bitte gib deine Nachricht ein",
+    "Thank you": "Danke",
+    "Your message has been sent": "Ihre Nachricht wurde gesendet",
+    "New message": "Neue Nachricht"
   }
 }

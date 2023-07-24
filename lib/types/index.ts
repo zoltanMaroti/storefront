@@ -1,8 +1,8 @@
 import {
     ReactNode,
     ElementType,
-    HTMLInputTypeAttribute,
     ChangeEvent,
+    InputHTMLAttributes,
 } from 'react';
 import { SortDirection } from '@/lib/constants';
 
@@ -174,13 +174,15 @@ export type ProductPageTitleProps = {
     category?: string;
 };
 
-export type InputBaseProps = {
-    type: HTMLInputTypeAttribute;
-    placeholder?: string;
-    disabled?: boolean;
+export type InputBaseProps = InputHTMLAttributes<HTMLInputElement> & {
     icon?: ReactNode;
     onChange: (event: ChangeEvent<HTMLInputElement>) => void;
-    onClear: () => void;
+    onClear?: () => void;
+};
+
+export type TextAreaBaseProps = InputBaseProps & {
+    onChange: (event: ChangeEvent<HTMLTextAreaElement>) => void;
+    rows?: number;
 };
 
 export type SearchParams = {
@@ -237,4 +239,19 @@ export type ProductBreadCrumbsProps = {
     slug?: string;
     category?: string;
     renderHome?: boolean;
+};
+
+export type ContactFormValues = {
+    firstName: string;
+    lastName: string;
+    email: string;
+    message: string;
+};
+
+export type FormErrorMessageProps = {
+    error: string;
+};
+
+export type ContactFormSuccessProps = {
+    onClick: () => void;
 };
