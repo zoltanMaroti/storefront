@@ -10,17 +10,21 @@ import { ContactFormValues } from '@/lib/types';
 import { StyledInput, StyledTextArea } from '@/components/common/input/style';
 import FormErrorMessage from '@/components/forms/FormErrorMessage';
 import { validationRules } from '@/lib/constants';
+import useContactForm from '@/lib/hooks/useContactForm';
 
 const ContactForm = () => {
     const t = useTranslations('contact');
     const {
+        reset,
         register,
         handleSubmit,
         formState: { errors },
     } = useForm<ContactFormValues>();
 
-    const onSubmit = (values: ContactFormValues) => {
-        // TODO create mutation to submit contact form
+    const contactFormMutation = useContactForm();
+
+    const onSubmit = (contactForm: ContactFormValues) => {
+        contactFormMutation.mutateAsync(contactForm).then(() => reset());
     };
 
     return (
@@ -76,7 +80,11 @@ const ContactForm = () => {
                     <FormErrorMessage error={t(errors.message.message)} />
                 )}
             </Row>
-            <Button width={'250px'}>
+            <Button
+                width={'250px'}
+                disabled={contactFormMutation.isLoading}
+                loading={contactFormMutation.isLoading}
+            >
                 <ButtonText>{t('Send message')}</ButtonText>
             </Button>
         </StyledForm>
