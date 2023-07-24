@@ -160,6 +160,13 @@
     "Message": "Message",
     "Send message": "Envoyer le message",
     "Contact us": "Contactez-nous",
-    "Need assistance": "Besoin d'assistance?"
+    "Need assistance": "Besoin d'assistance?",
+    "First name": "Prénom",
+    "Last name": "Nom de famille",
+    "Please enter your first name": "Entrez votre prénom s'il vous plait",
+    "Please enter your last name": "Veuillez entrer votre nom de famille",
+    "Please enter your email address": "Veuillez saisir votre adresse e-mail",
+    "Invalid email address": "Adresse e-mail invalide",
+    "Please enter your message": "Veuillez entrer votre message"
   }
 }

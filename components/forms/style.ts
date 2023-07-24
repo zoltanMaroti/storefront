@@ -18,3 +18,13 @@ export const Column = styled.div`
         grid-template-columns: 1fr;
     }
 `;
+
+export const Row = styled.div`
+    width: 100%;
+    line-height: 1;
+`;
+
+export const ErrorMessage = styled.p`
+    color: var(--color-danger);
+    line-height: 2.5;
+`;

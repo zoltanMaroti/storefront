@@ -25,12 +25,16 @@ export const StyledClearIcon = styled(FiX)`
     cursor: pointer;
 `;
 
-export const StyledInput = styled.input<{ hasIcon?: boolean }>`
+export const StyledInput = styled.input<{
+    hasIcon?: boolean;
+    hasError?: boolean;
+}>`
     padding: var(--spacing-sm);
     border-radius: var(--border-radius-sm);
     border: 1px solid var(--color-font-primary);
     font-family: inherit;
     width: 100%;
+    height: max-content;
     font-size: var(--font-size-lg);
 
     ${({ hasIcon }) =>
@@ -38,13 +42,25 @@ export const StyledInput = styled.input<{ hasIcon?: boolean }>`
         css`
             padding-left: calc(var(--spacing-md) * 1.3);
         `}
+
+    ${({ hasError }) =>
+        hasError &&
+        css`
+            border-color: var(--color-danger);
+        `}
 `;
 
-export const StyledTextArea = styled.textarea`
+export const StyledTextArea = styled.textarea<{ hasError?: boolean }>`
     padding: var(--spacing-sm);
     border-radius: var(--border-radius-sm);
     border: 1px solid var(--color-font-primary);
     font-family: inherit;
     width: 100%;
     font-size: var(--font-size-lg);
+
+    ${({ hasError }) =>
+        hasError &&
+        css`
+            border-color: var(--color-danger);
+        `}
 `;

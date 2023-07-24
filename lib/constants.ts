@@ -90,3 +90,34 @@ export const HERO_METADATA: ReactImageGalleryItem[] = [
 ];
 
 export const CENTS_MULTIPLIER = 100;
+
+export const validationRules = {
+    firstName: {
+        required: {
+            value: true,
+            message: 'Please enter your first name',
+        },
+    },
+    lastName: {
+        required: {
+            value: true,
+            message: 'Please enter your last name',
+        },
+    },
+    email: {
+        required: {
+            value: true,
+            message: 'Please enter your email address',
+        },
+        pattern: {
+            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+            message: 'Invalid email address',
+        },
+    },
+    message: {
+        required: {
+            value: true,
+            message: 'Please enter your message',
+        },
+    },
+};
