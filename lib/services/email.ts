@@ -6,7 +6,7 @@ export const sendEmail = async (
     from: string,
     replyTo: string,
     subject: string,
-    text: string
+    html: string
 ) => {
     Sendgrid.setApiKey(getEnv('EMAIL_PROVIDER_API_KEY'));
 
@@ -14,8 +14,8 @@ export const sendEmail = async (
         to,
         from,
         subject,
-        text,
         replyTo,
+        html,
     };
 
     try {
