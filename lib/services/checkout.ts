@@ -87,3 +87,21 @@ export const retrieveSession = async (
         throw new Error('Failed to retrieve checkout session: ', error);
     }
 };
+
+export const verifyStripeSignature = (
+    signature: string,
+    payload: any
+): Stripe.Event => {
+    const stripe = getStripeInstance();
+    const secret = getEnv('PAYMENT_GATEWAY_WEBHOOK_ENDPOINT_SECRET');
+
+    try {
+        return stripe.webhooks.constructEvent(payload, signature, secret);
+    } catch (error: any) {
+        throw new Error('Stripe signature verification failed: ', error);
+    }
+};
+
+export const onCheckoutCompleted = async (session: Stripe.Checkout.Session) => {
+    console.log(session);
+};

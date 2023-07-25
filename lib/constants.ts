@@ -121,3 +121,9 @@ export const validationRules = {
         },
     },
 };
+
+export enum StripeWebhookEvents {
+    AsyncPaymentSuccess = 'checkout.session.async_payment_succeeded',
+    Completed = 'checkout.session.completed',
+    PaymentFailed = 'checkout.session.async_payment_failed',
+}
