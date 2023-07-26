@@ -88,6 +88,26 @@ export const retrieveSession = async (
     }
 };
 
+export const getLineItems = async (
+    sessionId: string
+): Promise<Stripe.LineItem[]> => {
+    const stripe = getStripeInstance();
+
+    return await new Promise((resolve, reject) => {
+        stripe.checkout.sessions.listLineItems(
+            sessionId,
+            { limit: 100 },
+            // @ts-ignore
+            (error, lineItems) => {
+                if (error) {
+                    return reject(error);
+                }
+                resolve(lineItems);
+            }
+        );
+    });
+};
+
 export const verifyStripeSignature = (
     signature: string,
     payload: any
@@ -103,5 +123,5 @@ export const verifyStripeSignature = (
 };
 
 export const onCheckoutCompleted = async (session: Stripe.Checkout.Session) => {
-    console.log(session);
+    const lineItems = await getLineItems(session.id);
 };
