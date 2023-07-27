@@ -5,6 +5,7 @@ import {
     InputHTMLAttributes,
 } from 'react';
 import { SortDirection } from '@/lib/constants';
+import Stripe from 'stripe';
 
 export type Locale = 'en' | 'fr' | 'de';
 
@@ -254,4 +255,18 @@ export type FormErrorMessageProps = {
 
 export type ContactFormSuccessProps = {
     onClick: () => void;
+};
+
+export type OrderConfirmedEmailProps = {
+    id: string;
+    createdAt: number;
+    currency: string | null;
+    amountTotal: number | null;
+    amountSubtotal: number | null;
+    customerDetails: Stripe.Checkout.Session.CustomerDetails | null;
+    shippingDetails: Stripe.Checkout.Session.ShippingDetails | null;
+    shippingCost: Stripe.Checkout.Session.ShippingCost | null;
+    lineItems: Stripe.LineItem[] | undefined;
+    paymentMethod: Stripe.PaymentMethod;
+    locale: Locale;
 };
