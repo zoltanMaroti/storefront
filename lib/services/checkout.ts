@@ -6,6 +6,9 @@ import {
     DEFAULT_SHIPPING_PROVIDER,
     DEFAULT_SHIPPING_RATE,
 } from '@/lib/constants';
+import OrderConfirmedEmail from '@/emails/OrderConfirmedEmail';
+import { render } from '@react-email/render';
+import { sendEmail } from '@/lib/services/email';
 
 const getStripeInstance = () => {
     const apiKey = getEnv('PAYMENT_GATEWAY_SECRET_KEY');
@@ -77,35 +80,16 @@ export const createCheckoutSession = async (
 };
 
 export const retrieveSession = async (
-    sessionId: string
+    sessionId: string,
+    config?: Stripe.Checkout.SessionRetrieveParams
 ): Promise<Stripe.Checkout.Session> => {
     const stripe = getStripeInstance();
 
     try {
-        return await stripe.checkout.sessions.retrieve(sessionId);
+        return await stripe.checkout.sessions.retrieve(sessionId, config);
     } catch (error: any) {
         throw new Error('Failed to retrieve checkout session: ', error);
     }
-};
-
-export const getLineItems = async (
-    sessionId: string
-): Promise<Stripe.LineItem[]> => {
-    const stripe = getStripeInstance();
-
-    return await new Promise((resolve, reject) => {
-        stripe.checkout.sessions.listLineItems(
-            sessionId,
-            { limit: 100 },
-            // @ts-ignore
-            (error, lineItems) => {
-                if (error) {
-                    return reject(error);
-                }
-                resolve(lineItems);
-            }
-        );
-    });
 };
 
 export const verifyStripeSignature = (
@@ -122,6 +106,54 @@ export const verifyStripeSignature = (
     }
 };
 
-export const onCheckoutCompleted = async (session: Stripe.Checkout.Session) => {
-    const lineItems = await getLineItems(session.id);
+export const onCheckoutCompleted = async (sessionId: string) => {
+    const session = await retrieveSession(sessionId, {
+        expand: [
+            'line_items',
+            'payment_intent',
+            'payment_intent.payment_method',
+        ],
+    });
+
+    const {
+        id,
+        currency,
+        created,
+        amount_total,
+        amount_subtotal,
+        customer_details,
+        shipping_details,
+        shipping_cost,
+        line_items,
+        // @ts-ignore
+        payment_intent: { payment_method },
+    } = session;
+
+    if (!customer_details?.email) {
+        throw new Error('Customer email not found');
+    }
+
+    const html = render(
+        OrderConfirmedEmail({
+            id,
+            currency,
+            createdAt: created,
+            amountTotal: amount_total,
+            amountSubtotal: amount_subtotal,
+            customerDetails: customer_details,
+            shippingDetails: shipping_details,
+            shippingCost: shipping_cost,
+            lineItems: line_items?.data,
+            paymentMethod: payment_method,
+            locale: 'en',
+        })
+    );
+
+    await sendEmail(
+        customer_details?.email,
+        getEnv('EMAIL_ADDRESS'),
+        getEnv('EMAIL_ADDRESS'),
+        'Order confirmed',
+        html
+    );
 };
