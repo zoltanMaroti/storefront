@@ -12,19 +12,9 @@ import {
     Column,
     Hr,
 } from '@react-email/components';
+import { formatAmount, timestampToDateTime } from './components/helpers';
 
-export const timestampToDateTime = (timestamp: number) =>
-    new Date(timestamp * 1000).toLocaleString();
-
-export const formatAmount = (locale: string, amount: number, currency: string | null) => {
-    const amountInCents = amount / 100;
-    return new Intl.NumberFormat(locale, {
-        style: 'currency',
-        currency: currency || 'EUR',
-    }).format(amountInCents);
-};
-
-const OrderConfirmedEmail = ({
+const OrderConfirmationEmail = ({
     id,
     currency,
     createdAt,
@@ -45,8 +35,8 @@ const OrderConfirmedEmail = ({
                 <Container>
                     <Section>
                         <Heading style={styles.heading}>Order confirmation</Heading>
-                        <Text>Hello {customerDetails?.name},</Text>
-                        <Text>
+                        <Text style={styles.text}>Hello {customerDetails?.name},</Text>
+                        <Text style={styles.text}>
                             We&apos;ve received your order and will contact you as soon as your
                             package is shipped. You can find your purchase information below.
                         </Text>
@@ -63,7 +53,7 @@ const OrderConfirmedEmail = ({
                             <Text style={styles.label}>Payment method</Text>
                             {paymentMethod?.card && (
                                 <Text style={styles.last}>
-                                    {paymentMethod?.card.brand} - {paymentMethod?.card.last4}
+                                    {paymentMethod?.card.brand} - ending with {paymentMethod?.card.last4}
                                 </Text>
                             )}
                             {shippingDetails && (
@@ -191,9 +181,10 @@ const OrderConfirmedEmail = ({
                                 </Text>
                             </Column>
                         </Section>
-                        <Text style={styles.heading}>
+                        <Hr />
+                        <Text style={styles.footer}>
                             {/* TODO replace email */}
-                            If you have any questions, contact us at email@email.com
+                            If you have any questions, reply to this email or contact us at email@email.com
                         </Text>
                     </Section>
                 </Container>
@@ -205,9 +196,11 @@ const OrderConfirmedEmail = ({
 const styles = {
     body: {
         background: 'white',
+        color: '#777777',
     } as React.CSSProperties,
     heading: {
         textAlign: 'center',
+        color: '#000000'
     } as React.CSSProperties,
     amount: {
         textAlign: 'right',
@@ -220,10 +213,13 @@ const styles = {
     total: {
         textTransform: 'uppercase',
         fontWeight: 700,
+        color: '#555555'
     } as React.CSSProperties,
     label: {
         textTransform: 'uppercase',
+        fontWeight: 700,
         margin: 0,
+        color: '#555555'
     } as React.CSSProperties,
     text: {
         margin: 0,
@@ -231,6 +227,9 @@ const styles = {
     last: {
         marginTop: 0,
     } as React.CSSProperties,
+    footer: {
+        textAlign: 'center'
+    } as React.CSSProperties,
 };
 
-export default OrderConfirmedEmail;
+export default OrderConfirmationEmail;
