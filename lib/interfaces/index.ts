@@ -24,7 +24,10 @@ export interface ICommerceApiClient {
 }
 
 export interface IPaymentApiClient {
-    getCheckoutSessionUrl: (products: Product[]) => Promise<string>;
+    getCheckoutSessionUrl: (
+        products: Product[],
+        locale: string
+    ) => Promise<string>;
     getCheckoutSession: (sessionId: string) => Promise<CheckoutSession>;
 }
 

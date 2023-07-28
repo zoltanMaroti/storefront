@@ -12,19 +12,10 @@ import {
     Column,
     Hr,
 } from '@react-email/components';
+import { formatAmount, timestampToDateTime } from './components/helpers';
+import i18n from './components/locales/i18n.json';
 
-export const timestampToDateTime = (timestamp: number) =>
-    new Date(timestamp * 1000).toLocaleString();
-
-export const formatAmount = (locale: string, amount: number, currency: string | null) => {
-    const amountInCents = amount / 100;
-    return new Intl.NumberFormat(locale, {
-        style: 'currency',
-        currency: currency || 'EUR',
-    }).format(amountInCents);
-};
-
-const OrderConfirmedEmail = ({
+const OrderConfirmationEmail = ({
     id,
     currency,
     createdAt,
@@ -40,35 +31,35 @@ const OrderConfirmedEmail = ({
     return (
         <Html>
             <Head />
-            <Preview>Order confirmed</Preview>
+            <Preview>{i18n[locale]['Order confirmed']}</Preview>
             <Body style={styles.body}>
                 <Container>
                     <Section>
-                        <Heading style={styles.heading}>Order confirmation</Heading>
-                        <Text>Hello {customerDetails?.name},</Text>
-                        <Text>
-                            We&apos;ve received your order and will contact you as soon as your
-                            package is shipped. You can find your purchase information below.
+                        <Heading style={styles.heading}>{i18n[locale]['Order confirmed']}</Heading>
+                        <Text style={styles.text}>{i18n[locale]['Hello']} {customerDetails?.name},</Text>
+                        <Text style={styles.text}>
+                            {i18n[locale]["We've received your order and will contact you as soon as your package is shipped"]}{' '}
+                            {i18n[locale]['You can find your purchase information below']}
                         </Text>
                     </Section>
                     <Section>
                         <Heading as={'h2'} style={styles.heading}>
-                            Summary
+                            {i18n[locale]['Summary']}
                         </Heading>
                         <Section>
-                            <Text style={styles.label}>Order number</Text>
+                            <Text style={styles.label}>{i18n[locale]['Order number']}</Text>
                             <Text style={styles.last}>{id}</Text>
-                            <Text style={styles.label}>Date of order</Text>
+                            <Text style={styles.label}>{i18n[locale]['Date of order']}</Text>
                             <Text style={styles.last}>{timestampToDateTime(createdAt)}</Text>
-                            <Text style={styles.label}>Payment method</Text>
+                            <Text style={styles.label}>{i18n[locale]['Payment method']}</Text>
                             {paymentMethod?.card && (
                                 <Text style={styles.last}>
-                                    {paymentMethod?.card.brand} - {paymentMethod?.card.last4}
+                                    {paymentMethod?.card.brand} - {i18n[locale]['Ending with']} {paymentMethod?.card.last4}
                                 </Text>
                             )}
                             {shippingDetails && (
                                 <Section>
-                                    <Text style={styles.label}>Shipping</Text>
+                                    <Text style={styles.label}>{i18n[locale]['Shipping']}</Text>
                                     {shippingDetails.name && (
                                         <Text style={styles.text}>{shippingDetails.name}</Text>
                                     )}
@@ -101,7 +92,7 @@ const OrderConfirmedEmail = ({
                             )}
                             {paymentMethod?.billing_details && (
                                 <Section>
-                                    <Text style={styles.label}>Billing</Text>
+                                    <Text style={styles.label}>{i18n[locale]['Billing']}</Text>
                                     {paymentMethod?.billing_details.name && (
                                         <Text style={styles.text}>
                                             {paymentMethod.billing_details.name}
@@ -173,9 +164,9 @@ const OrderConfirmedEmail = ({
                         <Hr />
                         <Section>
                             <Column>
-                                <Text>Subtotal</Text>
-                                <Text>Shipping</Text>
-                                <Text style={styles.total}>Total</Text>
+                                <Text>{i18n[locale]['Subtotal']}</Text>
+                                <Text>{i18n[locale]['Shipping']}</Text>
+                                <Text style={styles.total}>{i18n[locale]['Total']}</Text>
                             </Column>
                             <Column>
                                 <Text style={styles.amount}>
@@ -191,9 +182,10 @@ const OrderConfirmedEmail = ({
                                 </Text>
                             </Column>
                         </Section>
-                        <Text style={styles.heading}>
+                        <Hr />
+                        <Text style={styles.footer}>
                             {/* TODO replace email */}
-                            If you have any questions, contact us at email@email.com
+                            {i18n[locale]['If you have any questions, reply to this email or contact us at']}{' '}email@email.com
                         </Text>
                     </Section>
                 </Container>
@@ -205,9 +197,11 @@ const OrderConfirmedEmail = ({
 const styles = {
     body: {
         background: 'white',
+        color: '#777777',
     } as React.CSSProperties,
     heading: {
         textAlign: 'center',
+        color: '#000000'
     } as React.CSSProperties,
     amount: {
         textAlign: 'right',
@@ -220,10 +214,13 @@ const styles = {
     total: {
         textTransform: 'uppercase',
         fontWeight: 700,
+        color: '#555555'
     } as React.CSSProperties,
     label: {
         textTransform: 'uppercase',
+        fontWeight: 700,
         margin: 0,
+        color: '#555555'
     } as React.CSSProperties,
     text: {
         margin: 0,
@@ -231,6 +228,9 @@ const styles = {
     last: {
         marginTop: 0,
     } as React.CSSProperties,
+    footer: {
+        textAlign: 'center'
+    } as React.CSSProperties,
 };
 
-export default OrderConfirmedEmail;
+export default OrderConfirmationEmail;

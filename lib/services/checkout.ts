@@ -1,14 +1,15 @@
 import Stripe from 'stripe';
-import { Product } from '@/lib/types';
+import { Locale, Product } from '@/lib/types';
 import { convertToCents, getEnv } from '@/lib/utils';
 import {
     DEFAULT_CURRENCY,
     DEFAULT_SHIPPING_PROVIDER,
     DEFAULT_SHIPPING_RATE,
 } from '@/lib/constants';
-import OrderConfirmedEmail from '@/emails/OrderConfirmedEmail';
+import OrderConfirmationEmail from '@/emails/OrderConfirmationEmail';
 import { render } from '@react-email/render';
 import { sendEmail } from '@/lib/services/email';
+import i18n from '@/emails/components/locales/i18n.json';
 
 const getStripeInstance = () => {
     const apiKey = getEnv('PAYMENT_GATEWAY_SECRET_KEY');
@@ -19,7 +20,8 @@ const getStripeInstance = () => {
 };
 
 export const createCheckoutSession = async (
-    products: Product[]
+    products: Product[],
+    locale: Stripe.Checkout.Session.Locale
 ): Promise<Stripe.Checkout.Session> => {
     const stripe = getStripeInstance();
     const successUrl = getEnv('PAYMENT_GATEWAY_SUCCESS_URL');
@@ -70,6 +72,7 @@ export const createCheckoutSession = async (
         mode: 'payment',
         success_url: `${successUrl}?session_id={CHECKOUT_SESSION_ID}`,
         cancel_url: cancelUrl,
+        locale,
     };
 
     try {
@@ -127,6 +130,7 @@ export const onCheckoutCompleted = async (sessionId: string) => {
         line_items,
         // @ts-ignore
         payment_intent: { payment_method },
+        locale,
     } = session;
 
     if (!customer_details?.email) {
@@ -134,7 +138,7 @@ export const onCheckoutCompleted = async (sessionId: string) => {
     }
 
     const html = render(
-        OrderConfirmedEmail({
+        OrderConfirmationEmail({
             id,
             currency,
             createdAt: created,
@@ -145,7 +149,7 @@ export const onCheckoutCompleted = async (sessionId: string) => {
             shippingCost: shipping_cost,
             lineItems: line_items?.data,
             paymentMethod: payment_method,
-            locale: 'en',
+            locale: locale as Locale,
         })
     );
 
@@ -153,7 +157,7 @@ export const onCheckoutCompleted = async (sessionId: string) => {
         customer_details?.email,
         getEnv('EMAIL_ADDRESS'),
         getEnv('EMAIL_ADDRESS'),
-        'Order confirmed',
+        i18n[locale as Locale]['Order confirmed'],
         html
     );
 };

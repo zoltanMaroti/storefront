@@ -211,7 +211,10 @@ export type HeadingProps = {
     subTitle?: string;
 };
 
-export type CheckoutRequestBody = Product[];
+export type CheckoutRequestBody = {
+    products: Product[];
+    locale: Stripe.Checkout.Session.Locale;
+};
 
 export type CheckoutSessionUrl = { url: string };
 

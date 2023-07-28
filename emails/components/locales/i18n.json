@@ -1,0 +1,50 @@
+{
+  "en": {
+    "Order confirmed": "Order confirmed",
+    "Hello": "Hello",
+    "We've received your order and will contact you as soon as your package is shipped": "We've received your order and will contact you as soon as your package is shipped.",
+    "You can find your purchase information below": "You can find your purchase information below.",
+    "Summary": "Summary",
+    "Order number": "Order number",
+    "Date of order": "Date of order",
+    "Payment method": "Payment method",
+    "Ending with": "Ending with",
+    "Shipping": "Shipping",
+    "Billing": "Billing",
+    "Subtotal": "Subtotal",
+    "Total": "Total",
+    "If you have any questions, reply to this email or contact us at": "If you have any questions, reply to this email or contact us at"
+  },
+  "fr": {
+    "Order confirmed": "Commande confirmée",
+    "Hello": "Bonjour",
+    "We've received your order and will contact you as soon as your package is shipped": "Nous avons bien reçu votre commande et vous contacterons dès que votre colis sera expédié.",
+    "You can find your purchase information below": "Vous pouvez trouver vos informations d'achat ci-dessous.",
+    "Summary": "Résumé",
+    "Order number": "Numéro de commande",
+    "Date of order": "Date de commande",
+    "Payment method": "Mode de paiement",
+    "Ending with": "Se terminant par",
+    "Shipping": "Expédition",
+    "Billing": "Facturation",
+    "Subtotal": "Subtotal",
+    "Total": "Total",
+    "If you have any questions, reply to this email or contact us at": "Si vous avez des questions, répondez à cet e-mail ou contactez-nous à"
+  },
+  "de": {
+    "Order confirmed": "Bestellung bestätigt",
+    "Hello": "Hallo",
+    "We've received your order and will contact you as soon as your package is shipped": "Wir haben Ihre Bestellung erhalten und werden Sie kontaktieren, sobald Ihr Paket versendet wird.",
+    "You can find your purchase information below": "Nachfolgend finden Sie Ihre Kaufinformationen.",
+    "Summary": "Zusammenfassung",
+    "Order number": "Bestellnummer",
+    "Date of order": "Datum der Bestellung",
+    "Payment method": "Bezahlverfahren",
+    "Ending with": "Endet mit",
+    "Shipping": "Versand",
+    "Billing": "Abrechnung",
+    "Subtotal": "Zwischensumme",
+    "Total": "Gesamt",
+    "If you have any questions, reply to this email or contact us at": "Wenn Sie Fragen haben, antworten Sie auf diese E-Mail oder kontaktieren Sie uns unter"
+  }
+}
