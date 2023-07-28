@@ -24,8 +24,7 @@ export const createCheckoutSession = async (
     locale: Stripe.Checkout.Session.Locale
 ): Promise<Stripe.Checkout.Session> => {
     const stripe = getStripeInstance();
-    const successUrl = getEnv('PAYMENT_GATEWAY_SUCCESS_URL');
-    const cancelUrl = getEnv('PAYMENT_GATEWAY_CANCEL_URL');
+    const baseUrl = getEnv('BASE_URL');
 
     const params: Stripe.Checkout.SessionCreateParams = {
         line_items: products.map((product) => {
@@ -70,8 +69,8 @@ export const createCheckoutSession = async (
             },
         ],
         mode: 'payment',
-        success_url: `${successUrl}?session_id={CHECKOUT_SESSION_ID}`,
-        cancel_url: cancelUrl,
+        success_url: `${baseUrl}/${locale}/payment/success?session_id={CHECKOUT_SESSION_ID}`,
+        cancel_url: `${baseUrl}/${locale}/payment/cancel`,
         locale,
     };
 
