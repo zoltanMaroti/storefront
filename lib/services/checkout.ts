@@ -1,5 +1,5 @@
 import Stripe from 'stripe';
-import { Product } from '@/lib/types';
+import { Locale, Product } from '@/lib/types';
 import { convertToCents, getEnv } from '@/lib/utils';
 import {
     DEFAULT_CURRENCY,
@@ -9,6 +9,7 @@ import {
 import OrderConfirmationEmail from '@/emails/OrderConfirmationEmail';
 import { render } from '@react-email/render';
 import { sendEmail } from '@/lib/services/email';
+import i18n from '@/emails/components/locales/i18n.json';
 
 const getStripeInstance = () => {
     const apiKey = getEnv('PAYMENT_GATEWAY_SECRET_KEY');
@@ -148,7 +149,7 @@ export const onCheckoutCompleted = async (sessionId: string) => {
             shippingCost: shipping_cost,
             lineItems: line_items?.data,
             paymentMethod: payment_method,
-            locale: 'en',
+            locale: locale as Locale,
         })
     );
 
@@ -156,7 +157,7 @@ export const onCheckoutCompleted = async (sessionId: string) => {
         customer_details?.email,
         getEnv('EMAIL_ADDRESS'),
         getEnv('EMAIL_ADDRESS'),
-        'Order confirmed',
+        i18n[locale as Locale]['Order confirmed'],
         html
     );
 };
