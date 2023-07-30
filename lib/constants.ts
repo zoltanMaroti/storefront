@@ -126,9 +126,9 @@ export const validationRules = {
 };
 
 export enum StripeWebhookEvents {
-    AsyncPaymentSuccess = 'checkout.session.async_payment_succeeded',
-    Completed = 'checkout.session.completed',
-    PaymentFailed = 'checkout.session.async_payment_failed',
+    ASYNC_PAYMENT_SUCCESS = 'checkout.session.async_payment_succeeded',
+    COMPLETED = 'checkout.session.completed',
+    PAYMENT_FAILED = 'checkout.session.async_payment_failed',
 }
 
 export enum AuthStatuses {
