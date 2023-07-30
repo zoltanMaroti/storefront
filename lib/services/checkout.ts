@@ -11,7 +11,7 @@ import { render } from '@react-email/render';
 import { sendEmail } from '@/lib/services/email';
 import i18n from '@/emails/components/locales/i18n.json';
 
-const getStripeInstance = () => {
+export const getStripeInstance = () => {
     const apiKey = getEnv('PAYMENT_GATEWAY_SECRET_KEY');
 
     return new Stripe(apiKey, {
@@ -81,7 +81,7 @@ export const createCheckoutSession = async (
     }
 };
 
-export const retrieveSession = async (
+export const getSession = async (
     sessionId: string,
     config?: Stripe.Checkout.SessionRetrieveParams
 ): Promise<Stripe.Checkout.Session> => {
@@ -91,6 +91,19 @@ export const retrieveSession = async (
         return await stripe.checkout.sessions.retrieve(sessionId, config);
     } catch (error: any) {
         throw new Error('Failed to retrieve checkout session: ', error);
+    }
+};
+
+export const getAllSessions = async (
+    config?: Stripe.Checkout.SessionListParams
+) => {
+    const stripe = getStripeInstance();
+
+    try {
+        return await stripe.checkout.sessions.list(config);
+    } catch (error: any) {
+        console.log(error);
+        throw new Error('Failed to retrieve checkout sessions', error);
     }
 };
 
@@ -109,7 +122,7 @@ export const verifyStripeSignature = (
 };
 
 export const onCheckoutCompleted = async (sessionId: string) => {
-    const session = await retrieveSession(sessionId, {
+    const session = await getSession(sessionId, {
         expand: [
             'line_items',
             'payment_intent',
