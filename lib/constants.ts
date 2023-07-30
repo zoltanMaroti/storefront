@@ -1,6 +1,7 @@
 import { Category, LanguageSelectorItem } from '@/lib/types';
 import { ReactImageGalleryItem } from 'react-image-gallery';
 
+export const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 export const API_URL = process.env.NEXT_PUBLIC_COMMERCE_PROVIDER_API_URL;
 export const API_TOKEN = process.env.NEXT_PUBLIC_COMMERCE_PROVIDER_ACCESS_TOKEN;
 

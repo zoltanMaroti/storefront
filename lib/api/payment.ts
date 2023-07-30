@@ -1,5 +1,6 @@
 import { IPaymentApiClient } from '@/lib/interfaces';
 import { CheckoutSessionUrl, CheckoutSession, Product } from '@/lib/types';
+import { BASE_URL } from '@/lib/constants';
 
 export const PaymentApiClient: IPaymentApiClient = {
     getCheckoutSessionUrl: async (
@@ -24,7 +25,7 @@ export const PaymentApiClient: IPaymentApiClient = {
     },
     getCheckoutSession: async (sessionId: string): Promise<CheckoutSession> => {
         const response = await fetch(
-            `${process.env.BASE_URL}/api/payment/checkout/success?session_id=${sessionId}`,
+            `${BASE_URL}/api/payment/checkout/success?session_id=${sessionId}`,
             {
                 method: 'GET',
             }
