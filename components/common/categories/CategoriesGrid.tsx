@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { CATEGORIES } from '@/lib/constants';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import {
     InnerContainer,
     CategoryCard,
@@ -14,6 +14,7 @@ import {
 
 const CategoriesGrid = () => {
     const t = useTranslations('common');
+    const locale = useLocale();
 
     return (
         <CategoriesContainer>
@@ -21,7 +22,7 @@ const CategoriesGrid = () => {
                 {CATEGORIES.map((category) => (
                     <CategoryCard
                         key={category.slug}
-                        href={`/products/${category.slug}`}
+                        href={`/${locale}/products/${category.slug}`}
                     >
                         <NameContainer>
                             <Name>{t(category.name)}</Name>
