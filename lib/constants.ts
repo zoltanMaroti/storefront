@@ -130,3 +130,9 @@ export enum StripeWebhookEvents {
     Completed = 'checkout.session.completed',
     PaymentFailed = 'checkout.session.async_payment_failed',
 }
+
+export enum AuthStatuses {
+    AUTHENTICATED = 'authenticated',
+    UNAUTHENTICATED = 'unauthenticated',
+    LOADING = 'loading',
+}

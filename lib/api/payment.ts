@@ -37,4 +37,23 @@ export const PaymentApiClient: IPaymentApiClient = {
 
         return await response.json();
     },
+    getPaymentIntents: async (cursor: string | null) => {
+        const url = new URL('/api/payments', BASE_URL);
+
+        if (cursor) {
+            url.search = new URLSearchParams({ cursor }).toString();
+        }
+
+        const response = await fetch(url, {
+            method: 'GET',
+        });
+
+        if (!response.ok) {
+            throw new Error('Failed to fetch payment intents');
+        }
+
+        const data = await response.json();
+
+        return data.paymentIntents.data;
+    },
 };
