@@ -102,7 +102,6 @@ export const getAllSessions = async (
     try {
         return await stripe.checkout.sessions.list(config);
     } catch (error: any) {
-        console.log(error);
         throw new Error('Failed to retrieve checkout sessions', error);
     }
 };
