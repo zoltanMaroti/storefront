@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { useSession, signOut } from 'next-auth/react';
+import { useSession } from 'next-auth/react';
 import usePaymentIntents from '@/lib/hooks/usePaymentIntents';
 import { AuthStatuses } from '@/lib/constants';
 import PaymentCard from '@/components/admin/payment/PaymentCard';
