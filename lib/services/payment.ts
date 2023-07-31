@@ -12,3 +12,18 @@ export const getPaymentIntents = async (
         throw new Error('Failed to retrieve payment intents', error);
     }
 };
+
+export const updatePaymentIntent = async (
+    paymentIntentId: string,
+    metadata?: Stripe.MetadataParam
+): Promise<Stripe.PaymentIntent> => {
+    const stripe = getStripeInstance();
+
+    try {
+        return await stripe.paymentIntents.update(paymentIntentId, {
+            metadata,
+        });
+    } catch (error: any) {
+        throw new Error('Failed to update payment intent', error);
+    }
+};

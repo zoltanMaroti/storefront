@@ -288,3 +288,7 @@ export type AdminHeaderProps = {
     email: string | null | undefined;
     name: string | null | undefined;
 };
+
+export type TrackingNumberRequestBody = {
+    trackingNumber: string;
+};
