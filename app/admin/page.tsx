@@ -7,6 +7,7 @@ import { AuthStatuses } from '@/lib/constants';
 import PaymentCard from '@/components/admin/payment/PaymentCard';
 import Divider from '@/components/common/divider/Divider';
 import { InnerContainer, PageContainer } from '@/app/admin/style';
+import Button from '@/components/common/button/Button';
 
 const AdminPage = () => {
     const { data: session, status } = useSession({ required: true });
@@ -69,12 +70,17 @@ const AdminPage = () => {
                     });
                 })}
             </InnerContainer>
-            {isLoading || isFetchingNextPage ? (
+            {isLoading ? (
                 <p>Loading</p>
             ) : (
-                <button onClick={onClick} disabled={isButtonDisabled}>
+                <Button
+                    onClick={onClick}
+                    disabled={isButtonDisabled || isFetchingNextPage}
+                    loading={isFetchingNextPage}
+                    width={'200px'}
+                >
                     Load more
-                </button>
+                </Button>
             )}
         </PageContainer>
     );
