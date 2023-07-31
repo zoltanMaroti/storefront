@@ -3,6 +3,7 @@
 import styled from '@emotion/styled';
 import Stripe from 'stripe';
 import { css } from '@emotion/react';
+import { screenSizes } from '@/lib/constants';
 
 export const AccordionLabel = styled.div`
     display: flex;
@@ -42,9 +43,20 @@ export const PaymentCardBody = styled.div`
     grid-template-columns: 1fr 1fr;
     gap: var(--spacing-sm);
     margin-top: var(--spacing-sm);
+
+    @media screen and (max-width: ${screenSizes.SMALL}) {
+        grid-template-columns: 1fr;
+    }
 `;
 
 export const Label = styled.p`
     font-weight: bold;
     color: var(--color-font-primary);
+`;
+
+export const SpinnerContainer = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-sm);
 `;

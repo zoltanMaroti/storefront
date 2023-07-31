@@ -33,6 +33,9 @@ export interface IPaymentApiClient {
     getPaymentIntents: (
         cursor: string | null
     ) => Promise<Stripe.PaymentIntent[]>;
+    getCheckoutSessionByPaymentIntent: (
+        paymentIntentId: string | undefined
+    ) => Promise<Stripe.Checkout.Session | undefined>;
 }
 
 export interface IEmailApiClient {

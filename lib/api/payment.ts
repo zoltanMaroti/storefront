@@ -1,6 +1,7 @@
 import { IPaymentApiClient } from '@/lib/interfaces';
 import { CheckoutSessionUrl, CheckoutSession, Product } from '@/lib/types';
 import { BASE_URL } from '@/lib/constants';
+import Stripe from 'stripe';
 
 export const PaymentApiClient: IPaymentApiClient = {
     getCheckoutSessionUrl: async (
@@ -55,5 +56,23 @@ export const PaymentApiClient: IPaymentApiClient = {
         const data = await response.json();
 
         return data.paymentIntents.data;
+    },
+    getCheckoutSessionByPaymentIntent: async (
+        paymentIntentId: string | undefined
+    ): Promise<Stripe.Checkout.Session | undefined> => {
+        if (!paymentIntentId) {
+            return;
+        }
+        const response = await fetch(
+            `${BASE_URL}/api/payment/${paymentIntentId}`
+        );
+
+        if (!response.ok) {
+            throw new Error('Failed to fetch checkout session');
+        }
+
+        const data = await response.json();
+
+        return data.data[0];
     },
 };
