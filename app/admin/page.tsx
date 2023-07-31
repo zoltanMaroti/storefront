@@ -9,6 +9,7 @@ import Divider from '@/components/common/divider/Divider';
 import { InnerContainer, PageContainer } from '@/app/admin/style';
 import Button from '@/components/common/button/Button';
 import AdminHeader from '@/components/admin/header/AdminHeader';
+import Spinner from '@/components/common/spinner/Spinner';
 
 const AdminPage = () => {
     const { data: session, status } = useSession({ required: true });
@@ -40,7 +41,11 @@ const AdminPage = () => {
     }, [payments]);
 
     if (isAuthenticating) {
-        return <PageContainer center={true}>Loading</PageContainer>;
+        return (
+            <PageContainer center={true}>
+                <Spinner color={'var(--color-font-primary)'} />
+            </PageContainer>
+        );
     }
 
     if (!payments?.pages.length && !isLoading) {
@@ -76,7 +81,7 @@ const AdminPage = () => {
                     })}
                 </InnerContainer>
                 {isLoading ? (
-                    <p>Loading</p>
+                    <Spinner color={'var(--color-font-primary)'} />
                 ) : (
                     <Button
                         onClick={onClick}
