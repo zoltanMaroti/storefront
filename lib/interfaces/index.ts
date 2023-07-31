@@ -32,7 +32,7 @@ export interface IPaymentApiClient {
     getCheckoutSession: (sessionId: string) => Promise<CheckoutSession>;
     getPaymentIntents: (
         cursor: string | null
-    ) => Promise<Stripe.Checkout.Session[]>;
+    ) => Promise<Stripe.PaymentIntent[]>;
 }
 
 export interface IEmailApiClient {

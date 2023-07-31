@@ -273,3 +273,8 @@ export type OrderConfirmedEmailProps = {
     paymentMethod: Stripe.PaymentMethod;
     locale: Locale;
 };
+
+export type PaymentCardProps = {
+    payment: Stripe.PaymentIntent;
+    index: number;
+};

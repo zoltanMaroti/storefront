@@ -4,6 +4,9 @@ import React, { useEffect, useState } from 'react';
 import { useSession, signOut } from 'next-auth/react';
 import usePaymentIntents from '@/lib/hooks/usePaymentIntents';
 import { AuthStatuses } from '@/lib/constants';
+import PaymentCard from '@/components/admin/payment/PaymentCard';
+import Divider from '@/components/common/divider/Divider';
+import { InnerContainer, PageContainer } from '@/app/admin/style';
 
 const AdminPage = () => {
     const { data: session, status } = useSession({ required: true });
@@ -35,24 +38,32 @@ const AdminPage = () => {
     }, [payments]);
 
     if (isAuthenticating) {
-        return <div>Loading</div>;
+        return <PageContainer center={true}>Loading</PageContainer>;
     }
 
     if (!payments?.pages.length && !isLoading) {
-        return <p>There are no payments</p>;
+        return (
+            <PageContainer center={true}>There are no payments</PageContainer>
+        );
     }
 
     return (
-        <div>
+        <PageContainer>
             <div>
                 <button onClick={() => signOut()}>Sign out</button>
             </div>
             <div>{session?.user?.email}</div>
-
-            {payments?.pages?.map((orders) =>
-                orders.map((order) => <p>{order.id}</p>)
-            )}
-
+            <h1>Orders</h1>
+            <InnerContainer>
+                {payments?.pages?.map((payments) =>
+                    payments.map((payment, index) => (
+                        <React.Fragment key={payment.id}>
+                            <PaymentCard index={index + 1} payment={payment} />
+                            <Divider />
+                        </React.Fragment>
+                    ))
+                )}
+            </InnerContainer>
             {isLoading || isFetchingNextPage ? (
                 <p>Loading</p>
             ) : (
@@ -60,7 +71,7 @@ const AdminPage = () => {
                     Load more
                 </button>
             )}
-        </div>
+        </PageContainer>
     );
 };
 
