@@ -8,6 +8,7 @@ import PaymentCard from '@/components/admin/payment/PaymentCard';
 import Divider from '@/components/common/divider/Divider';
 import { InnerContainer, PageContainer } from '@/app/admin/style';
 import Button from '@/components/common/button/Button';
+import AdminHeader from '@/components/admin/header/AdminHeader';
 
 const AdminPage = () => {
     const { data: session, status } = useSession({ required: true });
@@ -51,38 +52,43 @@ const AdminPage = () => {
     let index = 0;
 
     return (
-        <PageContainer>
-            <div>
-                <button onClick={() => signOut()}>Sign out</button>
-            </div>
-            <div>{session?.user?.email}</div>
-            <h1>Orders</h1>
-            <InnerContainer>
-                {payments?.pages.map((payments) => {
-                    return payments.map((payment) => {
-                        ++index;
-                        return (
-                            <React.Fragment key={payment.id}>
-                                <PaymentCard index={index} payment={payment} />
-                                <Divider />
-                            </React.Fragment>
-                        );
-                    });
-                })}
-            </InnerContainer>
-            {isLoading ? (
-                <p>Loading</p>
-            ) : (
-                <Button
-                    onClick={onClick}
-                    disabled={isButtonDisabled || isFetchingNextPage}
-                    loading={isFetchingNextPage}
-                    width={'200px'}
-                >
-                    Load more
-                </Button>
-            )}
-        </PageContainer>
+        <>
+            <AdminHeader
+                email={session?.user?.email}
+                name={session?.user?.name}
+            />
+            <PageContainer>
+                <h1>Orders</h1>
+                <InnerContainer>
+                    {payments?.pages.map((payments) => {
+                        return payments.map((payment) => {
+                            ++index;
+                            return (
+                                <React.Fragment key={payment.id}>
+                                    <PaymentCard
+                                        index={index}
+                                        payment={payment}
+                                    />
+                                    <Divider />
+                                </React.Fragment>
+                            );
+                        });
+                    })}
+                </InnerContainer>
+                {isLoading ? (
+                    <p>Loading</p>
+                ) : (
+                    <Button
+                        onClick={onClick}
+                        disabled={isButtonDisabled || isFetchingNextPage}
+                        loading={isFetchingNextPage}
+                        width={'200px'}
+                    >
+                        Load more
+                    </Button>
+                )}
+            </PageContainer>
+        </>
     );
 };
 

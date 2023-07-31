@@ -278,3 +278,8 @@ export type PaymentCardProps = {
     payment: Stripe.PaymentIntent;
     index: number;
 };
+
+export type AdminHeaderProps = {
+    email: string | null | undefined;
+    name: string | null | undefined;
+};
