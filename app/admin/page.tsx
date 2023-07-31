@@ -47,6 +47,8 @@ const AdminPage = () => {
         );
     }
 
+    let index = 0;
+
     return (
         <PageContainer>
             <div>
@@ -55,14 +57,17 @@ const AdminPage = () => {
             <div>{session?.user?.email}</div>
             <h1>Orders</h1>
             <InnerContainer>
-                {payments?.pages?.map((payments) =>
-                    payments.map((payment, index) => (
-                        <React.Fragment key={payment.id}>
-                            <PaymentCard index={index + 1} payment={payment} />
-                            <Divider />
-                        </React.Fragment>
-                    ))
-                )}
+                {payments?.pages.map((payments) => {
+                    return payments.map((payment) => {
+                        ++index;
+                        return (
+                            <React.Fragment key={payment.id}>
+                                <PaymentCard index={index} payment={payment} />
+                                <Divider />
+                            </React.Fragment>
+                        );
+                    });
+                })}
             </InnerContainer>
             {isLoading || isFetchingNextPage ? (
                 <p>Loading</p>
