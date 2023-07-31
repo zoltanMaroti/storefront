@@ -38,11 +38,16 @@ export type AccordionProps = {
     padding?: boolean;
     children: ReactNode;
     defaultOpen?: boolean;
+    onClick?: () => void;
 };
 
 export type DropdownProps = {
     isActive: boolean;
     children: ReactNode;
+};
+
+export type PaymentIntentRequestParams = {
+    paymentIntentId: string;
 };
 
 export type MobileNavigationProps = {

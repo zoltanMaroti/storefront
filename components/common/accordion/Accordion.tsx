@@ -13,6 +13,7 @@ import { AccordionProps } from '@/lib/types';
 const Accordion = ({
     label,
     children,
+    onClick,
     defaultOpen = false,
     borderTop = true,
     borderBottom = true,
@@ -21,13 +22,18 @@ const Accordion = ({
     const [isOpen, setOpen] = useState<boolean>(defaultOpen);
     const toggleOpen = () => setOpen((prevState) => !prevState);
 
+    const handleClick = () => {
+        onClick && onClick();
+        toggleOpen();
+    };
+
     return (
         <AccordionContainer
             borderTop={borderTop}
             borderBottom={borderBottom}
             padding={padding}
         >
-            <LabelContainer onClick={toggleOpen}>
+            <LabelContainer onClick={handleClick}>
                 {label}
                 <IconContainer isOpen={isOpen}>
                     <FiChevronDown size={24} />
