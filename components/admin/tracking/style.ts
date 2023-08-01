@@ -3,11 +3,11 @@
 import styled from '@emotion/styled';
 import { screenSizes } from '@/lib/constants';
 
-export const AddTrackingNumberContainer = styled.div`
+export const CreateTrackingNumberContainer = styled.div`
     margin-top: var(--spacing-xs);
 `;
 
-export const AddTrackingNumberDialog = styled.dialog`
+export const CreateTrackingNumberDialog = styled.dialog`
     z-index: 6;
     width: 90%;
     max-width: 500px;

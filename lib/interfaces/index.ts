@@ -36,6 +36,10 @@ export interface IPaymentApiClient {
     getCheckoutSessionByPaymentIntent: (
         paymentIntentId: string | undefined
     ) => Promise<Stripe.Checkout.Session | undefined>;
+    createTrackingNumber: (
+        paymentIntentId: string,
+        trackingNumber: string
+    ) => Promise<Stripe.PaymentIntent>;
 }
 
 export interface IEmailApiClient {

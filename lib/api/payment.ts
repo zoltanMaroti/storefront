@@ -75,4 +75,27 @@ export const PaymentApiClient: IPaymentApiClient = {
 
         return data.data[0];
     },
+    createTrackingNumber: async (
+        paymentIntentId: string,
+        trackingNumber: string
+    ): Promise<Stripe.PaymentIntent> => {
+        const response = await fetch(
+            `${BASE_URL}/api/payment/${paymentIntentId}/tracking`,
+            {
+                method: 'POST',
+                body: JSON.stringify({ trackingNumber }),
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            }
+        );
+
+        if (!response.ok) {
+            throw new Error('Failed to fetch checkout session');
+        }
+
+        const data = await response.json();
+
+        return data;
+    },
 };

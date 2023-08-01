@@ -292,3 +292,12 @@ export type AdminHeaderProps = {
 export type TrackingNumberRequestBody = {
     trackingNumber: string;
 };
+
+export type CreateTrackingNumberParams = {
+    paymentIntentId: string;
+    trackingNumber: string;
+};
+
+export type CreateTrackingNumberProps = {
+    paymentIntentId: string;
+};

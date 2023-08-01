@@ -2,15 +2,20 @@ import React, { ChangeEvent, useState } from 'react';
 import Button from '@/components/common/button/Button';
 import {
     ButtonsContainer,
-    AddTrackingNumberContainer,
-    AddTrackingNumberDialog,
+    CreateTrackingNumberContainer,
+    CreateTrackingNumberDialog,
 } from '@/components/admin/tracking/style';
 import { Backdrop } from '@/components/layout/drawer/style';
 import Input from '@/components/common/input/Input';
+import useTrackingNumber from '@/lib/hooks/useTrackingNumber';
+import { CreateTrackingNumberProps } from '@/lib/types';
 
-const AddTrackingNumber = () => {
+const CreateTrackingNumber = ({
+    paymentIntentId,
+}: CreateTrackingNumberProps) => {
     const [isModalOpen, setModalOpen] = useState<boolean>(false);
     const [trackingNumber, setTrackingNumber] = useState<string>();
+    const createTrackingNumber = useTrackingNumber();
 
     const toggleModal = () => setModalOpen((prevState) => !prevState);
 
@@ -18,9 +23,20 @@ const AddTrackingNumber = () => {
         setTrackingNumber(event.target.value);
     };
 
+    const onClick = () => {
+        if (trackingNumber) {
+            createTrackingNumber
+                .mutateAsync({
+                    paymentIntentId,
+                    trackingNumber,
+                })
+                .then(() => toggleModal());
+        }
+    };
+
     return (
-        <AddTrackingNumberContainer>
-            <AddTrackingNumberDialog open={isModalOpen}>
+        <CreateTrackingNumberContainer>
+            <CreateTrackingNumberDialog open={isModalOpen}>
                 <Input
                     type={'text'}
                     placeholder={'Enter tracking number'}
@@ -30,15 +46,15 @@ const AddTrackingNumber = () => {
                     <Button variant={'secondary'} onClick={toggleModal}>
                         Cancel
                     </Button>
-                    <Button>Save</Button>
+                    <Button onClick={onClick}>Save</Button>
                 </ButtonsContainer>
-            </AddTrackingNumberDialog>
+            </CreateTrackingNumberDialog>
             <Backdrop isVisible={isModalOpen} />
             <Button variant={'secondary'} onClick={toggleModal}>
                 Add tracking number
             </Button>
-        </AddTrackingNumberContainer>
+        </CreateTrackingNumberContainer>
     );
 };
 
-export default AddTrackingNumber;
+export default CreateTrackingNumber;
