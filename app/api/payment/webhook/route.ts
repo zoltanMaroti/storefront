@@ -16,7 +16,7 @@ export async function POST(request: NextRequest) {
 
     try {
         switch (event.type) {
-            case StripeWebhookEvents.Completed: {
+            case StripeWebhookEvents.COMPLETED: {
                 const session = event.data.object as Stripe.Checkout.Session;
                 await onCheckoutCompleted(session.id);
                 break;

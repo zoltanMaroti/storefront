@@ -38,11 +38,16 @@ export type AccordionProps = {
     padding?: boolean;
     children: ReactNode;
     defaultOpen?: boolean;
+    onClick?: () => void;
 };
 
 export type DropdownProps = {
     isActive: boolean;
     children: ReactNode;
+};
+
+export type PaymentIntentRequestParams = {
+    paymentIntentId: string;
 };
 
 export type MobileNavigationProps = {
@@ -272,4 +277,27 @@ export type OrderConfirmedEmailProps = {
     lineItems: Stripe.LineItem[] | undefined;
     paymentMethod: Stripe.PaymentMethod;
     locale: Locale;
+};
+
+export type PaymentCardProps = {
+    payment: Stripe.PaymentIntent;
+    index: number;
+};
+
+export type AdminHeaderProps = {
+    email: string | null | undefined;
+    name: string | null | undefined;
+};
+
+export type TrackingNumberRequestBody = {
+    trackingNumber: string;
+};
+
+export type CreateTrackingNumberParams = {
+    paymentIntentId: string;
+    trackingNumber: string;
+};
+
+export type CreateTrackingNumberProps = {
+    paymentIntentId: string;
 };

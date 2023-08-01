@@ -1,5 +1,6 @@
 import { CheckoutSession, ContactFormValues, Product } from '@/lib/types';
 import { SortDirection } from '@/lib/constants';
+import Stripe from 'stripe';
 
 export interface ICommerceApiClient {
     getProduct: (slug: string, language: string) => Promise<Product>;
@@ -29,6 +30,16 @@ export interface IPaymentApiClient {
         locale: string
     ) => Promise<string>;
     getCheckoutSession: (sessionId: string) => Promise<CheckoutSession>;
+    getPaymentIntents: (
+        cursor: string | null
+    ) => Promise<Stripe.PaymentIntent[]>;
+    getCheckoutSessionByPaymentIntent: (
+        paymentIntentId: string | undefined
+    ) => Promise<Stripe.Checkout.Session | undefined>;
+    createTrackingNumber: (
+        paymentIntentId: string,
+        trackingNumber: string
+    ) => Promise<Stripe.PaymentIntent>;
 }
 
 export interface IEmailApiClient {

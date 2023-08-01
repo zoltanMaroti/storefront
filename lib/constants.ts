@@ -1,6 +1,7 @@
 import { Category, LanguageSelectorItem } from '@/lib/types';
 import { ReactImageGalleryItem } from 'react-image-gallery';
 
+export const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 export const API_URL = process.env.NEXT_PUBLIC_COMMERCE_PROVIDER_API_URL;
 export const API_TOKEN = process.env.NEXT_PUBLIC_COMMERCE_PROVIDER_ACCESS_TOKEN;
 
@@ -125,7 +126,13 @@ export const validationRules = {
 };
 
 export enum StripeWebhookEvents {
-    AsyncPaymentSuccess = 'checkout.session.async_payment_succeeded',
-    Completed = 'checkout.session.completed',
-    PaymentFailed = 'checkout.session.async_payment_failed',
+    ASYNC_PAYMENT_SUCCESS = 'checkout.session.async_payment_succeeded',
+    COMPLETED = 'checkout.session.completed',
+    PAYMENT_FAILED = 'checkout.session.async_payment_failed',
+}
+
+export enum AuthStatuses {
+    AUTHENTICATED = 'authenticated',
+    UNAUTHENTICATED = 'unauthenticated',
+    LOADING = 'loading',
 }
