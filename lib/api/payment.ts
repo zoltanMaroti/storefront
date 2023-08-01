@@ -96,6 +96,6 @@ export const PaymentApiClient: IPaymentApiClient = {
 
         const data = await response.json();
 
-        return data;
+        return data.paymentIntent;
     },
 };
