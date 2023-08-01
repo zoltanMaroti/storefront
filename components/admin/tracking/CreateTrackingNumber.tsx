@@ -43,10 +43,20 @@ const CreateTrackingNumber = ({
                     onChange={onChange}
                 />
                 <ButtonsContainer>
-                    <Button variant={'secondary'} onClick={toggleModal}>
+                    <Button
+                        variant={'secondary'}
+                        onClick={toggleModal}
+                        disabled={createTrackingNumber.isLoading}
+                    >
                         Cancel
                     </Button>
-                    <Button onClick={onClick}>Save</Button>
+                    <Button
+                        onClick={onClick}
+                        disabled={createTrackingNumber.isLoading}
+                        loading={createTrackingNumber.isLoading}
+                    >
+                        Save
+                    </Button>
                 </ButtonsContainer>
             </CreateTrackingNumberDialog>
             <Backdrop isVisible={isModalOpen} />

@@ -57,7 +57,7 @@ const AdminPage = () => {
     let index = 0;
 
     return (
-        <>
+        <div>
             <AdminHeader
                 email={session?.user?.email}
                 name={session?.user?.name}
@@ -93,7 +93,7 @@ const AdminPage = () => {
                     </Button>
                 )}
             </PageContainer>
-        </>
+        </div>
     );
 };
 
