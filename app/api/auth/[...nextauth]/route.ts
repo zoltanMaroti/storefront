@@ -29,8 +29,8 @@ export const authOptions: AuthOptions = {
                 if (isValidUser) {
                     return {
                         id: '1',
-                        name: getEnv('NEXTAUTH_USER'),
-                        email: getEnv('NEXTAUTH_EMAIL'),
+                        name: getEnv('USER'),
+                        email: getEnv('EMAIL_ADDRESS'),
                     };
                 } else {
                     return null;
