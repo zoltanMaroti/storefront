@@ -16,17 +16,18 @@ const Input = ({
     onChange,
     onClear,
     defaultValue,
+    value,
 }: InputBaseProps) => {
-    const [value, setValue] = useState<string>();
+    const [inputValue, setInputValue] = useState<string>();
 
     const onChangeInput = (event: ChangeEvent<HTMLInputElement>) => {
-        setValue(event.target.value);
+        setInputValue(event.target.value);
         onChange(event);
     };
 
     const onClickClear = () => {
         onClear && onClear();
-        setValue('');
+        setInputValue('');
     };
 
     return (
@@ -38,10 +39,10 @@ const Input = ({
                 defaultValue={defaultValue}
                 disabled={disabled}
                 onChange={onChangeInput}
-                value={value}
+                value={value || inputValue}
                 hasIcon={!!icon}
             />
-            {value && (
+            {(value || inputValue) && (
                 <ClearIconContainer>
                     <StyledClearIcon onClick={onClickClear} />
                 </ClearIconContainer>

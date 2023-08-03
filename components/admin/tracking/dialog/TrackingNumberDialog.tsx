@@ -8,6 +8,7 @@ import {
     ButtonsContainer,
     TrackingNumberDialogWrapper,
 } from '@/components/admin/tracking/dialog/style';
+import FormErrorMessage from '@/components/forms/FormErrorMessage';
 
 const TrackingNumberDialog = ({
     isOpen,
@@ -15,11 +16,31 @@ const TrackingNumberDialog = ({
     paymentIntentId,
     defaultTrackingNumber,
 }: TrackingNumberDialogProps) => {
-    const [trackingNumber, setTrackingNumber] = useState<string>();
+    const [trackingNumber, setTrackingNumber] = useState<string | undefined>(
+        defaultTrackingNumber
+    );
     const createTrackingNumber = useTrackingNumber();
+    const [error, setError] = useState<boolean>(false);
 
-    const onChange = (event: ChangeEvent<HTMLInputElement>) =>
+    const isButtonDisabled =
+        error ||
+        trackingNumber === defaultTrackingNumber ||
+        createTrackingNumber.isLoading;
+
+    const onChange = (event: ChangeEvent<HTMLInputElement>) => {
+        if (event.target.value === '') {
+            setError(true);
+            setTrackingNumber(undefined);
+            return;
+        }
         setTrackingNumber(event.target.value);
+        setError(false);
+    };
+
+    const onClear = () => {
+        setError(true);
+        setTrackingNumber(undefined);
+    };
 
     const onClickSave = () => {
         if (trackingNumber) {
@@ -32,6 +53,12 @@ const TrackingNumberDialog = ({
         }
     };
 
+    const handleCancel = () => {
+        setTrackingNumber(defaultTrackingNumber);
+        setError(false);
+        onCancel();
+    };
+
     return (
         <>
             <TrackingNumberDialogWrapper open={isOpen}>
@@ -40,18 +67,25 @@ const TrackingNumberDialog = ({
                     placeholder={'Enter tracking number'}
                     onChange={onChange}
                     defaultValue={defaultTrackingNumber}
+                    onClear={onClear}
+                    value={trackingNumber}
                 />
+                {error && (
+                    <FormErrorMessage
+                        error={'Please enter a tracking number'}
+                    />
+                )}
                 <ButtonsContainer>
                     <Button
                         variant={'secondary'}
-                        onClick={onCancel}
+                        onClick={handleCancel}
                         disabled={createTrackingNumber.isLoading}
                     >
                         Cancel
                     </Button>
                     <Button
                         onClick={onClickSave}
-                        disabled={createTrackingNumber.isLoading}
+                        disabled={isButtonDisabled}
                         loading={createTrackingNumber.isLoading}
                     >
                         Save
