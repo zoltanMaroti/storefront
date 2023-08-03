@@ -298,6 +298,12 @@ export type CreateTrackingNumberParams = {
     trackingNumber: string;
 };
 
-export type CreateTrackingNumberProps = {
+export type TrackingNumberProps = {
+    defaultTrackingNumber?: string;
     paymentIntentId: string;
+};
+
+export type TrackingNumberDialogProps = TrackingNumberProps & {
+    isOpen: boolean;
+    onCancel: () => void;
 };

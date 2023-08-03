@@ -1,70 +1,66 @@
 import React, { ChangeEvent, useState } from 'react';
+import Input from '@/components/common/input/Input';
 import Button from '@/components/common/button/Button';
+import { Backdrop } from '@/components/layout/drawer/style';
+import { TrackingNumberDialogProps } from '@/lib/types';
+import useTrackingNumber from '@/lib/hooks/useTrackingNumber';
 import {
     ButtonsContainer,
-    CreateTrackingNumberContainer,
-    CreateTrackingNumberDialog,
-} from '@/components/admin/tracking/style';
-import { Backdrop } from '@/components/layout/drawer/style';
-import Input from '@/components/common/input/Input';
-import useTrackingNumber from '@/lib/hooks/useTrackingNumber';
-import { CreateTrackingNumberProps } from '@/lib/types';
+    TrackingNumberDialogWrapper,
+} from '@/components/admin/tracking/dialog/style';
 
-const CreateTrackingNumber = ({
+const TrackingNumberDialog = ({
+    isOpen,
+    onCancel,
     paymentIntentId,
-}: CreateTrackingNumberProps) => {
-    const [isModalOpen, setModalOpen] = useState<boolean>(false);
+    defaultTrackingNumber,
+}: TrackingNumberDialogProps) => {
     const [trackingNumber, setTrackingNumber] = useState<string>();
     const createTrackingNumber = useTrackingNumber();
 
-    const toggleModal = () => setModalOpen((prevState) => !prevState);
-
-    const onChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const onChange = (event: ChangeEvent<HTMLInputElement>) =>
         setTrackingNumber(event.target.value);
-    };
 
-    const onClick = () => {
+    const onClickSave = () => {
         if (trackingNumber) {
             createTrackingNumber
                 .mutateAsync({
                     paymentIntentId,
                     trackingNumber,
                 })
-                .then(() => toggleModal());
+                .then(onCancel);
         }
     };
 
     return (
-        <CreateTrackingNumberContainer>
-            <CreateTrackingNumberDialog open={isModalOpen}>
+        <>
+            <TrackingNumberDialogWrapper open={isOpen}>
                 <Input
                     type={'text'}
                     placeholder={'Enter tracking number'}
                     onChange={onChange}
+                    defaultValue={defaultTrackingNumber}
                 />
                 <ButtonsContainer>
                     <Button
                         variant={'secondary'}
-                        onClick={toggleModal}
+                        onClick={onCancel}
                         disabled={createTrackingNumber.isLoading}
                     >
                         Cancel
                     </Button>
                     <Button
-                        onClick={onClick}
+                        onClick={onClickSave}
                         disabled={createTrackingNumber.isLoading}
                         loading={createTrackingNumber.isLoading}
                     >
                         Save
                     </Button>
                 </ButtonsContainer>
-            </CreateTrackingNumberDialog>
-            <Backdrop isVisible={isModalOpen} />
-            <Button variant={'secondary'} onClick={toggleModal}>
-                Add tracking number
-            </Button>
-        </CreateTrackingNumberContainer>
+            </TrackingNumberDialogWrapper>
+            <Backdrop isVisible={isOpen} />
+        </>
     );
 };
 
-export default CreateTrackingNumber;
+export default TrackingNumberDialog;

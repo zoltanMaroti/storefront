@@ -15,6 +15,7 @@ const Input = ({
     icon,
     onChange,
     onClear,
+    defaultValue,
 }: InputBaseProps) => {
     const [value, setValue] = useState<string>();
 
@@ -34,6 +35,7 @@ const Input = ({
             <StyledInput
                 type={type}
                 placeholder={placeholder}
+                defaultValue={defaultValue}
                 disabled={disabled}
                 onChange={onChangeInput}
                 value={value}

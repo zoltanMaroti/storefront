@@ -10,6 +10,7 @@ const usePaymentIntents = (enabled: boolean, cursor: string | null) => {
             enabled,
             getNextPageParam: (lastPage, allPages) =>
                 lastPage.length === 0 ? undefined : allPages.length + 1,
+            refetchOnWindowFocus: false,
         }
     );
 };
