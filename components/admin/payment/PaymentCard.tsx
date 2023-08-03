@@ -14,7 +14,7 @@ import { formatAmount, timestampToDateTime } from '@/emails/components/helpers';
 import { DEFAULT_LOCALE } from '@/lib/constants';
 import useCheckoutSession from '@/lib/hooks/useCheckoutSession';
 import Spinner from '@/components/common/spinner/Spinner';
-import CreateTrackingNumber from '@/components/admin/tracking/CreateTrackingNumber';
+import TrackingNumber from '@/components/admin/tracking/TrackingNumber';
 
 const PaymentCard = ({ payment, index }: PaymentCardProps) => {
     const [paymentIntentId, setPaymentIntentId] = useState<string | undefined>(
@@ -126,13 +126,12 @@ const PaymentCard = ({ payment, index }: PaymentCardProps) => {
                     )}
                     <div>
                         <Label>Tracking</Label>
-                        {payment.metadata.trackingNumber ? (
-                            <p>{payment.metadata.trackingNumber}</p>
-                        ) : (
-                            <CreateTrackingNumber
-                                paymentIntentId={payment.id}
-                            />
-                        )}
+                        <TrackingNumber
+                            paymentIntentId={payment.id}
+                            defaultTrackingNumber={
+                                payment.metadata.trackingNumber
+                            }
+                        />
                     </div>
                 </PaymentCardBody>
             )}

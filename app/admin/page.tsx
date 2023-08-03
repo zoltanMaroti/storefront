@@ -48,12 +48,7 @@ const AdminPage = () => {
         );
     }
 
-    if (!payments?.pages.length && !isLoading) {
-        return (
-            <PageContainer center={true}>There are no payments</PageContainer>
-        );
-    }
-
+    const noPayments = !payments?.pages[0].length && !isLoading;
     let index = 0;
 
     return (
@@ -64,6 +59,7 @@ const AdminPage = () => {
             />
             <PageContainer>
                 <h1>Orders</h1>
+                {noPayments && <p>There are no payments</p>}
                 <InnerContainer>
                     {payments?.pages.map((payments) => {
                         return payments.map((payment) => {
@@ -83,14 +79,16 @@ const AdminPage = () => {
                 {isLoading ? (
                     <Spinner color={'var(--color-font-primary)'} />
                 ) : (
-                    <Button
-                        onClick={onClick}
-                        disabled={isButtonDisabled || isFetchingNextPage}
-                        loading={isFetchingNextPage}
-                        width={'200px'}
-                    >
-                        Load more
-                    </Button>
+                    !noPayments && (
+                        <Button
+                            onClick={onClick}
+                            disabled={isButtonDisabled || isFetchingNextPage}
+                            loading={isFetchingNextPage}
+                            width={'200px'}
+                        >
+                            Load more
+                        </Button>
+                    )
                 )}
             </PageContainer>
         </div>
