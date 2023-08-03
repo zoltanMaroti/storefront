@@ -6,6 +6,7 @@ import {
     DEFAULT_CURRENCY,
     GALLERY_THUMBNAIL_HEIGHT,
 } from '@/lib/constants';
+import Stripe from 'stripe';
 
 export const normalizeImages = (
     images: ProductImage[]
@@ -85,4 +86,30 @@ export const removeLocale = (url: string, locale: string) => {
     }
 
     return url;
+};
+
+export const prepareAttachment = async (url: string) => {
+    const response = await fetch(url);
+    const responseArrayBuffer = await response.arrayBuffer();
+    return Buffer.from(responseArrayBuffer).toString('base64');
+};
+
+export const validateCheckoutSession = (
+    checkoutSession: Stripe.Checkout.Session
+) => {
+    const { customer_details, payment_intent, invoice } = checkoutSession;
+
+    if (!customer_details?.hasOwnProperty('email')) {
+        throw new Error('Customer email not found');
+    }
+
+    if (!invoice?.hasOwnProperty('invoice_pdf')) {
+        throw new Error('Invoice not found');
+    }
+
+    if (!payment_intent || typeof payment_intent === 'string') {
+        throw new Error('Payment intent not found');
+    }
+
+    return true;
 };

@@ -6,7 +6,8 @@ export const sendEmail = async (
     from: string,
     replyTo: string,
     subject: string,
-    html: string
+    html: string,
+    attachment?: string
 ) => {
     Sendgrid.setApiKey(getEnv('EMAIL_PROVIDER_API_KEY'));
 
@@ -16,6 +17,16 @@ export const sendEmail = async (
         subject,
         replyTo,
         html,
+        ...(attachment && {
+            attachments: [
+                {
+                    content: attachment,
+                    filename: 'invoice.pdf',
+                    type: 'application/pdf',
+                    disposition: 'attachment',
+                },
+            ],
+        }),
     };
 
     try {
