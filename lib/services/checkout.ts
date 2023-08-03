@@ -1,6 +1,11 @@
 import Stripe from 'stripe';
 import { Locale, Product } from '@/lib/types';
-import { convertToCents, getEnv } from '@/lib/utils';
+import {
+    convertToCents,
+    getEnv,
+    prepareAttachment,
+    validateCheckoutSession,
+} from '@/lib/utils';
 import {
     DEFAULT_CURRENCY,
     DEFAULT_SHIPPING_PROVIDER,
@@ -24,7 +29,7 @@ export const createCheckoutSession = async (
     locale: Stripe.Checkout.Session.Locale
 ): Promise<Stripe.Checkout.Session> => {
     const stripe = getStripeInstance();
-    const baseUrl = getEnv('BASE_URL');
+    const baseUrl = getEnv('NEXT_PUBLIC_BASE_URL');
 
     const params: Stripe.Checkout.SessionCreateParams = {
         line_items: products.map((product) => {
@@ -68,6 +73,13 @@ export const createCheckoutSession = async (
                 },
             },
         ],
+        invoice_creation: {
+            enabled: true,
+        },
+        billing_address_collection: 'required',
+        phone_number_collection: {
+            enabled: true,
+        },
         mode: 'payment',
         success_url: `${baseUrl}/${locale}/payment/success?session_id={CHECKOUT_SESSION_ID}`,
         cancel_url: `${baseUrl}/${locale}/payment/cancel`,
@@ -76,12 +88,12 @@ export const createCheckoutSession = async (
 
     try {
         return await stripe.checkout.sessions.create(params);
-    } catch (error) {
-        throw new Error(error as string);
+    } catch (error: any) {
+        throw new Error('Failed to prepare checkout session url', error);
     }
 };
 
-export const getSession = async (
+export const getCheckoutSession = async (
     sessionId: string,
     config?: Stripe.Checkout.SessionRetrieveParams
 ): Promise<Stripe.Checkout.Session> => {
@@ -90,7 +102,7 @@ export const getSession = async (
     try {
         return await stripe.checkout.sessions.retrieve(sessionId, config);
     } catch (error: any) {
-        throw new Error('Failed to retrieve checkout session: ', error);
+        throw new Error('Failed to retrieve checkout session', error);
     }
 };
 
@@ -121,11 +133,12 @@ export const verifyStripeSignature = (
 };
 
 export const onCheckoutCompleted = async (sessionId: string) => {
-    const session = await getSession(sessionId, {
+    const session = await getCheckoutSession(sessionId, {
         expand: [
             'line_items',
             'payment_intent',
             'payment_intent.payment_method',
+            'invoice',
         ],
     });
 
@@ -139,14 +152,22 @@ export const onCheckoutCompleted = async (sessionId: string) => {
         shipping_details,
         shipping_cost,
         line_items,
-        // @ts-ignore
-        payment_intent: { payment_method },
+        payment_intent,
         locale,
+        invoice,
     } = session;
 
-    if (!customer_details?.email) {
-        throw new Error('Customer email not found');
-    }
+    validateCheckoutSession(session);
+
+    const { payment_method } = payment_intent as {
+        payment_method: Stripe.PaymentMethod;
+    };
+
+    const { email } = customer_details as { email: string };
+
+    const attachment = await prepareAttachment(
+        (invoice as Stripe.Invoice).invoice_pdf!
+    );
 
     const html = render(
         OrderConfirmationEmail({
@@ -165,10 +186,11 @@ export const onCheckoutCompleted = async (sessionId: string) => {
     );
 
     await sendEmail(
-        customer_details?.email,
+        email,
         getEnv('EMAIL_ADDRESS'),
         getEnv('EMAIL_ADDRESS'),
         i18n[locale as Locale]['Order confirmed'],
-        html
+        html,
+        attachment
     );
 };

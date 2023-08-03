@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getSession } from '@/lib/services/checkout';
+import { getCheckoutSession } from '@/lib/services/checkout';
 
 export async function GET(request: NextRequest) {
     const {
@@ -16,7 +16,7 @@ export async function GET(request: NextRequest) {
     }
 
     try {
-        const session = await getSession(sessionId);
+        const session = await getCheckoutSession(sessionId);
 
         return NextResponse.json({
             order_number: session.payment_intent,
