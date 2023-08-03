@@ -8,15 +8,18 @@ import {
     PriceContainer,
 } from '@/components/product/card/style';
 import Price from '@/components/common/price/Price';
+import { useLocale } from 'next-intl';
 
 const priceConfig = {
     minimumFractionDigits: 0,
 };
 
 const ProductCard = ({ item, maxItemWidth }: ProductCardProps) => {
+    const locale = useLocale();
+
     return (
         <ProductCardContainer
-            href={`/product/${item.slug}`}
+            href={`/${locale}/product/${item.slug}`}
             maxItemWidth={maxItemWidth}
         >
             <ProductImageContainer>
