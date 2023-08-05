@@ -15,7 +15,7 @@ const CookiePolicy = () => {
                         électronique](&quot;nous&quot;, &quot;notre&quot; ou
                         &quot;nos&quot;) utilise des cookies et des technologies
                         similaires pour vous reconnaître lorsque vous visitez
-                        notre site Web à l'adresse [domaine](&quot;site
+                        notre site Web à l&apos;adresse [domaine](&quot;site
                         Web&quot;). Il explique ce que sont ces technologies et
                         pourquoi nous les utilisons, ainsi que vos droits de
                         contrôler notre utilisation de celles-ci.
@@ -153,10 +153,10 @@ const CookiePolicy = () => {
                         pour refuser les cookies si vous préférez. Veuillez
                         noter que le blocage ou la suppression des cookies peut
                         avoir un impact sur votre expérience de navigation et
-                        restreindre l'accès à certaines fonctionnalités de notre
-                        site Web. Pour en savoir plus sur la gestion des
-                        cookies, vous pouvez consulter les pages d'aide de votre
-                        navigateur ou de votre appareil.
+                        restreindre l&apos;accès à certaines fonctionnalités de
+                        notre site Web. Pour en savoir plus sur la gestion des
+                        cookies, vous pouvez consulter les pages d&apos;aide de
+                        votre navigateur ou de votre appareil.
                     </p>
                     <ol>
                         <li>
@@ -251,7 +251,7 @@ const CookiePolicy = () => {
                             Si vous avez des questions ou des préoccupations
                             concernant cette politique relative aux cookies ou
                             notre utilisation des cookies, veuillez nous
-                            contacter à l'adresse [votre adresse e-mail].
+                            contacter à l&apos;adresse [votre adresse e-mail].
                         </p>
                     </span>
                 </li>
