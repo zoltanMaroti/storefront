@@ -9,11 +9,12 @@ import {
 } from '@/components/layout/footer/style';
 import { FiFacebook, FiInstagram } from 'react-icons/fi';
 import { RiPinterestLine } from 'react-icons/ri';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { CATEGORIES } from '@/lib/constants';
 
 const Footer = () => {
     const t = useTranslations('common');
+    const locale = useLocale();
 
     return (
         <FooterContainer>
@@ -50,6 +51,9 @@ const Footer = () => {
                     <FooterNavLink href={'#'}>{t('About us')}</FooterNavLink>
                     <FooterNavLink href={'#'}>{t('FAQ')}</FooterNavLink>
                     <FooterNavLink href={'#'}>{t('Contact')}</FooterNavLink>
+                    <FooterNavLink href={`/${locale}/cookie-policy`}>
+                        {t('Cookie Policy')}
+                    </FooterNavLink>
                 </Column>
             </Row>
             <PaymentMethods>
