@@ -60,6 +60,9 @@ const Footer = () => {
                     <FooterNavLink href={`/${locale}/cookie-policy`}>
                         {t('Cookie Policy')}
                     </FooterNavLink>
+                    <FooterNavLink href={`/${locale}/privacy-policy`}>
+                        {t('Privacy Policy')}
+                    </FooterNavLink>
                 </Column>
             </Row>
             <PaymentMethods>
