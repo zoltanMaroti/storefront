@@ -107,6 +107,7 @@ export const IconContainer = styled.span<{ isOpen: boolean }>`
 
 export const MobileNavigationContainer = styled.div`
     display: none;
+    cursor: pointer;
 
     @media screen and (max-width: ${screenSizes.SMALL}) {
         display: flex;
