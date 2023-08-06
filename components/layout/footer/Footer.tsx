@@ -34,13 +34,13 @@ const Footer = () => {
             <Row>
                 <Column>
                     <h2>{t('Shop')}</h2>
-                    <FooterNavLink href={'/products'}>
+                    <FooterNavLink href={`/${locale}/products`}>
                         {t('All products')}
                     </FooterNavLink>
                     {CATEGORIES.map((category) => (
                         <FooterNavLink
                             key={category.slug}
-                            href={`/products/${category.slug}`}
+                            href={`/${locale}/products/${category.slug}`}
                         >
                             {t(`${category.name}`)}
                         </FooterNavLink>
@@ -48,9 +48,15 @@ const Footer = () => {
                 </Column>
                 <Column>
                     <h2>{t('Information')}</h2>
-                    <FooterNavLink href={'#'}>{t('About us')}</FooterNavLink>
-                    <FooterNavLink href={'#'}>{t('FAQ')}</FooterNavLink>
-                    <FooterNavLink href={'#'}>{t('Contact')}</FooterNavLink>
+                    <FooterNavLink href={`/${locale}/about`}>
+                        {t('About us')}
+                    </FooterNavLink>
+                    <FooterNavLink href={`/${locale}/faq`}>
+                        {t('FAQ')}
+                    </FooterNavLink>
+                    <FooterNavLink href={`/${locale}/contact`}>
+                        {t('Contact')}
+                    </FooterNavLink>
                     <FooterNavLink href={`/${locale}/cookie-policy`}>
                         {t('Cookie Policy')}
                     </FooterNavLink>

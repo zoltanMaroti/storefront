@@ -62,6 +62,8 @@ const MobileNavigation = ({ isOpen, onClick }: MobileNavigationProps) => {
                 <Divider />
                 <NavLink href={'/faq'}>{t('FAQ')}</NavLink>
                 <Divider />
+                <NavLink href={'/contact'}>{t('Contact')}</NavLink>
+                <Divider />
                 <LanguageSelector inline={true} />
             </Drawer>
         </nav>

@@ -20,6 +20,11 @@ export const Language = styled.div<{ selected?: boolean }>`
     gap: var(--spacing-xs);
     line-height: 1.5;
 
+    &:hover {
+        text-stroke: 0.5px black;
+        -webkit-text-stroke: 0.5px black;
+    }
+
     ${({ selected }) =>
         selected &&
         css`

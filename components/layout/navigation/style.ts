@@ -8,6 +8,11 @@ export const NavItem = styled.span<{ isActive: boolean; size?: string }>`
     cursor: pointer;
     white-space: nowrap;
 
+    &:hover {
+        text-stroke: 0.5px black;
+        -webkit-text-stroke: 0.5px black;
+    }
+
     ${({ isActive }) =>
         isActive &&
         css`
