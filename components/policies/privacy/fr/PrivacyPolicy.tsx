@@ -16,12 +16,13 @@ const PrivacyPolicy = () => {
                         Bienvenue dans [votre boutique de commerce électronique]
                         (&quot;nous&quot;, &quot;notre&quot; ou
                         &quot;notre&quot;). Nous nous engageons à protéger votre
-                        vie privée et à vous offrir une expérience d'achat en
-                        ligne sûre et sécurisée. Cette politique de
+                        vie privée et à vous offrir une expérience d&apos;achat
+                        en ligne sûre et sécurisée. Cette politique de
                         confidentialité vise à vous informer de nos pratiques
-                        concernant la collecte, l'utilisation et la divulgation
-                        de données personnelles lorsque vous visitez et utilisez
-                        notre site Web et nos services via le domaine [Domaine].
+                        concernant la collecte, l&apos;utilisation et la
+                        divulgation de données personnelles lorsque vous visitez
+                        et utilisez notre site Web et nos services via le
+                        domaine [Domaine].
                     </p>
                 </li>
                 <li>
@@ -35,8 +36,8 @@ const PrivacyPolicy = () => {
                         personnelles, y compris, mais sans s&apos;y limiter, le
                         règlement (UE) 2016/679 du Parlement et du Conseil du 27
                         avril 2016 relatif à la protection des personnes à
-                        l'égard de la traitement des données personnelles et sur
-                        la libre circulation de ces données (le
+                        l&apos;égard de la traitement des données personnelles
+                        et sur la libre circulation de ces données (le
                         &quot;GDPR&quot;) et toute autre loi ou réglementation
                         nationale applicable régissant le traitement de ces
                         données personnelles.
@@ -70,7 +71,7 @@ const PrivacyPolicy = () => {
                             <p>[Contact Phone Number]</p>
                             <p>Numéro RCS:</p>
                             <p>[RCS ID]</p>
-                            <p>Permis d'affaires:</p>
+                            <p>Permis d&apos;affaires:</p>
                             <p>[Business Permit]</p>
                         </Grid>
                     </List>
@@ -194,10 +195,11 @@ const PrivacyPolicy = () => {
                                 nous pensons que cela est raisonnablement
                                 nécessaire pour réaliser nos intérêts
                                 commerciaux légitimes et que ces intérêts ne
-                                l'emportent pas sur vos intérêts et vos libertés
-                                et droits fondamentaux. Par exemple, nous
-                                pouvons traiter vos informations personnelles à
-                                certaines des fins décrites afin de:
+                                l&apos;emportent pas sur vos intérêts et vos
+                                libertés et droits fondamentaux. Par exemple,
+                                nous pouvons traiter vos informations
+                                personnelles à certaines des fins décrites afin
+                                de:
                             </p>
                         </li>
                         <li>
@@ -241,9 +243,9 @@ const PrivacyPolicy = () => {
                                 paiement pour gérer en toute sécurité les
                                 transactions de paiement. Vos informations de
                                 paiement sont directement soumises et traitées
-                                par Stripe, et nous ne stockons ni n'avons accès
-                                à vos informations de paiement complètes. Vous
-                                pouvez consulter{' '}
+                                par Stripe, et nous ne stockons ni n&apos;avons
+                                accès à vos informations de paiement complètes.
+                                Vous pouvez consulter{' '}
                                 <a
                                     href="https://stripe.com/en-lu/privacy"
                                     target={'_blank'}
@@ -269,7 +271,7 @@ const PrivacyPolicy = () => {
                             <p>
                                 Nous utilisons SendGrid pour envoyer des e-mails
                                 transactionnels. Votre adresse e-mail et
-                                d'autres détails pertinents peuvent être
+                                d&apos;autres détails pertinents peuvent être
                                 partagés avec SendGrid à cette fin. Vous pouvez
                                 consulter{' '}
                                 <a
@@ -368,7 +370,7 @@ const PrivacyPolicy = () => {
                             </p>
                         </li>
                         <li>
-                            <span>Droit d'opposition</span>
+                            <span>Droit d&apos;opposition</span>
                             <p>
                                 Vous avez le droit de vous opposer au traitement
                                 de vos données personnelles dans certaines
@@ -390,10 +392,11 @@ const PrivacyPolicy = () => {
                         organisationnelles appropriées pour assurer la sécurité
                         de vos données personnelles et les protéger contre tout
                         accès non autorisé, perte accidentelle, destruction ou
-                        altération. Cependant, veuillez comprendre qu'aucune
-                        méthode de transmission sur Internet ou de stockage
-                        électronique n&apos;est sécurisée à 100 %, et nous ne
-                        pouvons pas garantir une sécurité absolue des données.
+                        altération. Cependant, veuillez comprendre
+                        qu&apos;aucune méthode de transmission sur Internet ou
+                        de stockage électronique n&apos;est sécurisée à 100 %,
+                        et nous ne pouvons pas garantir une sécurité absolue des
+                        données.
                     </p>
                 </li>
                 <li>
@@ -455,8 +458,8 @@ const PrivacyPolicy = () => {
                     <p>
                         Si vous estimez que vos droits en matière de protection
                         des données en vertu du RGPD ont été violés, vous avez
-                        le droit de déposer une plainte auprès de l'autorité de
-                        contrôle luxembourgeoise, la{' '}
+                        le droit de déposer une plainte auprès de
+                        l&apos;autorité de contrôle luxembourgeoise, la{' '}
                         <a
                             href="https://cnpd.public.lu/fr.html"
                             target={'_blank'}
