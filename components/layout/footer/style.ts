@@ -36,7 +36,8 @@ export const FooterNavLink = styled(Link)`
     cursor: pointer;
 
     &:hover {
-        font-weight: 500;
+        text-stroke: 0.5px black;
+        -webkit-text-stroke: 0.5px black;
     }
 `;
 
