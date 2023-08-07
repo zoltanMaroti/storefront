@@ -16,7 +16,7 @@ export const DrawerContainer = styled.div<{ isOpen?: boolean }>`
     transform: translateX(-120%);
     padding: var(--spacing-md);
     z-index: 6;
-    box-shadow: 1px 0 7px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: var(--box-shadow-sm);
     transition: transform 300ms ease-in-out;
     min-width: 30vw;
     will-change: auto;
