@@ -7,6 +7,7 @@ import Footer from '@/components/layout/footer/Footer';
 import getRequestConfig from '@/i18n';
 import Header from '@/components/layout/header/Header';
 import { Providers } from '@/lib/providers';
+import CookieBanner from '@/components/banners/cookie/CookieBanner';
 
 const montserrat = Montserrat({
     subsets: ['latin'],
@@ -27,6 +28,7 @@ export default async function RootLayout({ children }: LayoutProps) {
             <NextIntlClientProvider locale={locale} messages={messages}>
                 <Providers>
                     <body className={montserrat.className}>
+                        <CookieBanner />
                         <Header />
                         <main>{children}</main>
                         <Footer />

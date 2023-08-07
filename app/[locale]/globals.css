@@ -32,6 +32,8 @@
     --spacing-sm: 1rem;
     --spacing-md: 2rem;
     --spacing-lg: 3rem;
+
+    --box-shadow-sm: 1px 0 7px 0 rgba(0, 0, 0, 0.1);
 }
 
 * {

@@ -11,7 +11,7 @@ export function Providers({ children }: { children: ReactNode }) {
 
     return (
         <QueryClientProvider client={queryClient}>
-            <ReactQueryDevtools />
+            {/*<ReactQueryDevtools />*/}
             <Provider store={store}>{children}</Provider>
         </QueryClientProvider>
     );
