@@ -157,8 +157,8 @@ const Terms = () => {
                         <li>
                             <span>Transport maritime international</span>
                             <p>
-                                Nous offrons l'expédition internationale vers
-                                les pays suivants : Allemagne, Luxembourg,
+                                Nous offrons l&apos;expédition internationale
+                                vers les pays suivants : Allemagne, Luxembourg,
                                 Pays-Bas, France, Belgique
                             </p>
                             <p>
@@ -167,11 +167,11 @@ const Terms = () => {
                                 certaines livraisons internationales et que vous
                                 pouvez être soumis à des taxes et droits
                                 supplémentaires sur lesquels nous n&apos;avons
-                                aucun contrôle. Si de tels cas s'appliquent,
-                                vous êtes responsable du respect des lois
-                                applicables dans le pays où vous vivez et serez
-                                responsable de ces coûts ou taxes
-                                supplémentaires.
+                                aucun contrôle. Si de tels cas
+                                s&apos;appliquent, vous êtes responsable du
+                                respect des lois applicables dans le pays où
+                                vous vivez et serez responsable de ces coûts ou
+                                taxes supplémentaires.
                             </p>
                         </li>
                         <li>
@@ -179,8 +179,8 @@ const Terms = () => {
                             <p>
                                 Si la livraison est retardée pour une raison
                                 quelconque, nous vous en informerons dès que
-                                possible et vous informerons d'une date estimée
-                                révisée pour la livraison.
+                                possible et vous informerons d&apos;une date
+                                estimée révisée pour la livraison.
                             </p>
                         </li>
                     </ol>
@@ -221,9 +221,9 @@ const Terms = () => {
                             <span>Processus de retour</span>
                             <p>
                                 Pour retourner un article, placez l&apos;article
-                                en toute sécurité dans son emballage d'origine
-                                avec votre preuve d&apos;achat et envoyez votre
-                                retour à l&apos;adresse suivante:
+                                en toute sécurité dans son emballage
+                                d&apos;origine avec votre preuve d&apos;achat et
+                                envoyez votre retour à l&apos;adresse suivante:
                             </p>
                             <p>[Address]</p>
                             <p>
@@ -265,7 +265,7 @@ const Terms = () => {
                             </p>
                         </li>
                         <li>
-                            <span>Restrictions d'utilisation</span>
+                            <span>Restrictions d&apos;utilisation</span>
                             <p>
                                 Vous ne pouvez pas reproduire, distribuer,
                                 modifier ou créer des œuvres dérivées basées sur
