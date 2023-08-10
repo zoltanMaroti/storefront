@@ -80,6 +80,7 @@ export const createCheckoutSession = async (
         phone_number_collection: {
             enabled: true,
         },
+        consent_collection: { terms_of_service: 'required' },
         mode: 'payment',
         success_url: `${baseUrl}/${locale}/payment/success?session_id={CHECKOUT_SESSION_ID}`,
         cancel_url: `${baseUrl}/${locale}/payment/cancel`,
