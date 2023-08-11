@@ -3,6 +3,7 @@
 import styled from '@emotion/styled';
 import { FiX } from 'react-icons/fi';
 import { css } from '@emotion/react';
+import { screenSizes } from '@/lib/constants';
 
 export const InputContainer = styled.div`
     position: relative;
@@ -63,4 +64,30 @@ export const StyledTextArea = styled.textarea<{ hasError?: boolean }>`
         css`
             border-color: var(--color-danger);
         `}
+`;
+
+export const CheckboxContainer = styled.div<{ hasError?: boolean }>`
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: var(--spacing-xs);
+    line-height: 1.8;
+
+    ${({ hasError }) =>
+        hasError &&
+        css`
+            input {
+                outline: 1px solid var(--color-danger);
+            }
+            color: var(--color-danger);
+        `}
+
+    input {
+        width: 20px;
+        height: 20px;
+    }
+
+    @media screen and (max-width: ${screenSizes.SMALL}) {
+        gap: var(--spacing-sm);
+    }
 `;

@@ -41,3 +41,8 @@ export const StatusContainer = styled.div`
     gap: var(--spacing-sm);
     text-align: center;
 `;
+
+export const Link = styled.a`
+    font-weight: bold;
+    color: var(--color-accent-secondary);
+`;

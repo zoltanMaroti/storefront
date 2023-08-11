@@ -123,6 +123,13 @@ export const validationRules = {
             message: 'Please enter your message',
         },
     },
+    consentGiven: {
+        required: {
+            value: true,
+            message:
+                'Please read and accept the Terms and Conditions & Privacy Policy',
+        },
+    },
 };
 
 export enum StripeWebhookEvents {

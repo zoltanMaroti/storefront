@@ -8,10 +8,10 @@ import ContactFormEmail from '@/emails/ContactFormEmail';
 export async function POST(request: NextRequest) {
     const contactForm: ContactFormValues = await request.json();
 
-    const { firstName, lastName, email, message } = contactForm;
+    const { firstName, lastName, email, message, consentGiven } = contactForm;
 
     const html = render(
-        ContactFormEmail({ firstName, lastName, email, message })
+        ContactFormEmail({ firstName, lastName, email, message, consentGiven })
     );
 
     try {
