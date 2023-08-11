@@ -255,6 +255,7 @@ export type ContactFormValues = {
     lastName: string;
     email: string;
     message: string;
+    consentGiven: boolean;
 };
 
 export type FormErrorMessageProps = {

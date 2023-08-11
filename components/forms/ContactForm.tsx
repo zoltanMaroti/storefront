@@ -1,19 +1,24 @@
 'use client';
 
 import React from 'react';
-import { useTranslations } from 'next-intl';
-import { Column, Row, StyledForm } from '@/components/forms/style';
+import { useLocale, useTranslations } from 'next-intl';
+import { Column, Link, Row, StyledForm } from '@/components/forms/style';
 import Button from '@/components/common/button/Button';
 import { ButtonText } from '@/components/common/button/style';
 import { useForm } from 'react-hook-form';
 import { ContactFormValues } from '@/lib/types';
-import { StyledInput, StyledTextArea } from '@/components/common/input/style';
+import {
+    StyledInput,
+    StyledTextArea,
+    CheckboxContainer,
+} from '@/components/common/input/style';
 import FormErrorMessage from '@/components/forms/FormErrorMessage';
 import { validationRules } from '@/lib/constants';
 import useContactForm from '@/lib/hooks/useContactForm';
 import ContactFormSuccess from '@/components/forms/ContactFormSuccess';
 
 const ContactForm = () => {
+    const locale = useLocale();
     const t = useTranslations('contact');
     const {
         reset: resetForm,
@@ -88,6 +93,44 @@ const ContactForm = () => {
                 />
                 {errors.message && (
                     <FormErrorMessage error={t(errors.message.message)} />
+                )}
+            </Row>
+            <Row>
+                <CheckboxContainer
+                    hasError={!!errors.consentGiven}
+                    {...register('consentGiven', validationRules.consentGiven)}
+                >
+                    <input
+                        type="checkbox"
+                        id={'consentGiven'}
+                        name={'consentGiven'}
+                    />
+                    <label htmlFor={'consentGiven'}>
+                        {t.rich(
+                            'I have read and accept the Terms and Conditions & Privacy Policy',
+                            {
+                                terms: (chunks) => (
+                                    <Link
+                                        href={`/${locale}/terms`}
+                                        target={'_blank'}
+                                    >
+                                        {chunks}
+                                    </Link>
+                                ),
+                                privacy: (chunks) => (
+                                    <Link
+                                        href={`/${locale}/privacy-policy`}
+                                        target={'_blank'}
+                                    >
+                                        {chunks}
+                                    </Link>
+                                ),
+                            }
+                        )}
+                    </label>
+                </CheckboxContainer>
+                {errors.consentGiven && (
+                    <FormErrorMessage error={t(errors.consentGiven.message)} />
                 )}
             </Row>
             <Button
